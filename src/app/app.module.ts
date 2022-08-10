@@ -43,8 +43,6 @@ import { PersonalDataHeightComponent } from './pages/personal-data/personal-data
 import { PersonalDataMainPageComponent } from './pages/personal-data/personal-data-main-page/personal-data-main-page.component';
 import { WeightAdderFormComponent } from './components/forms/weight-adder/weight-adder-form/weight-adder-form.component';
 import { PersonalDataDisplayComponent } from './components/personal-data-display/personal-data-display.component';
-import { PersonalDataGenderComponent } from './pages/personal-data/personal-data-gender/personal-data-gender.component';
-import { PersonalDataBirthdayComponent } from './pages/personal-data/personal-data-birthday/personal-data-birthday.component';
 import { InfoUpdateFormComponent } from './components/forms/info-update-form/info-update-form.component';
 import { DateInputComponent } from './components/forms/date-input/date-input.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
@@ -105,8 +103,6 @@ import { BmiScaleComponent } from './components/bmi-scale/bmi-scale.component';
     PersonalDataMainPageComponent,
     WeightAdderFormComponent,
     PersonalDataDisplayComponent,
-    PersonalDataGenderComponent,
-    PersonalDataBirthdayComponent,
     InfoUpdateFormComponent,
     DateInputComponent,
     CalendarComponent,

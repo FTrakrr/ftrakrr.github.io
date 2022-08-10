@@ -19,8 +19,6 @@ import { SettingsSetsComponent } from './pages/settings/settings-sets/settings-s
 import { PersonalDataMainPageComponent } from './pages/personal-data/personal-data-main-page/personal-data-main-page.component';
 import { PersonalDataWeightComponent } from './pages/personal-data/personal-data-weight/personal-data-weight.component';
 import { PersonalDataHeightComponent } from './pages/personal-data/personal-data-height/personal-data-height.component';
-import { PersonalDataGenderComponent } from './pages/personal-data/personal-data-gender/personal-data-gender.component';
-import { PersonalDataBirthdayComponent } from './pages/personal-data/personal-data-birthday/personal-data-birthday.component';
 import { UpdatePersonalDataComponent } from './pages/personal-data/update-personal-data/update-personal-data.component';
 
 const routes: Routes = [
@@ -32,8 +30,6 @@ const routes: Routes = [
       { path: 'update', component: UpdatePersonalDataComponent },
       { path: 'weight', component: PersonalDataWeightComponent },
       { path: 'height', component: PersonalDataHeightComponent },
-      { path: 'gender', component: PersonalDataGenderComponent },
-      { path: 'birthday', component: PersonalDataBirthdayComponent },
     ]
   },
   { path: 'history', component: HistoryComponent },
