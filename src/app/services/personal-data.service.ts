@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { PersonalData, WeightMeasurementObject, UserPhysiqueObject, HeightMeasurementObject, PersonalDataInternalObject, UserGender } from '../scripts/types';
+import { PersonalData, WeightMeasurementObject, UserPhysiqueObject, HeightMeasurementObject, PersonalDataInternalObject, UserGender } from 'src/app/scripts/types';
 import { LocalStorageService } from './local-storage.service';
-import DEFAULTS from './../scripts/defaults';
+import DEFAULTS from 'src/app/scripts/defaults';
 import { LBS_TO_KG, GENDER_MAP, BMI_SCALE, CM_TO_INCH } from '../scripts/constants';
 import { MoreRounding } from 'more-rounding';
 import { Duration } from 'duration-string';

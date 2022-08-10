@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit, ChangeDetectionStrategy, OnChanges, SimpleChanges } from '@angular/core';
-import { RegexService, InputElementData } from './../../../services/regex.service';
+import { RegexService, InputElementData } from 'src/app/services/regex.service';
 import { MoreRounding } from 'more-rounding';
 
 @Component({

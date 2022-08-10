@@ -1,5 +1,5 @@
 import { MoreRounding } from 'more-rounding';
-import { INCHES_IN_FOOT, LBS_TO_KG, CM_TO_INCH, M_TO_FT } from './constants';
+import { INCHES_IN_FOOT, LBS_TO_KG, CM_TO_INCH, M_TO_FT } from 'src/app/scripts/constants';
 
 export function feetFloatToFeetInches(feet: number) {
     return [

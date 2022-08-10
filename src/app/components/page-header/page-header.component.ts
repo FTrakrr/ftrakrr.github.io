@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { UrlService } from './../../services/url.service';
+import { UrlService } from 'src/app/services/url.service';
 
 @Component({
   selector: 'app-page-header',

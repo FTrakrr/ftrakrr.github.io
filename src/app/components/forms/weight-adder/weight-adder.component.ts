@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { WeightObject, WeightMeasurementObject } from './../../../scripts/types';
+import { WeightObject, WeightMeasurementObject } from 'src/app/scripts/types';
 
 @Component({
   selector: 'app-weight-adder',

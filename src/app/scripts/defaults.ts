@@ -1,4 +1,4 @@
-import { HeightMeasurementObject, PersonalData, PersonalDataUpdateDefaults, Settings, WeightMeasurementObject } from './types';
+import { HeightMeasurementObject, PersonalData, PersonalDataUpdateDefaults, Settings, WeightMeasurementObject } from 'src/app/scripts/types';
 
 const settings: Settings = {
     is_dark_theme: -1,

@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { WeightUnit, WeightMeasurementObject } from 'src/app/scripts/types';
-import { LBS_TO_KG } from './../../../scripts/constants';
+import { LBS_TO_KG } from 'src/app/scripts/constants';
 import { MoreRounding } from 'more-rounding';
 
 @Component({

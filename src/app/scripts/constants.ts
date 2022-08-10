@@ -1,4 +1,4 @@
-import { PersonalDataConstant } from "./types";
+import { PersonalDataConstant } from "src/app/scripts/types";
 
 //! personal data
 export const PERSONAL_DATA: PersonalDataConstant[] = [

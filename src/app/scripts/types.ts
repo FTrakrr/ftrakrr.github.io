@@ -1,4 +1,4 @@
-import { MoreDataObject } from "../components/data-row-expandable/data-row-expandable.component";
+import { MoreDataObject } from "src/app/components/data-row-expandable/data-row-expandable.component";
 
 export type UserGender = 'm' | 'f' | 'o';
 export type ExerciseType = 'weight_machine' | 'cable_machine' | 'cardio_machine' | 'barbell' | 'dumbbell' | 'kettlebell' | 'body_mass';
