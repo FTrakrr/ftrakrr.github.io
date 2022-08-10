@@ -18,8 +18,8 @@ export class LocalStorageService {
      */
     public loadFromLocalStorage(item: string): null | object | number | boolean | string {
         let data = localStorage.getItem(item);
-        if (!data) return null;
-        if (data.match(/^[\[\{]/)) return JSON.parse(data);
+        if (!data || data == 'null') return null;
+        if (data.trim().match(/^[\[\{]/)) return JSON.parse(data);
         if (Number(data)) return Number(data);
         if (data.match(/^(?:true|false)$/)) return data == 'true';
         return data;
