@@ -4,7 +4,6 @@ import { RadioBarOption } from 'src/app/components/forms/radio-bar/radio-bar.com
 import { SettingsService } from './../../../services/settings.service';
 
 @Component({
-  selector: 'app-settings-theme',
   templateUrl: './settings-theme.component.html',
   styleUrls: ['./settings-theme.component.scss']
 })

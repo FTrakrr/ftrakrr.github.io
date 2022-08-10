@@ -5,7 +5,6 @@ import { SettingsService } from './../../../services/settings.service';
 import { TimerService } from './../../../services/timer.service';
 
 @Component({
-  selector: 'app-settings-timer',
   templateUrl: './settings-timer.component.html',
   styleUrls: ['./settings-timer.component.scss']
 })

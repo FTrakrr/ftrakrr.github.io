@@ -8,7 +8,6 @@ import { SettingsService } from './../../../services/settings.service';
 import { MoreDataObject } from 'src/app/components/data-row-expandable/data-row-expandable.component';
 
 @Component({
-  selector: 'app-personal-data-weight',
   templateUrl: './personal-data-weight.component.html',
   styleUrls: ['./personal-data-weight.component.scss']
 })

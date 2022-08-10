@@ -3,7 +3,6 @@ import { Settings, WeightMeasurementObject } from 'src/app/scripts/types';
 import { SettingsService } from './../../../services/settings.service';
 
 @Component({
-  selector: 'app-settings-weights',
   templateUrl: './settings-weights.component.html',
   styleUrls: ['./settings-weights.component.scss']
 })

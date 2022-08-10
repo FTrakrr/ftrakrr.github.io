@@ -3,7 +3,6 @@ import { PersonalDataService } from './../../../services/personal-data.service';
 import { PERSONAL_DATA } from 'src/app/scripts/constants';
 
 @Component({
-  selector: 'app-personal-data-main-page',
   templateUrl: './personal-data-main-page.component.html',
   styleUrls: ['./personal-data-main-page.component.scss']
 })

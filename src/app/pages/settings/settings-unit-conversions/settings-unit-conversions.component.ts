@@ -4,7 +4,6 @@ import { RadioBarOption } from 'src/app/components/forms/radio-bar/radio-bar.com
 import { Settings } from 'src/app/scripts/types';
 
 @Component({
-  selector: 'app-settings-unit-conversions',
   templateUrl: './settings-unit-conversions.component.html',
   styleUrls: ['./settings-unit-conversions.component.scss']
 })

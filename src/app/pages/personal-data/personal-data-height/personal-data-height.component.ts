@@ -8,7 +8,6 @@ import { MoreDataObject } from 'src/app/components/data-row-expandable/data-row-
 import { feetFloatToFeetInches, cmToFtFloat, ftFloatToCm } from 'src/app/scripts/unit_convert';
 
 @Component({
-  selector: 'app-personal-data-height',
   templateUrl: './personal-data-height.component.html',
   styleUrls: ['./personal-data-height.component.scss']
 })

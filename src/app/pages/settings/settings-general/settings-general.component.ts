@@ -4,7 +4,6 @@ import { Settings } from 'src/app/scripts/types';
 import { SettingsService } from './../../../services/settings.service';
 
 @Component({
-  selector: 'app-settings-general',
   templateUrl: './settings-general.component.html',
   styleUrls: ['./settings-general.component.scss']
 })

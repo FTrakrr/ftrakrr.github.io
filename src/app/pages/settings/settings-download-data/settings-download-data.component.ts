@@ -4,7 +4,6 @@ import { LocalStorageService } from './../../../services/local-storage.service';
 import { TakeChance } from 'take-chance';
 
 @Component({
-  selector: 'app-settings-download-data',
   templateUrl: './settings-download-data.component.html',
   styleUrls: ['./settings-download-data.component.scss']
 })

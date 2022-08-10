@@ -6,7 +6,6 @@ import { TakeChance } from 'take-chance';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-update-personal-data',
   templateUrl: './update-personal-data.component.html',
   styleUrls: ['./update-personal-data.component.scss']
 })
