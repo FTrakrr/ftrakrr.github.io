@@ -6,23 +6,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { HomeComponent } from './pages/home/home.component';
-import { TrainingComponent } from './pages/training/training.component';
-import { WorkoutComponent } from './pages/workout/workout.component';
-import { ExerciseComponent } from './pages/exercise/exercise.component';
-import { EditExerciseComponent } from './pages/edit-exercise/edit-exercise.component';
-import { ExerciseListComponent } from './pages/exercise-list/exercise-list.component';
 import { GoBackComponent } from './components/go-back/go-back.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { RadioCardComponent } from './components/forms/radio-card/radio-card.component';
 import { PersonalDataComponent } from './pages/personal-data/personal-data.component';
-import { PersonalDataEditComponent } from './pages/personal-data-edit/personal-data-edit.component';
 import { LastWorkoutComponent } from './components/last-workout/last-workout.component';
 import { HistoryComponent } from './pages/history/history.component';
 import { PlanListComponent } from './components/plan-list/plan-list.component';
 import { MainButtonComponent } from './components/buttons/main-button/main-button.component';
 import { GhostButtonComponent } from './components/buttons/ghost-button/ghost-button.component';
 import { PlanCardComponent } from './components/plan-card/plan-card.component';
-import { PlanComponent } from './pages/plan/plan.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PlansComponent } from './pages/plans/plans.component';
 import { PageHeaderComponent } from './components/page-header/page-header.component';
@@ -75,23 +68,16 @@ import { BmiScaleComponent } from './components/bmi-scale/bmi-scale.component';
     AppComponent,
     MenuComponent,
     HomeComponent,
-    TrainingComponent,
-    WorkoutComponent,
-    ExerciseComponent,
-    EditExerciseComponent,
-    ExerciseListComponent,
     GoBackComponent,
     SettingsComponent,
     RadioCardComponent,
     PersonalDataComponent,
-    PersonalDataEditComponent,
     LastWorkoutComponent,
     HistoryComponent,
     PlanListComponent,
     MainButtonComponent,
     GhostButtonComponent,
     PlanCardComponent,
-    PlanComponent,
     HeaderComponent,
     PlansComponent,
     PageHeaderComponent,

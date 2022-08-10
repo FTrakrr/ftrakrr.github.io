@@ -5,11 +5,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { PersonalDataComponent } from './pages/personal-data/personal-data.component';
 import { HistoryComponent } from './pages/history/history.component';
-import { WorkoutComponent } from './pages/workout/workout.component';
-import { PlansComponent } from './pages/plans/plans.component';
-import { PlanComponent } from './pages/plan/plan.component';
-import { ExerciseListComponent } from './pages/exercise-list/exercise-list.component';
-import { ExerciseComponent } from './pages/exercise/exercise.component';
 // settings components
 import { SettingsComponent } from './pages/settings/settings.component';
 import { SettingsMainPageComponent } from './pages/settings/settings-main-page/settings-main-page.component';
@@ -42,11 +37,6 @@ const routes: Routes = [
     ]
   },
   { path: 'history', component: HistoryComponent },
-  { path: 'history/workout', component: WorkoutComponent },
-  { path: 'plans', component: PlansComponent },
-  { path: 'plans/plan', component: PlanComponent },
-  { path: 'exercises', component: ExerciseListComponent },
-  { path: 'exercises/exercise', component: ExerciseComponent },
   {
     path: 'settings', component: SettingsComponent, children: [
       { path: '', component: SettingsMainPageComponent },
