@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { WeightUnit } from 'src/app/scripts/types';
 import DEFAULTS from 'src/app/scripts/defaults';
 import { Settings, WeightMeasurementObject } from 'src/app/scripts/types';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
