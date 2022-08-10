@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="setting">
+        <h4>Plate weights</h4>
+        <p>What plates are available in your gym?</p>
+        <div class="setting">
+            <app-weight-adder [items]="settings.plates" (app-add)="onPlateAdd($event)"
+                (app-remove)="onPlateRemove($event)"></app-weight-adder>
+        </div>
+    </div>
+    <div class="gap"></div>
+    <div class="setting">
+        <h4>Cable machine add ons</h4>
+        <p>What cable machine add ons are available in your gym?</p>
+        <div class="setting">
+            <app-weight-adder [items]="settings.cable_weights" (app-add)="onCableWeightAdd($event)"
+                (app-remove)="onCableWeightRemove($event)"></app-weight-adder>
+        </div>
+    </div>
+</div>

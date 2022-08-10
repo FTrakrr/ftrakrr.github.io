@@ -1,0 +1,18 @@
+header {
+    background: var(--acc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 3.8rem;
+    border-bottom: 1px solid var(--disabled);
+    
+    max-width: 500px;
+    margin: 0 auto;
+
+    app-transparent-button {
+        position: absolute;
+        left: 1rem;
+        font-size: 1.6rem;
+    }
+}

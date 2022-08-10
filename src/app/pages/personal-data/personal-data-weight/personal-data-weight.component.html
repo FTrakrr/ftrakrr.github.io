@@ -1,0 +1,35 @@
+<div class="content">
+    <section class="main-section">
+        <h5>Your current weight is</h5>
+        <h2>{{ DATA_FOR_DISPLAY.weight?.value }}</h2>
+        <p class="align-right">last updated {{ DATA_FOR_DISPLAY.weight?.updated }}</p>
+        <div class="bmi-scale-container">
+            <app-bmi-scale [value]="DATA_FOR_DISPLAY.bmi?.object"></app-bmi-scale>
+        </div>
+    </section>
+    <hr>
+    <section class="no-flex">
+        <h4>
+            <span>Weight history</span>
+            <app-radio-bar
+                class="unit-selector"
+                [options]="unitOptions"
+                [value]="unit"
+                (valueChange)="onHistoryUnitChange($event)"
+                [fit-content]="true"
+            ></app-radio-bar>
+        </h4>
+        <p>
+            Here you can view the history of your weight measurements.
+        </p>
+    </section>
+    <section class="history-section">
+        <app-data-row-expandable
+            *ngFor="let item of weightHistoryData_copy; let index = index;"
+            [title]="item.dateString"
+            [value]="item.valueString"
+            [more-data]="item.moreData"
+            [(expanded)]="item.expanded"
+        ></app-data-row-expandable>
+    </section>
+</div>

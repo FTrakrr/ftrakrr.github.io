@@ -1,0 +1,20 @@
+select {
+    height: calc(1.5em + 1px * 2 + 0.5px);
+    font-size: 0.85em;
+    text-align: center;
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--disabled);
+    border-radius: 4px;
+    z-index: 2;
+    margin-bottom: 0.6em;
+    cursor: pointer;
+
+    &:focus {
+        background: var(--focus);
+    }
+}
+option {
+    background: var(--bg);
+    color: var(--text);
+}

@@ -1,0 +1,38 @@
+<div class="container">
+    <h4>Timer settings</h4>
+    <p>
+        The behavior of the timer can be customized here.
+    </p>
+    <p>
+        If you want to change the timer's length, you can do it by editing your workout plans.
+    </p>
+    <hr class="wide">
+    <section>
+        <h5>Volume</h5>
+        <app-radio-bar
+        [options]="volumeOptions"
+        size="M"
+        [fit-content]="true"
+        [value]="settings.timer.volume"
+        (valueChange)="settingsService.setTimerVolume($event)"
+        ></app-radio-bar>
+    </section>
+    <hr>
+    <section>
+        <h5>Vibration</h5>
+        <app-radio-bar
+        [options]="vibrationOptions"
+        size="M"
+        [fit-content]="true"
+        [value]="settings.timer.vibration"
+        (valueChange)="settingsService.setTimerVolume($event)"
+        ></app-radio-bar>
+    </section>
+    <hr class="wide">
+    <section>
+        <p>
+            Click the button below to test your settings.
+        </p>
+        <button class="ghost-btn" (click)="onTestButtonClick()">Test</button>
+    </section>
+</div>

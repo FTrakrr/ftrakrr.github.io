@@ -1,0 +1,18 @@
+<div class="container" [class]="{'force-show-buttons': alwaysShowButtons, 'force-show-border': alwaysShowBorder}">
+    <input
+        #input
+        type="text"
+        [class]="{'with-buttons': !noButtons}"
+        (input)="onInput()"
+        [value]="value"
+        [placeholder]="placeholder"
+    >
+    <div class="buttons" *ngIf="!noButtons">
+        <button class="transparent-btn plus" (click)="onIncrementClick()">
+            <bi-icon icon="plus"></bi-icon>
+        </button>
+        <button class="transparent-btn minus" (click)="onDecrementClick()">
+            <bi-icon icon="dash"></bi-icon>
+        </button>
+    </div>
+</div>

@@ -1,0 +1,75 @@
+.row {
+    --height: 3rem;
+    height: var(--height);
+    background: var(--hover);
+    border-bottom: 1px solid var(--acc);
+}
+.pointer-cursor {
+    cursor: pointer;
+}
+a {
+    display: flex;
+    justify-content: stretch;
+    text-decoration: none;
+}
+.icon, .arrow {
+    height: var(--height);
+    width: var(--height);
+    display: grid;
+    place-items: center;
+}
+.icon {
+    font-size: 1.35rem;
+    color: var(--text-e);
+
+    & + .title {
+        padding-left: 0;
+    }
+}
+.title, .value {
+    font-size: 1.1rem;
+    letter-spacing: 0.75px;
+}
+.title {
+    height: var(--height);
+    line-height: var(--height);
+    flex-grow: 1;
+    padding-left: 0.75rem;
+    font-weight: 300;
+}
+.value {
+    height: var(--height);
+    line-height: var(--height);
+    color: var(--text);
+    font-weight: 200;
+}
+.arrow {
+    font-size: 1.2rem;
+    color: var(--text-s);
+    opacity: 85%;
+    position: relative;
+    right: 0;
+    transition: right 0.25s ease, color 0.25s ease;
+}
+
+a:hover, a:focus {
+    i.arrow {
+        color: var(--main-500);
+        right: 0.5rem;
+    }
+}
+
+.gap {
+    border-top: 1px solid var(--acc);
+    margin-top: 0.5rem;
+}
+
+.value-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 0.4rem;
+    height: 100%;
+    line-height: normal;
+}

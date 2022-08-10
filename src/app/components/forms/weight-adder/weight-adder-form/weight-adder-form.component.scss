@@ -1,0 +1,11 @@
+form {
+    display: flex;
+    gap: 1rem;
+}
+button {
+    border-color: var(--disabled);
+    font-size: 0.81rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    margin-left: auto;
+}

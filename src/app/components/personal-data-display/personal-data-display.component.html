@@ -1,0 +1,16 @@
+<div class="card">
+    <h5 class="title" *ngIf="title">{{ title }}</h5>
+    <div class="field-container">
+        <div class="field" *ngFor="let f of fields">
+            <bi-icon *ngIf="f.icon" [icon]="f.icon"></bi-icon>
+            <h6 *ngIf="f.title" class="subtitle">{{ f.title }}</h6>
+            <span class="value">{{ f.value }}</span>
+        </div>
+    </div>
+    <div class="buttons-container" *ngIf="routerLink">
+        <a [routerLink]="routerLink">
+            <button class="ghost-btn">View</button>
+        </a>
+    </div>
+    <span class="updated" *ngIf="updated">Last updated: {{ updatedString }}</span>
+</div>

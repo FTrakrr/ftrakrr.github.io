@@ -1,0 +1,121 @@
+<div class="container">
+    <p>
+        Here you can set what information do you want to be displayed in the set details. Set details can be viewed by expanding it using the arrow found on the right side.
+    </p>
+    <hr>
+    <div class="setting">
+        <h4>Show previous workout</h4>
+        <p>
+            Shows information about the same set from the previous workout: reps done, weight lifted, if it was completed, and other.
+        </p>
+        <app-radio-bar
+            [options]="previousWorkoutOptions"
+            size="S"
+            [fit-content]="true"
+            [value]="settings.sets.show_previous"
+            (valueChange)="settingsService.setShowPreviousWorkout($event)"
+        ></app-radio-bar>
+    </div>
+    <hr>
+    <div class="setting">
+        <h4>Show total added weight</h4>
+        <p>
+            Shows the total added weight, if it is equipped on two sides separately.
+        </p>
+        <app-radio-bar
+            [options]="addedWeightOptions"
+            size="S"
+            [fit-content]="true"
+            [value]="settings.sets.total.show_total_added"
+            (valueChange)="settingsService.setShowAddedWeight($event)"
+        ></app-radio-bar>
+    </div>
+    <hr>
+    <div class="setting">
+        <h4>Show base resistance</h4>
+        <p>
+            Shows the base resistance without any added weight. If there is no base resistance in that exercise, it is not shown.
+        </p>
+        <app-radio-bar
+            [options]="baseResistanceOptions"
+            size="S"
+            [fit-content]="true"
+            [value]="settings.sets.total.show_base_resistance"
+            (valueChange)="settingsService.setShowBaseResistance($event)"
+        ></app-radio-bar>
+    </div>
+    <hr>
+    <div class="setting">
+        <h4>Show total weight</h4>
+        <p>
+            Shows the total weight lifted per rep, counting all sides (if applicable) and the base resistance (if applicable). If there is no base resistance in that exercise, it is not shown.
+        </p>
+        <app-radio-bar
+            [options]="totalWeightOptions"
+            size="S"
+            [fit-content]="true"
+            [value]="settings.sets.total.show_total_weight"
+            (valueChange)="settingsService.setShowTotalWeight($event)"
+        ></app-radio-bar>
+    </div>
+    <hr>
+    <div class="setting">
+        <h4>Show total weight in set</h4>
+        <p>
+            Shows the total weight lifted in that set, counting all sides (if applicable) and the base resistance (if applicable).
+        </p>
+        <app-radio-bar
+            [options]="setTotalOptions"
+            size="S"
+            [fit-content]="true"
+            [value]="settings.sets.total.show_set_total"
+            (valueChange)="settingsService.setShowSetTotal($event)"
+        ></app-radio-bar>
+    </div>
+    <hr>
+    <div class="setting">
+        <h4>Show total weight in exercise</h4>
+        <p>
+            Shows the total weight lifted in that exercise up to this set, counting all sides (if applicable) and the base resistance (if
+            applicable).
+        </p>
+        <app-radio-bar
+            [options]="exerciseTotalOptions"
+            size="S"
+            [fit-content]="true"
+            [value]="settings.sets.total.show_exercise_total"
+            (valueChange)="settingsService.setShowExerciseTotal($event)"
+        ></app-radio-bar>
+    </div>
+    <hr>
+    <div class="setting">
+        <h4>Show body mass percent</h4>
+        <p>
+            Shows the percent of body mass you lift in one rep, counting all sides (if applicable) and the base resistance (if applicable).
+        </p>
+        <app-radio-bar
+            [options]="bodyMassPercentOptions"
+            size="S"
+            [fit-content]="true"
+            [value]="settings.sets.show_body_mass_percent"
+            (valueChange)="settingsService.setShowBodyMassPercent($event)"
+        ></app-radio-bar>
+    </div>
+    <hr>
+    <div class="setting">
+        <h4>Show weight calculator</h4>
+        <p>
+            Shows the weight calculator that helps you put on the correct weights. There is a version of the calculator for exercises using plate weights as well as cable weights.
+        </p>
+        <p class="info">
+            The weights you want to use in the calculator can be chosen from the "Available weights" setting! <br/><a routerLink="../weights">Show me</a>.
+        </p>
+        <app-radio-bar
+            [options]="weightCalculatorOptions"
+            size="S"
+            [fit-content]="true"
+            [value]="settings.sets.show_calculator"
+            (valueChange)="settingsService.setShowWeightCalculator($event)"
+        ></app-radio-bar>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="adder-container-master">
+    <div class="adder-container" *ngIf="items.kg?.length">
+        <app-weight-adder-item
+            *ngFor="let item of items.kg"
+            [value]="item"
+            unit="kg"
+            (app-remove)="remove.emit($event)"
+        ></app-weight-adder-item>
+    </div>
+    <div class="adder-container" *ngIf="items.lbs?.length">
+        <app-weight-adder-item
+            *ngFor="let item of items.lbs"
+            [value]="item"
+            unit="lbs"
+            (app-remove)="remove.emit($event)"
+        ></app-weight-adder-item>
+    </div>
+    <hr>
+    <div class="form-container">
+        <span class="label">Add another weight</span>
+        <app-weight-adder-form (app-submit)="onAddWeight($event)"></app-weight-adder-form>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="setting">
+        <h5>First day of the week</h5>
+        <p>
+            The day that will be displayed as first in the history calendar.
+        </p>
+        <app-radio-bar
+            [options]="weekdayOptions"
+            size="S"
+            [fit-content]="true"
+            [value]="settings.first_weekday"
+            (valueChange)="settingsService.setFirstWeekday($event)"
+        ></app-radio-bar>
+    </div>
+    <hr class="wide">
+    <div class="setting">
+        <h5>Keep awake during workout</h5>
+        <app-radio-bar
+            [options]="keepAwakeOptions"
+            size="S"
+            [fit-content]="true"
+            [value]="settings.keep_awake"
+            (valueChange)="settingsService.setKeepAwake($event)"
+        ></app-radio-bar>
+    </div>
+</div>

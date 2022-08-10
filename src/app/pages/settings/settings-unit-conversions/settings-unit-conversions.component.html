@@ -1,0 +1,20 @@
+<div class="container">
+    <h4>Unit conversion factors</h4>
+    <p>During a workout, both the primary unit and the other unit for that exercise will be visible. Here you can set how do you want them to be converted.</p>
+    <div class="setting">
+        <h5>Weight</h5>
+        <app-radio-bar
+            [options]="weightConversionOptions"
+            [value]="settings.precise_conversion.weight"
+            (valueChange)="settingsService.setPreciseConversion('weight', $event)"
+        ></app-radio-bar>
+    </div>
+    <div class="setting">
+        <h5>Distance</h5>
+        <app-radio-bar
+            [options]="distanceConversionOptions"
+            [value]="settings.precise_conversion.distance"
+            (valueChange)="settingsService.setPreciseConversion('distance', $event)"
+        ></app-radio-bar>
+    </div>
+</div>

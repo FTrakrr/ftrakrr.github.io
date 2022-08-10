@@ -1,0 +1,87 @@
+.container {
+    height: max-content;
+    width: 100%;
+    display: flex;
+
+    --component-color: var(--disabled);
+}
+
+input {
+    height: calc(1.5em + 1px * 2 + 0.5px);
+    font-size: 0.85em;
+    min-width: 5.5ch;
+    width: 100%;
+    text-align: center;
+    background: var(--bg);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    z-index: 2;
+    color: var(--text);
+    transition: border-color 0.2s ease, background-color 0.15s ease;
+}
+.buttons {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: -4px;
+
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+button {
+    --button-size: 0.75em;
+    border: 1px solid var(--component-color);
+    background: transparent;
+    color: var(--component-color);
+    height: calc(var(--button-size) + 1px);
+    width: calc(var(--button-size) + 1px + 3px);
+    padding: 0;
+    position: relative;
+
+    transform: translateY(-1px);
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+
+    &.plus {
+        height: calc(var(--button-size) + 2px);
+        bottom: -1px;
+        border-radius: 0 4px 0 0;
+    }
+    &.minus {
+        border-radius: 0 0 4px 0;
+        bottom: -1px;
+        border-top: none;
+    }
+    & > * {
+        position: absolute;
+        top: calc(50% + 1px);
+        left: calc(50% + 2px);
+        transform: translate(-50%, -50%);
+        color: var(--text);
+        transition: color 0.2s ease;
+    }
+}
+
+input:focus {
+    border-color: var(--component-color);
+
+    &+.buttons {
+        opacity: 1;
+        transition: opacity 0.2s ease 0.3s;
+    }
+}
+
+.container.force-show-buttons {
+    input {
+        border: 1px solid var(--component-color);
+    }
+    .buttons {
+        opacity: 1;
+    }
+}
+.container.force-show-border input {
+    border: 1px solid var(--component-color);
+
+    &:focus {
+        background: var(--focus);
+    }
+}

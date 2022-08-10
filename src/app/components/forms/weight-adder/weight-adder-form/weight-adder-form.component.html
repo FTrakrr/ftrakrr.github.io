@@ -1,0 +1,7 @@
+<form>
+    <app-weight-input
+        [(value)]="weightData"
+        [horizontal]="true"
+    ></app-weight-input>
+    <button class="ghost-btn" (click)="onSubmit()">{{ buttonText ?? 'Add'}}</button>
+</form>

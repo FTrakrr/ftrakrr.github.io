@@ -1,0 +1,44 @@
+section {
+    --sect-padding: 0.75rem;
+    padding: 0 var(--sect-padding);
+    display: flex;
+    flex-direction: column;
+}
+h5 {
+    font-weight: 300;
+}
+h6 {
+    color: var(--text-s);
+    font-weight: 300;
+}
+p {
+    color: var(--text-s);
+    font-weight: 300;
+}
+p.add-margin {
+    margin-bottom: 1rem;
+}
+
+.data-display-container {
+    border-top: 1px solid var(--acc);
+    position: relative;
+    left: calc(-1 * var(--sect-padding));
+    width: calc(100% + 2 * var(--sect-padding));
+
+    display: flex;
+    flex-direction: column;
+}
+
+.update-button {
+    align-self: center;
+}
+
+.data-value-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 0.4rem;
+    height: 100%;
+    line-height: normal;
+}

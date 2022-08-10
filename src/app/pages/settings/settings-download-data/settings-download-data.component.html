@@ -1,0 +1,30 @@
+<div class="container">
+    <h4>Export your data</h4>
+    <p>
+        Here you can export all your FTrakrr data and save it to a file.
+    </p>
+    <p>
+        You may use that file to import the data to another device, or as backup.
+    </p>
+    <hr class="wide">
+    <div class="button-container">
+        <button
+            class="ghost-btn"
+            (click)="onExportButtonClick()"
+            [disabled]="isProcessing"
+        >
+            Export
+        </button>
+        <button
+            class="ghost-btn"
+            (click)="onDownloadButtonClick()"
+            *ngIf="showDownload"
+        >
+            Download
+        </button>
+    </div>
+    <p *ngIf="isProcessing" class="processing-msg" [class]="processingClass">
+        <span>{{ processingMessage }}</span>
+        <span *ngIf="useDots">{{ dots }}</span>
+    </p>
+</div>

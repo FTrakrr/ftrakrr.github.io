@@ -1,0 +1,11 @@
+<div class="info-box" [class]="type" [ngSwitch]="type">
+    <bi-icon *ngSwitchCase="'info'" icon="info-circle-fill" class="icon"></bi-icon>
+    <bi-icon *ngSwitchCase="'error'" icon="exclamation-triangle-fill" class="icon"></bi-icon>
+    <bi-icon *ngSwitchCase="'warn'" icon="exclamation-diamond-fill" class="icon"></bi-icon>
+    <bi-icon *ngSwitchCase="'success'" icon="check-circle-fill" class="icon"></bi-icon>
+    <div class="content-container">
+        <h6 class="title" *ngIf="title">{{ title }}</h6>
+        <p class="text" *ngIf="text"> {{ text }}</p>
+        <ng-content></ng-content>
+    </div>
+</div>

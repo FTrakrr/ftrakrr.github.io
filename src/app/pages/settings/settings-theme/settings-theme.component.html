@@ -1,0 +1,22 @@
+<div class="container">
+    <h5>Select Theme</h5>
+    <p>
+        Dark Theme helps you reduce battery usage!
+    </p>
+    <app-radio-bar
+        [options]="themeOptions"
+        size="M"
+        [fit-content]="true"
+        [value]="settings.is_dark_theme"
+        (valueChange)="settingsService.setTheme($event)"
+    ></app-radio-bar>
+    <div class="notice-container">
+        <strong>Light theme notice</strong>
+        <p>
+            For now, only the dark theme is available.
+        </p>
+        <p>
+            If you want though, you can select the light theme now, and you will automatically see the effect whenever we add that functionality.
+        </p>
+    </div>
+</div>

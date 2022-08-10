@@ -1,0 +1,28 @@
+<div class="form-container">
+    <app-transparent-button
+        size="S"
+        icon="calendar4-week"
+        [text]="date.toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })"
+        (click)="isModalOpen = true"
+    ></app-transparent-button>
+    <app-modal
+        title="Select date"
+        cancel="Cancel"
+        ok="Confirm"
+        [(open)]="isModalOpen"
+        (app-confirm)="onConfirm()"
+        [width-max-content]="true"
+        >
+        <div class="calendar-container">
+            <app-calendar
+                (app-select)="dateStorage = $event"
+                [active-date]="date"
+            ></app-calendar>
+            <span>
+                Selected:
+                {{ dateStorage.toLocaleDateString('en-US', {day: 'numeric', month: 'long', year: 'numeric'}) }}
+            </span>
+        </div>
+    </app-modal>
+
+</div>

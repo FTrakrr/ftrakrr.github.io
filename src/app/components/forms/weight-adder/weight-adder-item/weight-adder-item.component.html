@@ -1,0 +1,13 @@
+<div class="item" [class]="{remove: triggerRemove}">
+    <span class="text">
+        <span class="value">{{ value }}</span>
+        <span class="unit"> {{ unit }}</span>
+    </span>
+    <button
+        class="remove-btn transparent-btn"
+        [disabled]="triggerRemove"
+        (click)="onRemove()"
+    >
+        <bi-icon icon="trash"></bi-icon>
+    </button>
+</div>

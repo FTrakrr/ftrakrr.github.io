@@ -1,0 +1,64 @@
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    background: var(--bg);
+    
+    --modal-side-padding: 1rem;
+    padding: 0.4rem var(--modal-side-padding) 0.8rem;
+
+    z-index: 999;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    animation: hide-flex 0 ease 0.41s 1 forwards;
+
+    &.open {
+        opacity: 1;
+        pointer-events: all;
+        animation: none;
+    }
+}
+.top-container {
+    display: flex;
+    justify-content: space-between;
+
+    .close-btn {
+        color: var(--text-s);
+        font-size: 70%;
+        position: relative;
+        left: 0.5rem;
+    }
+    &.has-border {
+        border-bottom: 1px solid var(--acc);
+    }
+}
+.middle-container {
+    min-height: 4rem;
+    padding-top: 0.5rem;
+    flex-grow: 1;
+}
+.bottom-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.4rem;
+    padding-top: 0.5rem;
+}
+
+@keyframes hide-flex {
+    0% {
+        display: flex;
+    }
+    99% {
+        display: flex;
+    }
+    100% {
+        display: none;
+    }
+}

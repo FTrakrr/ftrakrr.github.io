@@ -1,0 +1,30 @@
+<div class="row" [ngClass]="{gap, 'pointer-cursor': (routerLink || href) || showArrow}">
+    <a [routerLink]="routerLink" [href]="href">
+        <fa-icon class="icon" *ngIf="faIcon" [icon]="faIcon" [iconstyle]="iconstyle"></fa-icon>
+        <bi-icon class="icon" *ngIf="icon" [icon]="icon"></bi-icon>
+        <span class="title">{{ title }}</span>
+        <span class="value">
+            <div class="value-container" *ngIf="value || defaultValue">
+                    <span>
+                        <span>{{ value }}</span>
+                        <span *ngIf="!value" class="error small-font">
+                            {{ defaultValue }}
+                        </span>
+                    </span>
+                    <span class="subtitle" *ngIf="subvalue"
+                        [style.opacity]="subvalueOpacity"
+                        [style.color]="subvalueColor"
+                        [style.font-weight]="subvalueFontWeight">
+                        {{ subvalue }}
+                    </span>
+            </div>            
+            <ng-content></ng-content>
+        </span>
+        <fa-icon
+            class="arrow"
+            [ngClass]="{'soft-hidden': keepArrowSpace && !(routerLink || href)}"
+            icon="angle-right"
+            *ngIf="!hideArrow && (routerLink || href) || keepArrowSpace || showArrow"
+        ></fa-icon>
+    </a>
+</div>

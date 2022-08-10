@@ -1,0 +1,15 @@
+button {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+span {
+    padding-left: 0.25rem;
+}
+.icon {
+    font-size: 1.6rem;
+    margin-right: 0.2rem;
+}
+span + .icon {
+    font-size: 1.05rem;
+}

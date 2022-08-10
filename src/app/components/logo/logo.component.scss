@@ -1,0 +1,12 @@
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+img {
+    height: 3em;
+}
+span {
+    font-size: 1.8em;
+    color: var(--main-500);
+    margin: 0 0.75em;
+}

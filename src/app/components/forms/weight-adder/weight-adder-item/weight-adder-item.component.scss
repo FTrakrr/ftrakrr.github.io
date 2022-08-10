@@ -1,0 +1,41 @@
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: max-content;
+
+    border: 1px solid var(--acc);
+    border-radius: 3px;
+    padding: 0.15rem 0 0.15rem 0.4rem;
+}
+.item.remove {
+    position: relative;
+    animation: hide-anim 0.5s ease-in-out 0.1s forwards;
+}
+.text {
+    font-size: 0.9rem;
+    color: var(--text-s);
+}
+i {
+    font-size: 0.8rem;
+}
+.remove-btn {
+    padding: 0 0.4rem;
+    color: var(--text-s);
+}
+
+@keyframes hide-anim {
+    0% {
+        top: 0;
+    }
+    40% {
+        top: -20%;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        top: 50%;
+        opacity: 0;
+    }
+}

@@ -1,0 +1,82 @@
+.master-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    gap: 0.65rem;
+}
+.middle-container {
+    flex-grow: 1;
+    overflow: hidden;
+    position: relative;
+}
+.bottom-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.main-buttons-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.progressbar {
+    width: 90%;
+    max-width: calc(100% - 2rem);
+    height: 10px;
+    margin: auto;
+    border: 1px solid var(--acc);
+    border-radius: 999px;
+    position: relative;
+    overflow: hidden;
+
+    transition: opacity 0.25s ease;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: -1px;
+        bottom: -1px;
+        left: -2px;
+        right: calc(100% - var(--progress) * 100%);
+        background: var(--main-500);
+        border-radius: 999px;
+
+        transition: right 0.35s var(--timing-func);
+    }
+}
+
+.form-step-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+}
+.form-step {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: left 0.35s var(--timing-func);
+
+    &:not(.left100p):not(.right100p) {
+        left: 0;
+    }
+    &.left100p {
+        left: 100%;
+    }
+    &.right100p {
+        left: -100%;
+    }
+}
+
+.hideable-button {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s var(--timing-func);
+
+    &.shown {
+        opacity: 1;
+        pointer-events: all;
+    }
+}

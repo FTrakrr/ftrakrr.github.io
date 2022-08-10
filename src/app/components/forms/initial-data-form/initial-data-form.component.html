@@ -1,0 +1,134 @@
+<app-full-page-modal [middle-only]="true" [(open)]="dataCollectionModalOpen">
+    <app-multistep-form [total-steps]="5" [has-landing-page]="true" [step-skipability]="[3, 4]" [step-completenes]="completionStatuses" (stepChange)="onStepConfirm($event)" (finished)="onFinish()">
+        <div step="0">
+            <section>
+                <app-logo class="watermark-logo"></app-logo>
+                <h3>Before we can start...</h3>
+                <h1>Please provide some basic information about you</h1>
+                <h4 class="center">
+                    It is needed for our app to work properly.
+                </h4>
+                <p class="center small">
+                    It is important that you give accurate info, otherwise you may encounter issues.
+                </p>
+                <p class="center small">
+                    We promise, it will only take a short while!
+                </p>
+            </section>
+            <hr>
+            <section class="two-column-sect">
+                <div class="column1">
+                    <bi-icon icon="file-earmark-lock" class="watermark2"></bi-icon>
+                </div>
+                <div class="column2">
+                    <h4>Your information is secure</h4>
+                    <p class="small">
+                        Don't worry, we don't share it with anyone. Even more, the data you provide doesn't even leave your device! We don't send it anywhere, it is simply stored in your browser's local memory. 
+                    </p>
+                    <p class="small">
+                        Safety first!
+                    </p>
+                </div>
+            </section>
+        </div>
+        <div step="1">
+            <section>
+                <fa-icon icon="weight-scale" iconstyle="solid" class="watermark"></fa-icon>
+                <h1>Body mass</h1>
+                <p class="center small">
+                    Please provide your current body mass in your unit of choice.
+                </p>
+            </section>
+            <section>
+                <app-weight-input
+                    class="input-large"
+                    [value]="weightData"
+                    (valueChange)="onWeightChange($event)"
+                    [no-buttons]="true"
+                    [border-always-show]="true"
+                    [reverse-order]="true"
+                ></app-weight-input>
+            </section>
+        </div>
+        <div step="2">
+            <section>
+                <bi-icon icon="arrow-up-square" class="watermark"></bi-icon>
+                <h1>Body height</h1>
+                <p class="center small">
+                    Please provide your current body height in your unit of choice.
+                </p>
+            </section>
+            <section>
+                <app-height-input
+                    class="input-large"
+                    [value]="heightData"
+                    (valueChange)="onHeightChange($event)"
+                    [border-always-show]="true"
+                    [no-buttons]="true"
+                ></app-height-input>
+            </section>
+        </div>
+        <div step="3">
+            <section>
+                <fa-icon icon="person-half-dress" iconstyle="solid" class="watermark"></fa-icon>
+                <h1>Gender</h1>
+                <p class="center small">
+                    We will use this information for some translations to better phrase the sentences.
+                </p>
+            </section>
+            <section>
+                <app-radio-bar
+                    [options]="genderOptions"
+                    size="L"
+                    [fit-content]="true"
+                    [value]="genderTemp"
+                    (valueChange)="onGenderChange($event)"
+                ></app-radio-bar>
+            </section>
+        </div>
+        <div step="4">
+            <section>
+                <fa-icon icon="cake-candles" iconstyle="solid" class="watermark"></fa-icon>
+                <h1>Birthdate</h1>
+                <p class="center small">
+                    When is your birthday? We might have a special surprise for you...
+                </p>
+            </section>
+            <section>
+                <app-select
+                    [options]="yearOptions"
+                    (valueChange)="onYearPick($event)"
+                ></app-select>
+                <app-select
+                    class="opacity-anim"
+                    [ngClass]="{'soft-hidden': !yearTemp}"
+                    [options]="monthOptions"
+                    (valueChange)="onMonthPick($event)"
+                ></app-select>
+                <app-select
+                    class="opacity-anim"
+                    [ngClass]="{'soft-hidden': monthTemp == null || !yearTemp}"
+                    [options]="dateOptions"
+                    (valueChange)="onDatePick($event)"
+                ></app-select>
+            </section>
+        </div>
+        <div step="5">
+            <section>
+                <fa-icon icon="face-grin-beam" iconstyle="regular" class="watermark"></fa-icon>
+                <h1>We are almost done...</h1>
+                <h2>Just click "Finish" to save your input!</h2>
+                <p class="center small">Wasn't that bad, was it?</p>
+            </section>
+        </div>
+    </app-multistep-form>
+</app-full-page-modal>
+<app-full-page-modal
+    [middle-only]="true"
+    [open]="openFakeUpdatingModal"
+>
+    <div class="flex flex-column flex-align-center">
+        <h2>Saved!</h2>
+        <app-checkmark-spinner [check]="openFakeUpdatingModal" style="font-size: 10rem"></app-checkmark-spinner>
+    </div>
+</app-full-page-modal>

@@ -1,0 +1,10 @@
+<p class="text-secondary" *ngIf="!plans">You don't have any plans yet! Click below to create your first one.</p>
+<div class="plan-wrapper" *ngIf="plans">
+    <app-plan-card [plan]="plans[0]"></app-plan-card>
+    <app-plan-card *ngIf="plans[1]" [plan]="plans[1]"></app-plan-card>
+    <app-plan-card *ngIf="plans[2]" [plan]="plans[2]"></app-plan-card>
+    <p class="text-secondary" *ngIf="plans.length > 3">
+        And {{ plans.length - 3 }} more.
+        <a routerLink="plans">view all</a>.
+    </p>
+</div>

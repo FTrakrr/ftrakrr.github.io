@@ -1,0 +1,17 @@
+<div class="form-container" [ngClass]="{'flex-column-reverse': reverseOrder, horizontal: horizontal}">
+    <app-radio-bar
+        [options]="weightUnitOptions"
+        size="S"
+        [value]="weightUnitValue"
+        (valueChange)="onUnitChange($event)"
+    ></app-radio-bar>
+    <app-number-input
+        (app-input)="onValueChange($event)"
+        [buttons-always-show]="alwaysShowButtons"
+        [border-always-show]="alwaysShowBorder"
+        [no-buttons]="noButtons"
+        [button-increment]="0.1"
+        [value]="value.value"
+        [placeholder]="value.unit"
+    ></app-number-input>
+</div>

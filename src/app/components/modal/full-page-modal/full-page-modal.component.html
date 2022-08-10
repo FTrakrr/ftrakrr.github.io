@@ -1,0 +1,27 @@
+<div class="modal" [class]="{open}">
+    <div class="top-container" [ngClass]="{'has-border': title}" *ngIf="!middleOnly">
+        <h5 class="title" *ngIf="title">{{ title }}</h5>
+        <button class="close-btn transparent-btn" (click)="onClose($event)">
+            <bi-icon icon="x-lg"></bi-icon>
+        </button>
+    </div>
+    <div class="middle-container">
+        <ng-content></ng-content>
+    </div>
+    <div class="bottom-container" *ngIf="!middleOnly">
+        <app-ghost-button
+            class="cancel-btn"
+            *ngIf="cancelButtonText"
+            [text]="cancelButtonText"
+            size="S"
+            (click)="onCancel($event)"
+        ></app-ghost-button>
+        <app-main-button
+            class="ok-btn"
+            *ngIf="okButtonText"
+            [text]="okButtonText"
+            size="S"
+            (click)="onConfirm($event)"
+        ></app-main-button>
+    </div>
+</div>

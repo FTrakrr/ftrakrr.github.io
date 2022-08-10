@@ -1,0 +1,9 @@
+<div class="row" [ngClass]="{gap}">
+    <a [routerLink]="routerLink" [href]="href">
+        <fa-icon class="icon" *ngIf="faIcon" [icon]="faIcon" [iconstyle]="iconstyle"></fa-icon>
+        <bi-icon class="icon" *ngIf="icon" [icon]="icon"></bi-icon>
+        <span class="title">{{ title }}</span>
+        <span class="value"><ng-content></ng-content></span>
+        <fa-icon class="arrow" icon="angle-right" *ngIf="!hideArrow"></fa-icon>
+    </a>
+</div>

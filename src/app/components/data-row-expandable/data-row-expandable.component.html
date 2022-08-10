@@ -1,0 +1,53 @@
+<div class="row" [ngClass]="{gap, expanded}">
+    <div class="head-container">
+        <span class="title">{{ title }}</span>
+        <span class="value">
+            <div class="value-container" *ngIf="value || defaultValue">
+                <span>
+                    <span>{{ value }}</span>
+                    <span *ngIf="!value" class="error small-font">
+                        {{ defaultValue }}
+                    </span>
+                </span>
+                <span
+                    class="subtitle"
+                    *ngIf="subvalue"
+                    [style.opacity]="subvalueOpacity"
+                    [style.color]="subvalueColor"
+                    [style.font-weight]="subvalueFontWeight"
+                >
+                    {{ subvalue }}
+                </span>
+            </div>            
+            <ng-content></ng-content>
+        </span>
+        <button class="transparent-btn arrow-btn" (click)="expandData()">
+            <bi-icon class="arrow" icon="chevron-down" *ngIf="!hideArrow && moreData"></bi-icon>
+        </button>
+    </div>
+    <div class="more-data-container" *ngIf="moreData">
+        <div
+            class="data-group"
+            *ngFor="let group of moreData"
+        >
+            <span class="group-title">{{ group.groupLabel }}</span>
+            <div
+                class="data-item-container"
+                [style.grid-template-columns]="'1fr '.repeat(group.items.length)"
+            >
+                <div
+                    class="data-item"
+                    *ngFor="let item of group.items"
+                >
+                    <span class="data-item-label">{{ item.label }}</span>
+                    <span
+                        class="data-item-value"
+                        [style.color]="item.color"
+                    >
+                        {{ item.value }}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

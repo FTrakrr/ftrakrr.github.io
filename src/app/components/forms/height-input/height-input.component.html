@@ -1,0 +1,30 @@
+<div class="form-container">
+    <app-radio-bar
+        [options]="heightUnitOptions"
+        size="S"
+        [value]="heightUnitValue"
+        (valueChange)="onUnitChange($event)"
+    ></app-radio-bar>
+    <app-number-input
+        (app-input)="onMainValueChange($event)"
+        [buttons-always-show]="alwaysShowButtons"
+        [border-always-show]="alwaysShowBorder"
+        [no-buttons]="noButtons"
+        [button-increment]="1"
+        [max]="value.unit == 'cm' ? 300 : 9"
+        [value]="valueInternal.mainValue"
+        [placeholder]="value.unit"
+    ></app-number-input>
+    <app-number-input
+        class="inches-input"
+        [ngClass]="{'soft-hidden': value.unit == 'cm'}"
+        (app-input)="onInchesChange($event)"
+        [buttons-always-show]="alwaysShowButtons"
+        [border-always-show]="alwaysShowBorder"
+        [no-buttons]="noButtons"
+        [max]="11"
+        [button-increment]="0.5"
+        [value]="valueInternal.inches"
+        placeholder="in"
+    ></app-number-input>
+</div>

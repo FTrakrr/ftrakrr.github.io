@@ -1,0 +1,20 @@
+<div class="radio-bar-container" [ngClass]="{'fit-content': fitContent}">
+    <div class="radio-bar-item" *ngFor="let opt of options; let i = index" [style]="'--i:'+i+';'">
+        <input
+            type="radio"
+            [name]="id"
+            [id]="id+i"
+            [checked]="opt.checked"
+            class="hidden"
+            (change)="onSelect(opt.value)"
+        >
+        <label [for]="id+i" [class]="'size-'+size" [style]="'width:'+width">
+            <fa-icon class="icon" *ngIf="opt.faIcon" [icon]="opt.faIcon" [iconstyle]="opt.iconstyle"></fa-icon>
+            <bi-icon class="icon" *ngIf="opt.icon" [icon]="opt.icon"></bi-icon>
+            <div class="text" *ngIf="opt.title">
+                <h4 [class]="{uppercase: !noUppercase}" *ngIf="opt.title">{{ opt.title }}</h4>
+                <span class="subtitle" *ngIf="opt.subtitle">{{ opt.subtitle }}</span>
+            </div>
+        </label>
+    </div>
+</div>

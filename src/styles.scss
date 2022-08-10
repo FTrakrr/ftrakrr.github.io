@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --bg: #121212;
+    --acc: rgba(255, 255, 255, 0.12);
+    --acc2: rgba(255, 255, 255, 0.16);
+    --hover: rgba(255, 255, 255, 0.04);
+    --focus: rgba(255, 255, 255, 0.1);
+    --active: rgba(255, 255, 255, 0.2);
+    --disabled: rgba(255, 255, 255, 0.3);
+
+    --text-e: rgba(255, 255, 255, 0.8); //emphasis
+    --text: rgba(255, 255, 255, 0.65); //standard
+    --text-s: rgba(255, 255, 255, 0.52); //secondary
+
+    --main-50: #e3f2fd;
+    --main-100: #bbdefb;
+    --main-200: #90caf9;
+    --main-300: #64b5f6;
+    --main-400: #42a5f5;
+    --main-500: #2196f3;
+    --main-600: #1e88e5;
+    --main-700: #1976d2;
+    --main-800: #1565c0;
+    --main-900: #0d47a1;
+
+    --main-500-rgb: 33, 150, 243;
+
+    --error: rgb(248, 81, 73);
+    --error-rgb: 248, 81, 73;
+    --error-dark: rgb(214, 40, 31);
+    --error-dark-rgb: 214, 40, 31;
+    --success: rgb(44, 199, 30);
+    --success-rgb: 44, 199, 30;
+    --success-dark: rgb(36, 137, 25);
+    --success-dark-rgb: 36, 137, 25;
+    --warn: rgb(230, 192, 23);
+    --warn-rgb: 230, 192, 23;
+    --info: var(--main-500);
+    --info-rgb: var(--main-500-rgb);
+
+    --timing-func: cubic-bezier(0.28, 0.15, 0.2, 1);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    color: var(--text);
+    background-color: var(--bg);
+    background-image: url(./assets/background.png);
+    background-position: 50% 0;
+}
+
+ul {
+    list-style: none;
+}
+
+b {
+    font-weight: bold;
+}
+
+i {
+    font-style: italic;
+}
+
+p {
+    margin: 0.4em 0;
+}
+
+a {
+    color: var(--main-300);
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+    }
+}
+
+hr {
+    border: none;
+    border-bottom: 1px solid var(--acc);
+    margin: 0.5em 0;
+}
+hr.wide {
+    margin: 1em 0;
+}
+
+/*
+!==============================================================
+!        General Classes
+!==============================================================
+*/
+.unselectable {
+    user-select: none;
+}
+.hidden,
+[hidden] {
+    display: none !important;
+}
+.soft-hidden {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+.disabled, [disabled] {
+    opacity: 30% !important;
+    pointer-events: none !important;
+}
+
+/*
+!==============================================================
+!        Button Styling
+!==============================================================
+*/ 
+button {
+    cursor: pointer;
+}
+button.main-btn,
+button.ghost-btn,
+button.danger-btn {
+    border-radius: 4px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    &.size-ICON {
+        padding: 0.15rem 0.15rem;
+    }
+    &.size-S {
+        padding: 0.35rem 0.45rem;
+        font-size: 0.75rem;
+    }
+    &.size-M {
+        padding: 0.375rem 0.6rem;
+        font-size: 0.825rem;
+    }
+}
+
+button.main-btn {
+    transition: background-color 0.25s ease;
+    color: var(--text-e);
+    background-color: var(--main-900);
+    border: none;
+
+    &:not([disabled]):hover {
+        background-color: var(--main-800);
+    }   
+    &:not([disabled]):focus {
+        background-color: var(--main-700);
+    }
+    &:not([disabled]):active {
+        background-color: var(--main-600);
+    }
+}
+
+button.ghost-btn {
+    transition: background-color 0.25s ease;
+    color: var(--text);
+    background-color: transparent;
+    border: 1px solid var(--acc);
+
+    &:not([disabled]):hover {
+        background-color: var(--hover);
+    }
+    &:not([disabled]):focus {
+        background-color: var(--focus);
+    }
+    &:not([disabled]):active {
+        background-color: var(--active);
+    }
+}
+
+button.main-btn.ghost-btn {
+    transition: background-color 0.25s ease;
+    color: var(--main-700);
+    background-color: transparent;
+    border: 1px solid var(--main-700);
+
+    &:not([disabled]):hover {
+        background-color: rgba(var(--main-500-rgb), 0.05);
+    }
+    &:not([disabled]):focus {
+        background-color: rgba(var(--main-500-rgb), 0.1);
+    }
+    &:not([disabled]):active {
+        background-color: rgba(var(--main-500-rgb), 0.2);
+    }
+}
+
+button.danger-btn {
+    transition: background-color 0.25s ease;
+    color: var(--text-e);
+    background-color: var(--error-dark);
+    border: none;
+
+    &:not([disabled]):hover {
+        background-color: rgba(var(--error-dark-rgb), 85%);
+    }   
+    &:not([disabled]):focus {
+        background-color: rgba(var(--error-dark-rgb), 75%);
+    }
+    &:not([disabled]):active {
+        background-color: rgba(var(--error-dark-rgb), 65%);
+    }
+}
+
+button.danger-btn.ghost-btn {
+    transition: background-color 0.25s ease;
+    color: var(--error-dark);
+    background-color: transparent;
+    border: 1px solid var(--error-dark);
+
+    &:not([disabled]):hover {
+        background-color: rgba(var(--error-dark-rgb), 5%);
+    }   
+    &:not([disabled]):focus {
+        background-color: rgba(var(--error-dark-rgb), 10%);
+    }
+    &:not([disabled]):active {
+        background-color: rgba(var(--error-dark-rgb), 20%);
+    }
+}
+
+button.transparent-btn {
+    transition: background-color 0.25s ease;
+    color: var(--text);
+    border: none;
+    background: transparent;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    &:not([disabled]):hover {
+        background-color: var(--hover);
+    }
+    &:not([disabled]):focus {
+        background-color: var(--focus);
+    }
+    &:not([disabled]):active {
+        background-color: var(--active);
+    }
+
+    &.size-ICON {
+        padding: 0.25rem 0.25rem;
+    }
+    &.size-S {
+        padding: 0.35rem 0.45rem;
+        font-size: 0.75rem;
+    }
+    &.size-M {
+        padding: 0.375rem 0.6rem;
+        font-size: 0.825rem;
+    }
+}
+
+/*
+!==============================================================
+!        Text Styling
+!==============================================================
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.text-emphasis,
+.title {
+    color: var(--text-e);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0.5em 0;
+}
+h1 {
+    font-size: 2rem;
+    font-weight: 300;
+}
+h2 {
+    font-size: 28px;
+    font-weight: 300;
+}
+h3 {
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 0.75px;
+}
+h4 {
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+h5 {
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+h6 {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+.text-secondary, .subtitle {
+    color: var(--text-s);
+    font-weight: 300;
+}
+.subtitle {
+    font-size: 13px;
+    letter-spacing: 0.75px;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+.error {
+    color: var(--error);
+}
+.small-font {
+    font-size: 75%;
+}
+
+/*
+!==============================================================
+!        HTML Class Styling
+!==============================================================
+*/
+.height-100p {
+    height: 100%;
+}
+.height-max-content {
+    height: max-content;
+}
+.width-100p {
+    width: 100%;
+}
+.width-max-content {
+    width: max-content;
+}
+.opacity-90 {
+    opacity: 90%;
+}
+.opacity-80 {
+    opacity: 80%;
+}
+.opacity-75 {
+    opacity: 75%;
+}
+.opacity-70 {
+    opacity: 70%;
+}
+.opacity-60 {
+    opacity: 60%;
+}
+.opacity-50 {
+    opacity: 50%;
+}
+.font-weight-300 {
+    font-weight: 300;
+}
+.font-weight-200 {
+    font-weight: 200;
+}
+.line-height-normal {
+    line-height: normal;
+}
+.flex {
+    display: flex;
+}
+.flex-align-center {
+    align-items: center;
+}
+.flex-justify-center {
+    justify-content: center;
+}
+.flex-column {
+    flex-direction: column;
+}
+.flex-column-reverse {
+    flex-direction: column-reverse;
+}
+.flex-row-reverse {
+    flex-direction: row-reverse;
+}
+.flex-align-end {
+    align-items: flex-end;
+}
+.flex-justify-end {
+    justify-content: flex-end;
+}
+.flex-gap-small {
+    gap: 0.25rem;
+}
+.flex-gap-medium {
+    gap: 0.4rem;
+}
+.flex-gap-large {
+    gap: 0.6rem;
+}

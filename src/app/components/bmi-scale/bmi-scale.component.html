@@ -1,0 +1,32 @@
+<div class="bmi-scale-container">
+    <div class="bmi-bar-container">
+        <div class="bmi-labels">
+            <span
+                class="bmi-bar-label"
+                *ngFor="let item of BMI_CONSTANT"
+                [style.flex-grow]="item.width"
+            >
+                <span>{{ item.range_low }}</span>
+            </span>
+        </div>
+        <div class="bmi-bar">
+            <div
+                class="bmi-bar-item"
+                *ngFor="let item of BMI_CONSTANT"
+                [style.flex-grow]="item.width"
+                [style.background-color]="item.color"
+            ></div>
+        </div>
+        <div class="bmi-bar-marker" [style.left]="markerPos"></div>
+        <div class="bmi-data-container">
+            <div class="grid-item">
+                <span class="grid-label">YOUR BMI IS</span>
+                <span class="grid-value">{{ value?.bmi }}</span>
+            </div>
+            <div class="grid-item">
+                <span class="grid-label">WHICH MEANS YOU ARE</span>
+                <span class="grid-value" [style.color]="value?.color">{{ value?.name }}</span>
+            </div>
+        </div>
+    </div>
+</div>

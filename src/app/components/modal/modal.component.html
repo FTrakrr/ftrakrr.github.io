@@ -1,0 +1,35 @@
+<div class="modal-bg" [class]="{open}" (click)="onClose($event)">
+    <div
+        class="modal"
+        [style]="{'min-width': isWidthMaxContent ? 'max-content' : null}"
+        (click)="stopBgClick($event)"
+    >
+        <div class="top-container" [ngClass]="{'has-border': title}">
+            <h5 class="title" *ngIf="title">{{ title }}</h5>
+            <button
+                class="close-btn transparent-btn"
+                (click)="onClose($event)"
+            >
+                <bi-icon icon="x-lg"></bi-icon>
+            </button>
+        </div>
+        <div class="middle-container">
+            <ng-content></ng-content>
+        </div>
+        <div class="bottom-container" *ngIf="!hideButtons">
+            <app-ghost-button
+                class="cancel-btn"
+                *ngIf="cancelButtonText"
+                [text]="cancelButtonText"
+                size="S"
+                (click)="onCancel($event)"
+            ></app-ghost-button>
+            <app-main-button
+                class="ok-btn"
+                [text]="okButtonText ?? 'OK'"
+                size="S"
+                (click)="onConfirm($event)"
+            ></app-main-button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+<select
+    [value]="value"
+    (change)="onValueChange($event)"
+>
+    <option *ngFor="let opt of options; let index = index" [value]="opt[1]">{{ opt[0] }}</option>
+</select>

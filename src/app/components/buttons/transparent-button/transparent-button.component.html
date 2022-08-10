@@ -1,0 +1,11 @@
+<button
+    class="transparent-btn"
+    [routerLink]="routerLink"
+    [class]="size ? 'size-'+size : ''"
+>
+    <span *ngIf="text">{{ text }}</span>
+    <div class="icon-container" [style]="{'font-size': iconFontSize}">
+        <fa-icon class="icon" *ngIf="faIcon" [icon]="faIcon" [iconstyle]="iconstyle"></fa-icon>
+        <bi-icon class="icon" *ngIf="icon" [icon]="icon"></bi-icon>
+    </div>
+</button>

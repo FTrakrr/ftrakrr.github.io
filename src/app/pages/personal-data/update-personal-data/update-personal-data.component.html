@@ -1,0 +1,56 @@
+<div class="update-container">
+    <section>
+        <h5>Update personal information</h5>
+        <p>
+            Those measurements are from:
+        </p>
+        <app-date-input [(date)]="date"></app-date-input>
+    </section>
+    <div class="data-row-container">
+        <div
+            class="item"
+            *ngFor="let item of personalDataConstant"
+            [ngSwitch]="item.updateForm.unitType"
+        >
+            <app-data-row
+                [title]="item.updateForm.title || item.display.title"
+                [show-arrow]="true"
+                (click)="formModalStates[item.id] = true;"
+            >
+                {{ formValueStrings[item.id] }}
+            </app-data-row>
+            <app-modal
+                [(open)]="formModalStates[item.id]"
+                [title]="item.updateForm.title || item.display.title"
+                [width-max-content]="true"
+                (app-confirm)="onValueChangeConfirm(item.id)"
+            >
+                <app-weight-input
+                    *ngSwitchCase="'weight'"
+                    [(value)]="formData[item.id]"
+                ></app-weight-input>
+                <app-height-input
+                    *ngSwitchCase="'height'"
+                    [(value)]="formData[item.id]"
+                ></app-height-input>
+            </app-modal>
+        </div>
+    </div>
+    <section class="update-button-container">
+        <button
+            class="main-btn"
+            (click)="onConfirmClick()"
+        >
+            Update
+        </button>
+    </section>
+</div>
+<app-full-page-modal
+    [middle-only]="true"
+    [open]="openFakeUpdatingModal"
+>
+    <div class="flex flex-column flex-align-center">
+        <h2>Updated!</h2>
+        <app-checkmark-spinner [check]="openFakeUpdatingModal" style="font-size: 10rem"></app-checkmark-spinner>
+    </div>
+</app-full-page-modal>

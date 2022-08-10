@@ -1,0 +1,36 @@
+<main>
+    <section>
+        <h4>Your personal information</h4>
+        <p class="add-margin">
+            Here you can view and update information about your personal body measurements.
+        </p>
+        <app-ghost-button
+            icon="arrow-repeat"
+            text="Update"
+            class="update-button"
+            routerLink="update"
+        ></app-ghost-button>
+    </section>
+    <section>
+        <h5>Basic info</h5>
+        <div class="data-display-container">
+            <app-data-row
+                *ngFor="let item of personalDataConstant;"
+                [title]="item.display.title"
+                [routerLink]="item.display.routerLink"
+                [keep-arrow-space]="true"
+                [gap]="item.display.gapBefore"
+                [value]="personalData[item.id]?.value"
+                [default-value]="item.display.defaultValue"
+                [subvalue]="personalData[item.id]?.subvalue"
+                [subvalue-color]="personalData[item.id]?.subvalueColor"
+                [subvalue-opacity]="item.display.subvalueOpacity"
+                [subvalue-font-weight]="item.display.subvalueFontWeight"
+            ></app-data-row>
+        </div>
+    </section>
+    <section class="opacity-50">
+        <h5>Body measurements</h5>
+        <p>Coming Soon...</p>
+    </section>
+</main>

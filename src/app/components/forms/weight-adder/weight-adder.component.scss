@@ -1,0 +1,22 @@
+.adder-container-master {
+    display: flex;
+    flex-direction: column;
+}
+.adder-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0.4rem 0;
+}
+.button-container {
+    display: flex;
+    flex-direction: column;
+}
+.label {
+    margin-bottom: 0.25rem;
+    margin-top: 0.4rem;
+}
+.form-container {
+    display: flex;
+    flex-direction: column;
+}

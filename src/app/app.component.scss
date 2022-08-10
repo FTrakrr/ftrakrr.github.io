@@ -1,0 +1,16 @@
+.app-container {
+    max-width: 500px;
+    margin: 0 auto;
+    max-height: 100vh;
+    min-height: 100vh;
+    overflow: hidden auto;
+    background: var(--bg);
+    position: relative;
+}
+@media only screen and (min-width: 500px) {
+    .app-container {
+        border: 1px solid var(--disabled);
+        border-width: 0 1px;
+        box-shadow: 0 0, 0 0 5px 1px var(--acc);
+    }
+}

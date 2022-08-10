@@ -1,0 +1,32 @@
+.card {
+    margin: 0.5rem;
+    padding: 0.7rem;
+    border: 1px solid var(--acc);
+    border-radius: 8px;
+    width: max-content;
+    min-width: 6rem;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:hover {
+        background: var(--hover);
+    }
+    &:focus {
+        background: var(--focus);
+    }
+    &:active {
+        background: var(--active);
+    }
+}
+
+.desc {
+    padding-top: 0.5rem;
+}
+
+.icon {
+    font-size: 56px;
+}

@@ -1,0 +1,10 @@
+<label [for]="for" class="card unselectable">
+    <div class="hidden">
+        <ng-content></ng-content>
+    </div>
+    <fa-icon class="icon" *ngIf="faIcon" [icon]="faIcon" [iconstyle]="iconstyle"></fa-icon>
+    <bi-icon class="icon" *ngIf="icon" [icon]="icon"></bi-icon>
+    <h4 class="uppercase" *ngIf="title">{{ title }}</h4>
+    <span class="subtitle" *ngIf="subtitle">{{ subtitle }}</span>
+    <span class="desc" *ngIf="desc">{{ desc }}</span>
+</label>

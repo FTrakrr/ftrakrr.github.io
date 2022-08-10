@@ -1,0 +1,78 @@
+<main>
+    <section>
+        <h6>General</h6>
+        <div class="data-row-container">
+            <app-data-row
+                icon="gear"
+                title="General"
+                routerLink="general"
+            ></app-data-row>
+            <app-data-row
+                icon="stopwatch"
+                title="Timer"
+                routerLink="timer"
+            ></app-data-row>
+            <app-data-row
+                icon="disc"
+                title="Available weights"
+                routerLink="weights"
+            ></app-data-row>
+        </div>
+    </section>
+    <section>
+        <h6>Preferences</h6>
+        <div class="data-row-container">
+            <app-data-row
+                fa-icon="info"
+                title="Set information"
+                routerLink="set_information"
+            ></app-data-row>
+            <app-data-row
+                icon="rulers"
+                title="Unit conversions"
+                routerLink="unit_conversions"
+            ></app-data-row>
+            <app-data-row
+                icon="sun"
+                title="Theme"
+                routerLink="theme"
+            ></app-data-row>
+        </div>
+    </section>
+    <section>
+        <h6>Export & Import Data</h6>
+        <div class="data-row-container">
+            <app-data-row
+                icon="download"
+                title="Export data"
+                routerLink="download_data"
+            ></app-data-row>
+            <app-data-row
+                icon="upload"
+                title="Import data"
+                routerLink="import_data"
+            ></app-data-row>
+        </div>
+    </section>
+    <section>
+        <h6>Help</h6>
+        <!-- TODO: add href -->
+        <div class="data-row-container">
+            <app-data-row
+                icon="bug"
+                title="Report an issue"
+                href="#"
+            ></app-data-row>
+            <app-data-row
+                icon="lightbulb"
+                title="Request a feature"
+                href="#"
+            ></app-data-row>
+            <app-data-row
+                icon="at"
+                title="About"
+                routerLink="/about"
+            ></app-data-row>
+        </div>
+    </section>
+</main>
