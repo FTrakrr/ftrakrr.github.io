@@ -1,0 +1,12 @@
+.header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.content {
+    margin-top: 3.8rem;
+    padding-bottom: 1rem;
+    max-height: calc(100vh - 5rem);
+    overflow-y: auto;
+}
