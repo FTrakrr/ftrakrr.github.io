@@ -60,6 +60,15 @@ import { SimpleSpinnerComponent } from './components/spinners/simple-spinner/sim
 import { LogoComponent } from './components/logo/logo.component';
 import { DataRowExpandableComponent } from './components/data-row-expandable/data-row-expandable.component';
 import { BmiScaleComponent } from './components/bmi-scale/bmi-scale.component';
+import { PlansMainPageComponent } from './pages/plans/plans-main-page/plans-main-page.component';
+import { PlansPlanComponent } from './pages/plans/plans-plan/plans-plan.component';
+import { PlansEditComponent } from './pages/plans/plans-edit/plans-edit.component';
+import { PlansCreateComponent } from './pages/plans/plans-create/plans-create.component';
+import { ExercisesMainPageComponent } from './pages/exercises/exercises-main-page/exercises-main-page.component';
+import { ExercisesComponent } from './pages/exercises/exercises.component';
+import { ExercisesCreateComponent } from './pages/exercises/exercises-create/exercises-create.component';
+import { ExercisesEditComponent } from './pages/exercises/exercises-edit/exercises-edit.component';
+import { ExercisesExerciseComponent } from './pages/exercises/exercises-exercise/exercises-exercise.component';
 
 @NgModule({
   declarations: [
@@ -120,6 +129,15 @@ import { BmiScaleComponent } from './components/bmi-scale/bmi-scale.component';
     LogoComponent,
     DataRowExpandableComponent,
     BmiScaleComponent,
+    PlansMainPageComponent,
+    PlansPlanComponent,
+    PlansEditComponent,
+    PlansCreateComponent,
+    ExercisesMainPageComponent,
+    ExercisesComponent,
+    ExercisesCreateComponent,
+    ExercisesEditComponent,
+    ExercisesExerciseComponent,
   ],
   imports: [
   BrowserModule,
