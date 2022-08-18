@@ -1,0 +1,13 @@
+<main>
+    <section>
+        <div class="title-container">
+            <h4>Your workout plans</h4>
+            <app-main-button icon="plus-lg" text="Create" class="add-button" routerLink="create"></app-main-button>
+        </div>
+        <div class="data-display-container">
+            <app-plan-card
+                *ngFor=""
+            ></app-plan-card>
+        </div>
+    </section>
+</main>

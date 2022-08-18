@@ -1,0 +1,43 @@
+section {
+    --sect-padding: 0.75rem;
+    padding: 0 var(--sect-padding);
+    display: flex;
+    flex-direction: column;
+}
+
+h4 {
+    margin: 0;
+}
+h5 {
+    font-weight: 300;
+}
+
+h6 {
+    color: var(--text-s);
+    font-weight: 300;
+}
+
+p {
+    color: var(--text-s);
+    font-weight: 300;
+}
+
+.title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+}
+.data-display-container {
+    border-top: 1px solid var(--acc);
+    position: relative;
+    left: calc(-1 * var(--sect-padding));
+    width: calc(100% + 2 * var(--sect-padding));
+
+    display: flex;
+    flex-direction: column;
+}
+
+.add-button {
+    align-self: flex-end;
+}
