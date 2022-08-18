@@ -16,10 +16,22 @@ import { SettingsWeightsComponent } from './pages/settings/settings-weights/sett
 import { SettingsDownloadDataComponent } from './pages/settings/settings-download-data/settings-download-data.component';
 import { SettingsImportDataComponent } from './pages/settings/settings-import-data/settings-import-data.component';
 import { SettingsSetsComponent } from './pages/settings/settings-sets/settings-sets.component';
+// personal data components
 import { PersonalDataMainPageComponent } from './pages/personal-data/personal-data-main-page/personal-data-main-page.component';
 import { PersonalDataWeightComponent } from './pages/personal-data/personal-data-weight/personal-data-weight.component';
 import { PersonalDataHeightComponent } from './pages/personal-data/personal-data-height/personal-data-height.component';
 import { UpdatePersonalDataComponent } from './pages/personal-data/update-personal-data/update-personal-data.component';
+// plans components
+import { PlansComponent } from './pages/plans/plans.component';
+import { PlansMainPageComponent } from './pages/plans/plans-main-page/plans-main-page.component';
+import { PlansPlanComponent } from './pages/plans/plans-plan/plans-plan.component';
+import { PlansEditComponent } from './pages/plans/plans-edit/plans-edit.component';
+import { PlansCreateComponent } from './pages/plans/plans-create/plans-create.component';
+import { ExercisesComponent } from './pages/exercises/exercises.component';
+import { ExercisesMainPageComponent } from './pages/exercises/exercises-main-page/exercises-main-page.component';
+import { ExercisesExerciseComponent } from './pages/exercises/exercises-exercise/exercises-exercise.component';
+import { ExercisesEditComponent } from './pages/exercises/exercises-edit/exercises-edit.component';
+import { ExercisesCreateComponent } from './pages/exercises/exercises-create/exercises-create.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -33,6 +45,22 @@ const routes: Routes = [
     ]
   },
   { path: 'history', component: HistoryComponent },
+  {
+    path: 'plans', component: PlansComponent, children: [
+      { path: '', component: PlansMainPageComponent },
+      { path: 'plan', component: PlansPlanComponent },
+      { path: 'edit', component: PlansEditComponent },
+      { path: 'create', component: PlansCreateComponent },
+    ]
+  },
+  {
+    path: 'exercises', component: ExercisesComponent, children: [
+      { path: '', component: ExercisesMainPageComponent },
+      { path: 'exercise', component: ExercisesExerciseComponent },
+      { path: 'edit', component: ExercisesEditComponent },
+      { path: 'create', component: ExercisesCreateComponent },
+    ]
+  },
   {
     path: 'settings', component: SettingsComponent, children: [
       { path: '', component: SettingsMainPageComponent },
