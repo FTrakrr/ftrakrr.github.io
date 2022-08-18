@@ -8,7 +8,7 @@ import { TimerService } from './../../../services/timer.service';
   templateUrl: './settings-timer.component.html',
   styleUrls: ['./settings-timer.component.scss']
 })
-export class SettingsTimerComponent implements OnInit {
+export class SettingsTimerPage implements OnInit {
   settings: Settings = this.settingsService.loadSettings();
 
   volumeOptions: RadioBarOption[] = [

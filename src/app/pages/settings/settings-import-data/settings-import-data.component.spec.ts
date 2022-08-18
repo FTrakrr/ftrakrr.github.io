@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SettingsImportDataComponent } from './settings-import-data.component';
+import { SettingsImportDataPage } from './settings-import-data.component';
 
 describe('SettingsImportDataComponent', () => {
-  let component: SettingsImportDataComponent;
-  let fixture: ComponentFixture<SettingsImportDataComponent>;
+  let component: SettingsImportDataPage;
+  let fixture: ComponentFixture<SettingsImportDataPage>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SettingsImportDataComponent ]
+      declarations: [ SettingsImportDataPage ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SettingsImportDataComponent);
+    fixture = TestBed.createComponent(SettingsImportDataPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SettingsGeneralComponent } from './settings-general.component';
+import { SettingsGeneralPage } from './settings-general.component';
 
 describe('SettingsGeneralComponent', () => {
-  let component: SettingsGeneralComponent;
-  let fixture: ComponentFixture<SettingsGeneralComponent>;
+  let component: SettingsGeneralPage;
+  let fixture: ComponentFixture<SettingsGeneralPage>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SettingsGeneralComponent ]
+      declarations: [ SettingsGeneralPage ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SettingsGeneralComponent);
+    fixture = TestBed.createComponent(SettingsGeneralPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

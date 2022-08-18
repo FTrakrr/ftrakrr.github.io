@@ -7,7 +7,7 @@ import { Settings } from 'src/app/scripts/types';
   templateUrl: './settings-unit-conversions.component.html',
   styleUrls: ['./settings-unit-conversions.component.scss']
 })
-export class SettingsUnitConversionsComponent implements OnInit {
+export class SettingsUnitConversionsPage implements OnInit {
   settings: Settings = this.settingsService.loadSettings();
 
   weightConversionOptions: RadioBarOption[] = [

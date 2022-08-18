@@ -7,7 +7,7 @@ import { SettingsService } from './../../../services/settings.service';
   templateUrl: './settings-theme.component.html',
   styleUrls: ['./settings-theme.component.scss']
 })
-export class SettingsThemeComponent implements OnInit {
+export class SettingsThemePage implements OnInit {
   settings: Settings = this.settingsService.loadSettings();
 
   themeOptions: RadioBarOption[] = [

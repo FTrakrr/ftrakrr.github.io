@@ -5,7 +5,7 @@ import { Title } from '@angular/platform-browser';
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.scss']
 })
-export class SettingsComponent implements OnInit {
+export class SettingsPage implements OnInit {
 
   constructor(
     private titleService: Title

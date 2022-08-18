@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './plans-edit.component.html',
   styleUrls: ['./plans-edit.component.scss']
 })
-export class PlansEditComponent implements OnInit {
+export class PlansEditPage implements OnInit {
 
   constructor() { }
 

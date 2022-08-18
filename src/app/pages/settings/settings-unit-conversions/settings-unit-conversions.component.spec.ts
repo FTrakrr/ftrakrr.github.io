@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SettingsUnitConversionsComponent } from './settings-unit-conversions.component';
+import { SettingsUnitConversionsPage } from './settings-unit-conversions.component';
 
 describe('SettingsUnitConversionsComponent', () => {
-  let component: SettingsUnitConversionsComponent;
-  let fixture: ComponentFixture<SettingsUnitConversionsComponent>;
+  let component: SettingsUnitConversionsPage;
+  let fixture: ComponentFixture<SettingsUnitConversionsPage>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SettingsUnitConversionsComponent ]
+      declarations: [ SettingsUnitConversionsPage ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SettingsUnitConversionsComponent);
+    fixture = TestBed.createComponent(SettingsUnitConversionsPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

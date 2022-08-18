@@ -5,19 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
-import { HomeComponent } from './pages/home/home.component';
+import { HomePage } from './pages/home/home.component';
 import { GoBackComponent } from './components/go-back/go-back.component';
-import { SettingsComponent } from './pages/settings/settings.component';
+import { SettingsPage } from './pages/settings/settings.component';
 import { RadioCardComponent } from './components/forms/radio-card/radio-card.component';
 import { PersonalDataComponent } from './pages/personal-data/personal-data.component';
 import { LastWorkoutComponent } from './components/last-workout/last-workout.component';
-import { HistoryComponent } from './pages/history/history.component';
+import { HistoryPage } from './pages/history/history.component';
 import { PlanListComponent } from './components/plan-list/plan-list.component';
 import { MainButtonComponent } from './components/buttons/main-button/main-button.component';
 import { GhostButtonComponent } from './components/buttons/ghost-button/ghost-button.component';
 import { PlanCardComponent } from './components/plan-card/plan-card.component';
 import { HeaderComponent } from './components/header/header.component';
-import { PlansComponent } from './pages/plans/plans.component';
+import { PlansPage } from './pages/plans/plans.component';
 import { PageHeaderComponent } from './components/page-header/page-header.component';
 import { TransparentButtonComponent } from './components/buttons/transparent-button/transparent-button.component';
 import { RadioBarComponent } from './components/forms/radio-bar/radio-bar.component';
@@ -25,16 +25,16 @@ import { WeightAdderComponent } from './components/forms/weight-adder/weight-add
 import { WeightAdderItemComponent } from './components/forms/weight-adder/weight-adder-item/weight-adder-item.component';
 import { NumberInputComponent } from './components/forms/number-input/number-input.component';
 import { SettingsRowComponent } from './components/data-row/data-row.component';
-import { SettingsUnitConversionsComponent } from './pages/settings/settings-unit-conversions/settings-unit-conversions.component';
-import { SettingsWeightsComponent } from './pages/settings/settings-weights/settings-weights.component';
-import { SettingsDownloadDataComponent } from './pages/settings/settings-download-data/settings-download-data.component';
-import { SettingsImportDataComponent } from './pages/settings/settings-import-data/settings-import-data.component';
-import { SettingsGeneralComponent } from './pages/settings/settings-general/settings-general.component';
-import { SettingsMainPageComponent } from './pages/settings/settings-main-page/settings-main-page.component';
-import { SettingsTimerComponent } from './pages/settings/settings-timer/settings-timer.component';
-import { SettingsThemeComponent } from './pages/settings/settings-theme/settings-theme.component';
-import { AboutComponent } from './pages/about/about.component';
-import { SettingsSetsComponent } from './pages/settings/settings-sets/settings-sets.component';
+import { SettingsUnitConversionsPage } from './pages/settings/settings-unit-conversions/settings-unit-conversions.component';
+import { SettingsWeightsPage } from './pages/settings/settings-weights/settings-weights.component';
+import { SettingsDownloadDataPage } from './pages/settings/settings-download-data/settings-download-data.component';
+import { SettingsImportDataPage } from './pages/settings/settings-import-data/settings-import-data.component';
+import { SettingsGeneralPage } from './pages/settings/settings-general/settings-general.component';
+import { SettingsMainPagePage } from './pages/settings/settings-main-page/settings-main-page.component';
+import { SettingsTimerPage } from './pages/settings/settings-timer/settings-timer.component';
+import { SettingsThemePage } from './pages/settings/settings-theme/settings-theme.component';
+import { AboutPage } from './pages/about/about.component';
+import { SettingsSetsPage } from './pages/settings/settings-sets/settings-sets.component';
 import { TimerComponent } from './components/timer/timer.component';
 import { FaIconComponent } from './components/icons/fa-icon/fa-icon.component';
 import { BiIconComponent } from './components/icons/bi-icon/bi-icon.component';
@@ -60,33 +60,33 @@ import { SimpleSpinnerComponent } from './components/spinners/simple-spinner/sim
 import { LogoComponent } from './components/logo/logo.component';
 import { DataRowExpandableComponent } from './components/data-row-expandable/data-row-expandable.component';
 import { BmiScaleComponent } from './components/bmi-scale/bmi-scale.component';
-import { PlansMainPageComponent } from './pages/plans/plans-main-page/plans-main-page.component';
-import { PlansPlanComponent } from './pages/plans/plans-plan/plans-plan.component';
-import { PlansEditComponent } from './pages/plans/plans-edit/plans-edit.component';
-import { PlansCreateComponent } from './pages/plans/plans-create/plans-create.component';
-import { ExercisesMainPageComponent } from './pages/exercises/exercises-main-page/exercises-main-page.component';
-import { ExercisesComponent } from './pages/exercises/exercises.component';
-import { ExercisesCreateComponent } from './pages/exercises/exercises-create/exercises-create.component';
-import { ExercisesEditComponent } from './pages/exercises/exercises-edit/exercises-edit.component';
-import { ExercisesExerciseComponent } from './pages/exercises/exercises-exercise/exercises-exercise.component';
+import { PlansMainPagePage } from './pages/plans/plans-main-page/plans-main-page.component';
+import { PlansPlanPage } from './pages/plans/plans-plan/plans-plan.component';
+import { PlansEditPage } from './pages/plans/plans-edit/plans-edit.component';
+import { PlansCreatePage } from './pages/plans/plans-create/plans-create.component';
+import { ExercisesMainPagePage } from './pages/exercises/exercises-main-page/exercises-main-page.component';
+import { ExercisesPage } from './pages/exercises/exercises.component';
+import { ExercisesCreatePage } from './pages/exercises/exercises-create/exercises-create.component';
+import { ExercisesEditPage } from './pages/exercises/exercises-edit/exercises-edit.component';
+import { ExercisesExercisePage } from './pages/exercises/exercises-exercise/exercises-exercise.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    HomeComponent,
+    HomePage,
     GoBackComponent,
-    SettingsComponent,
+    SettingsPage,
     RadioCardComponent,
     PersonalDataComponent,
     LastWorkoutComponent,
-    HistoryComponent,
+    HistoryPage,
     PlanListComponent,
     MainButtonComponent,
     GhostButtonComponent,
     PlanCardComponent,
     HeaderComponent,
-    PlansComponent,
+    PlansPage,
     PageHeaderComponent,
     TransparentButtonComponent,
     RadioBarComponent,
@@ -94,16 +94,16 @@ import { ExercisesExerciseComponent } from './pages/exercises/exercises-exercise
     WeightAdderItemComponent,
     NumberInputComponent,
     SettingsRowComponent,
-    SettingsUnitConversionsComponent,
-    SettingsWeightsComponent,
-    SettingsDownloadDataComponent,
-    SettingsImportDataComponent,
-    SettingsGeneralComponent,
-    SettingsMainPageComponent,
-    SettingsTimerComponent,
-    SettingsThemeComponent,
-    AboutComponent,
-    SettingsSetsComponent,
+    SettingsUnitConversionsPage,
+    SettingsWeightsPage,
+    SettingsDownloadDataPage,
+    SettingsImportDataPage,
+    SettingsGeneralPage,
+    SettingsMainPagePage,
+    SettingsTimerPage,
+    SettingsThemePage,
+    AboutPage,
+    SettingsSetsPage,
     TimerComponent,
     FaIconComponent,
     BiIconComponent,
@@ -129,15 +129,15 @@ import { ExercisesExerciseComponent } from './pages/exercises/exercises-exercise
     LogoComponent,
     DataRowExpandableComponent,
     BmiScaleComponent,
-    PlansMainPageComponent,
-    PlansPlanComponent,
-    PlansEditComponent,
-    PlansCreateComponent,
-    ExercisesMainPageComponent,
-    ExercisesComponent,
-    ExercisesCreateComponent,
-    ExercisesEditComponent,
-    ExercisesExerciseComponent,
+    PlansMainPagePage,
+    PlansPlanPage,
+    PlansEditPage,
+    PlansCreatePage,
+    ExercisesMainPagePage,
+    ExercisesPage,
+    ExercisesCreatePage,
+    ExercisesEditPage,
+    ExercisesExercisePage,
   ],
   imports: [
   BrowserModule,

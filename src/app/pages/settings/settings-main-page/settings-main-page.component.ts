@@ -4,5 +4,5 @@ import { Component } from '@angular/core';
   templateUrl: './settings-main-page.component.html',
   styleUrls: ['./settings-main-page.component.scss']
 })
-export class SettingsMainPageComponent {
+export class SettingsMainPagePage {
 }

@@ -7,7 +7,7 @@ import { TakeChance } from 'take-chance';
   templateUrl: './settings-download-data.component.html',
   styleUrls: ['./settings-download-data.component.scss']
 })
-export class SettingsDownloadDataComponent {
+export class SettingsDownloadDataPage {
   isProcessing = false;
 
   processingMessage = '';

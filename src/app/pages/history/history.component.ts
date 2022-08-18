@@ -5,7 +5,7 @@ import { Title } from '@angular/platform-browser';
   templateUrl: './history.component.html',
   styleUrls: ['./history.component.scss']
 })
-export class HistoryComponent implements OnInit {
+export class HistoryPage implements OnInit {
 
   constructor(
     private titleService: Title

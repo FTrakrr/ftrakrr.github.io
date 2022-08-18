@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SettingsWeightsComponent } from './settings-weights.component';
+import { SettingsWeightsPage } from './settings-weights.component';
 
 describe('SettingsWeightsComponent', () => {
-  let component: SettingsWeightsComponent;
-  let fixture: ComponentFixture<SettingsWeightsComponent>;
+  let component: SettingsWeightsPage;
+  let fixture: ComponentFixture<SettingsWeightsPage>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SettingsWeightsComponent ]
+      declarations: [ SettingsWeightsPage ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SettingsWeightsComponent);
+    fixture = TestBed.createComponent(SettingsWeightsPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

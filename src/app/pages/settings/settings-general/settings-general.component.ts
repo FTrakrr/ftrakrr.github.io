@@ -7,7 +7,7 @@ import { SettingsService } from './../../../services/settings.service';
   templateUrl: './settings-general.component.html',
   styleUrls: ['./settings-general.component.scss']
 })
-export class SettingsGeneralComponent implements OnInit {
+export class SettingsGeneralPage implements OnInit {
   settings: Settings = this.settingsService.loadSettings();
 
   weekdayOptions: RadioBarOption[] = [

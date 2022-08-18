@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './settings-import-data.component.html',
   styleUrls: ['./settings-import-data.component.scss']
 })
-export class SettingsImportDataComponent implements OnInit {
+export class SettingsImportDataPage implements OnInit {
 
   constructor() { }
 

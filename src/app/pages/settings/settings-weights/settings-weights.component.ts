@@ -6,7 +6,7 @@ import { SettingsService } from './../../../services/settings.service';
   templateUrl: './settings-weights.component.html',
   styleUrls: ['./settings-weights.component.scss']
 })
-export class SettingsWeightsComponent implements OnInit {
+export class SettingsWeightsPage implements OnInit {
   settings: Settings = this.settingsService.loadSettings();
 
   constructor(

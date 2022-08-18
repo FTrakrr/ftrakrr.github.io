@@ -7,7 +7,7 @@ import { SettingsService } from './../../../services/settings.service';
   templateUrl: './settings-sets.component.html',
   styleUrls: ['./settings-sets.component.scss']
 })
-export class SettingsSetsComponent implements OnInit {
+export class SettingsSetsPage implements OnInit {
   settings: Settings = this.settingsService.loadSettings();
 
   previousWorkoutOptions: RadioBarOption[] = [

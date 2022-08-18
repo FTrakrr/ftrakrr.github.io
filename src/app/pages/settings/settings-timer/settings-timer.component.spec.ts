@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SettingsTimerComponent } from './settings-timer.component';
+import { SettingsTimerPage } from './settings-timer.component';
 
 describe('SettingsTimerComponent', () => {
-  let component: SettingsTimerComponent;
-  let fixture: ComponentFixture<SettingsTimerComponent>;
+  let component: SettingsTimerPage;
+  let fixture: ComponentFixture<SettingsTimerPage>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SettingsTimerComponent ]
+      declarations: [ SettingsTimerPage ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SettingsTimerComponent);
+    fixture = TestBed.createComponent(SettingsTimerPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

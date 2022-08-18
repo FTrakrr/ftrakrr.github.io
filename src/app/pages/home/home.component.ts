@@ -7,7 +7,7 @@ import { WorkoutsService } from './../../services/workouts.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomePage implements OnInit {
   lastWorkout!: Workout;
 
   constructor(
