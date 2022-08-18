@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Plan } from 'src/app/scripts/types';
+import { WorkoutPlan } from 'src/app/scripts/types';
 
 @Component({
   selector: 'app-plan-card',
@@ -7,7 +7,7 @@ import { Plan } from 'src/app/scripts/types';
   styleUrls: ['./plan-card.component.scss']
 })
 export class PlanCardComponent implements OnInit {
-  @Input() plan!: Plan;
+  @Input() plan!: WorkoutPlan;
 
   constructor() { }
 
