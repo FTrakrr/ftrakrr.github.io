@@ -1,4 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { RadioCardOption } from 'src/app/scripts/types';
+import { TakeChance } from 'take-chance';
 
 @Component({
   selector: 'app-radio-card',
@@ -6,15 +8,28 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./radio-card.component.scss']
 })
 export class RadioCardComponent {
-  @Input() icon?: string;
-  @Input('fa-icon') faIcon?: string;
-  @Input() iconstyle?: string = "solid";
-  @Input() title?: string;
-  @Input() subtitle?: string;
-  @Input() desc?: string;
+  @Input() options!: RadioCardOption[];
+  @Input('pre-row-max') perRowMax?: number; 
 
-  @Input() for?: string;
+  id = TakeChance.id();
 
-  constructor() { }
+  @Input() value?: any;
+  @Output() valueChange = new EventEmitter<any>();
+
+  ngAfterContentInit(): void {
+    this._checkValueToSelect(this.value);
+  }
+
+  private _checkValueToSelect(value: any) {
+    this.options.map(opt => {
+      opt.checked = opt.value == value;
+      return opt;
+    })
+  }
+  onSelect(value: any) {
+    this.value = value;
+    this.valueChange.emit(value);
+    this._checkValueToSelect(value);
+  }
 
 }

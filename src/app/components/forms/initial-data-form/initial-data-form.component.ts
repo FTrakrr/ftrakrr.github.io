@@ -25,7 +25,7 @@ export class InitialDataFormComponent implements OnInit {
     false, // [3]   gender
     false, // [4]   age
     true, //closing page; should always be "true"
-  ]
+  ];
 
   //! data holders
   weightData: WeightMeasurementObject = { value: null, unit: 'kg' };

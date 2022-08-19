@@ -3,12 +3,12 @@
         <input
             type="radio"
             [name]="id"
-            [id]="id+i"
+            [id]="id+-i"
             [checked]="opt.checked"
             class="hidden"
             (change)="onSelect(opt.value)"
         >
-        <label [for]="id+i" [class]="'size-'+size" [style]="'width:'+width">
+        <label [for]="id+-i" [class]="'size-'+size" [style]="'width:'+width">
             <fa-icon class="icon" *ngIf="opt.faIcon" [icon]="opt.faIcon" [iconstyle]="opt.iconstyle"></fa-icon>
             <bi-icon class="icon" *ngIf="opt.icon" [icon]="opt.icon"></bi-icon>
             <div class="text" *ngIf="opt.title">

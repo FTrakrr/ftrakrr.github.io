@@ -70,6 +70,7 @@ import { ExercisesCreatePage } from './pages/exercises/exercises-create/exercise
 import { ExercisesEditPage } from './pages/exercises/exercises-edit/exercises-edit.component';
 import { ExercisesExercisePage } from './pages/exercises/exercises-exercise/exercises-exercise.component';
 import { CreateCardComponent } from './components/create-card/create-card.component';
+import { ExerciseCardComponent } from './components/exercise-card/exercise-card.component';
 
 @NgModule({
   declarations: [
@@ -140,6 +141,7 @@ import { CreateCardComponent } from './components/create-card/create-card.compon
     ExercisesEditPage,
     ExercisesExercisePage,
     CreateCardComponent,
+    ExerciseCardComponent,
   ],
   imports: [
   BrowserModule,

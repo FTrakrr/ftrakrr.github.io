@@ -1,10 +1,22 @@
-<label [for]="for" class="card unselectable">
-    <div class="hidden">
-        <ng-content></ng-content>
+<div class="grid-container">
+    <div class="card-container" *ngFor="let opt of options; let i = index" [style]="'--i:'+i+';'">
+        <input
+            type="radio"
+            [name]="id"
+            [id]="id+-i"
+            [checked]="opt.checked"
+            class="hidden"
+            (change)="onSelect(opt.value)"
+        >
+        <label [for]="id+-i" class="card unselectable">
+            <div class="hidden">
+                <ng-content></ng-content>
+            </div>
+            <fa-icon class="icon" *ngIf="opt.faIcon" [icon]="opt.faIcon" [iconstyle]="opt.iconstyle"></fa-icon>
+            <bi-icon class="icon" *ngIf="opt.icon" [icon]="opt.icon"></bi-icon>
+            <h4 class="uppercase" *ngIf="opt.title">{{ opt.title }}</h4>
+            <span class="subtitle" *ngIf="opt.subtitle">{{ opt.subtitle }}</span>
+            <span class="desc" *ngIf="opt.desc">{{ opt.desc }}</span>
+        </label>
     </div>
-    <fa-icon class="icon" *ngIf="faIcon" [icon]="faIcon" [iconstyle]="iconstyle"></fa-icon>
-    <bi-icon class="icon" *ngIf="icon" [icon]="icon"></bi-icon>
-    <h4 class="uppercase" *ngIf="title">{{ title }}</h4>
-    <span class="subtitle" *ngIf="subtitle">{{ subtitle }}</span>
-    <span class="desc" *ngIf="desc">{{ desc }}</span>
-</label>
+</div>
