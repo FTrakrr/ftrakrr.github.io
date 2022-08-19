@@ -72,31 +72,6 @@ export class BmiScaleComponent implements AfterContentInit {
     low = 40;
     span = 45 - low;
     this.markerPos = `min(${w + w5 * (v - low) / span}%, calc(100% - 3px))`;
-    // if (v < 24) {
-    //   //define by the function: https://www.desmos.com/calculator/5sapjfv5mt
-    //   this.markerPos = `${w0 + w1 * ((v - 18.5 - 2.75) ** 3 / 41 + 0.5)}%`;
-    //   return;
-    // }
-    // if (v < 30) {
-    //   //define by the function: https://www.desmos.com/calculator/otc6j0vbeu
-    //   this.markerPos = `calc(${w0 + w1 + w2 * ((v - 24 - 3) ** 3 / 54 + 0.5)}% - 1px)`;
-    //   return;
-    // }
-    // if (v < 35) {
-    //   //define by the function: https://www.desmos.com/calculator/znlpchryhf
-    //   this.markerPos = `${w0 + w1 + w2 + w3 * ((v - 30 - 2.5) ** 3 / 31.25 + 0.5)}%`;
-    //   return;
-    // }
-    // if (v < 40) {
-    //   //define by the function: https://www.desmos.com/calculator/hfnna0a8qj
-    //   this.markerPos = `${w0 + w1 + w2 + w3 + w4 * ((v - 35 - 2.5) ** 3 / 31.25 + 0.5)}%`;
-    //   return;
-    // }
-    // if (v < 45) {
-    //   //define by the function: https://www.desmos.com/calculator/1k5lyx7ima
-    //   this.markerPos = `calc(${w0 + w1 + w2 + w3 + w4 + w5 * ((v - 40 - 2.5) ** 5 / 195.311 + 0.5)}% + 1px)`;
-    //   return;
-    // }
   }
 
 }

@@ -31,5 +31,4 @@ export class RadioCardComponent {
     this.valueChange.emit(value);
     this._checkValueToSelect(value);
   }
-
 }
