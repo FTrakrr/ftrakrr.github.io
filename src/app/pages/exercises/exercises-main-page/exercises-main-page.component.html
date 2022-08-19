@@ -7,6 +7,9 @@
                 routerLink="create"
                 class="create-btn"
             ></app-create-card>
+            <app-exercise-card
+                *ngFor="let ex of exercises"
+            ></app-exercise-card>
         </div>
     </section>
 </main>

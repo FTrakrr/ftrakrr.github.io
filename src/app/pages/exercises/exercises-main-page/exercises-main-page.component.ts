@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ExerciseService } from 'src/app/services/exercise.service';
 
 @Component({
   selector: 'app-exercises-main-page',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./exercises-main-page.component.scss']
 })
 export class ExercisesMainPagePage implements OnInit {
+  exercises = this.exerciseService.loadExercises();
 
-  constructor() { }
+  constructor(
+    private exerciseService: ExerciseService
+  ) { }
 
   ngOnInit(): void {
   }
