@@ -2,7 +2,7 @@
     <a [routerLink]="routerLink" [href]="href">
         <fa-icon class="icon" *ngIf="faIcon" [icon]="faIcon" [iconstyle]="iconstyle"></fa-icon>
         <bi-icon class="icon" *ngIf="icon" [icon]="icon"></bi-icon>
-        <span class="title">{{ title }}</span>
+        <span class="title" *ngIf="title">{{ title }}</span>
         <span class="value">
             <div class="value-container" *ngIf="value || defaultValue">
                     <span>
