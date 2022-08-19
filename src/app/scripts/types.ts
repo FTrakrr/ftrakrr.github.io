@@ -1,9 +1,48 @@
 import { MoreDataObject } from "src/app/components/data-row-expandable/data-row-expandable.component";
 
+/**
+A type holding three gender options available in the app.
+
+- `m` - male
+- `f` - female
+- `o` - other
+ */
 export type UserGender = 'm' | 'f' | 'o';
-export type ExerciseType = 'weight_machine' | 'cable_machine' | 'cardio_machine' | 'barbell' | 'dumbbell' | 'kettlebell' | 'body_mass';
-export type IncreaseType = 'weight' | 'reps' | 'reps_until' | 'time';
+
+/**
+ * A type holding all the types of exercises available in the app.
+ */
+export type ExerciseType = 'plate_machine' | 'cable_machine' | 'cardio_machine' | 'barbell' | 'dumbbell' | 'kettlebell' | 'body_mass';
+
+/**
+ * A type holding all the ways of automatically increasing the exercise stats.
+
+- `weight` - increase the weight, leave the reps/time unchanged
+- `reps` - increase the reps, leave the weight unchanged
+- `reps_until` - increase the reps until they reach a certain threshold, then start increasing the weight
+- `time` - increase the time of the exercise, leaving the weight unchanged
+ */
+export type BasicIncreaseType = 'weight' | 'reps' | 'reps_until';
+
+/**
+ * The colors a workout plan can have.
+ * 
+ * Based on [Material UI Colors](https://materialui.co/colors).
+ */
 export type PlanColor = 'red' | 'pink' | 'purple' | 'deep-purple' | 'indigo' | 'blue' | 'light-blue' | 'cyan' | 'teal' | 'green' | 'light-green' | 'lime' | 'yellow' | 'amber' | 'orange' | 'deep-orange';
+
+
+export type SetType = 'warmup' | 'normal' | 'cooldown';
+
+/**
+ * The type of completion of a certain set.
+
+- `unmarked` - when the user hasn't touched the completion box at all.
+- `completed` - the green check symbol in a box; it means that all the reps have been completed with the given weight.
+- `failed` - not all reps have been completed with the given weight.
+- `dropped` - means that the user decreased the weight for this set.
+- `skipped` - the user has skipped this set completely.
+ */
 export type SetCompletionType = 'unmarked' | 'completed' | 'failed' | 'dropped' | 'skipped';
 
 export type WeightUnit = 'kg' | 'lbs';
@@ -133,192 +172,108 @@ export type WeightObject = {
 //! Workout Plans
 export type WorkoutPlan = {
     id: string;
-    color: PlanColor;
     name: string;
+    color: PlanColor;
     last_workout: Date;
-    exercises: Exercise[];
+    exercises: AnyExercise[];
 }
 
 //! Exercises
-export type Exercise = {
+export type AnyExercise = '';
 
+interface _Exercise {
+    id: string;
+    name: string;
+    type: ExerciseType;
+    machine_id?: string | number;
+    use_imperial: boolean;
 }
+export interface PlateWeightMachineExercise extends _Exercise {
+    sides: 1 | 2;
+    sets: WeightedExerciseSet[];
+}
+export interface CableMachineExercise extends _Exercise {
+    accepts_addons: boolean;
+    sets: WeightedExerciseSet[];
+}
+export interface BarbellExercise extends _Exercise {
+    sides: 2;
+    sets: WeightedExerciseSet[];
+}
+export interface DumbbellExercise extends _Exercise {
+    /**
+     * How many dumbbells are needed?
+     */
+    sides: 1 | 2;
+    sets: WeightedExerciseSet[];
+}
+export interface KettlebellExercise extends _Exercise {
+    sides: 1;
+    sets: WeightedExerciseSet[];
+}
+export interface BodyMassExercise extends _Exercise {
+    /**
+     * Do you measure the time or the reps that you do?
+     */
+    measures: 'reps' | 'time';
+    sets: BodyMassExerciseSet[];
+}
+export interface CardioExercise extends _Exercise {
+    /**
+     * Do you measure the time or the distance that you do?
+     */
+    measures: 'time' | 'distance';
+    /**
+     * Does the machine allow you to change the speed or the resistance?
+     */
+    change_type: 'speed' | 'resistance';
+    /**
+     * Does the machine allow you to change the tilt?
+     */
+    allows_tilt_change: boolean;
+
+    time_or_distance: number;
+    speed_or_resistance: number;
+    tilt?: number;
+    user_input: {
+        time_or_distance?: number;
+    }
+}
+
+//! Sets
+interface _ExerciseSet {
+    type: SetType;
+    break_time: number;
+}
+interface WeightedExerciseSet extends _ExerciseSet {
+    increase: {
+        type: BasicIncreaseType;
+        weight_by?: number;
+        reps_by?: number;
+        reps_threshold?: number;
+    },
+    weight: number;
+    reps: number;
+    user_input: {
+        weight?: number;
+        reps?: number;
+    }
+}
+interface BodyMassExerciseSet extends _ExerciseSet {
+    increase: {
+        reps_by?: number;
+        time_by?: number;
+    }
+    time: number;
+    reps: number;
+    user_input: {
+        time?: number;
+        reps?: number;
+    }
+}
+
 
 //! Workout
 export type Workout = {
     
 }
-
-
-
-
-
-
-
-
-//! Plan
-// export type Plan = {
-//     id: string;
-//     color: PlanColor;
-//     exercises: (PlateWeightMachineExercise | CableWeightMachineExercise | BarbellExercise | DumbbellExercise | KettlebellExercise | BodyMassExercise | CardioExercise)[];
-// }
-
-// export interface Exercise {
-//     id: string;
-//     name: string;
-//     machine?: string | number;
-//     note?: string;
-//     type: ExerciseType;
-//     use_imperial: boolean;
-// }
-
-// export interface PlateWeightMachineExercise extends Exercise {
-//     sides: 1 | 2;
-//     base_weight_per_side: number;
-//     weight_steps: number;
-//     sets: {
-//         warmup: boolean;
-//         increase_type: IncreaseType;
-//         increase_weight?: {
-//             by: number;
-//             every: number;
-//         };
-//         increase_reps?: {
-//             by: number;
-//             every: number;
-//         }
-//         break_time: number;
-//     }[];
-// }
-// export interface CableWeightMachineExercise extends Exercise {
-//     accepts_weight: boolean;
-//     weight_steps: number;
-//     stack_steps: number;
-//     sets: {
-//         warmup: boolean;
-//         increase_type: IncreaseType;
-//         increase_weight?: {
-//             by: number;
-//             every: number;
-//         };
-//         increase_reps?: {
-//             by: number;
-//             every: number;
-//         }
-//         break_time: number;
-//     }[];
-// }
-// export interface BarbellExercise extends Exercise {
-//     weight_steps: number;
-//     sets: {
-//         warmup: boolean;
-//         increase_type: IncreaseType;
-//         increase_weight?: {
-//             by: number;
-//             every: number;
-//         };
-//         increase_reps?: {
-//             by: number;
-//             every: number;
-//         }
-//         break_time: number;
-//     }[];
-// }
-// export interface DumbbellExercise extends Exercise {
-//     dumbbells: 1 | 2;
-//     weight_steps: number;
-//     sets: {
-//         warmup: boolean;
-//         increase_type: IncreaseType;
-//         increase_weight?: {
-//             by: number;
-//             every: number;
-//         };
-//         increase_reps?: {
-//             by: number;
-//             every: number;
-//         }
-//         break_time: number;
-//     }[];
-// }
-// export interface KettlebellExercise extends Exercise {
-//     weight_steps: number;
-//     sets: {
-//         warmup: boolean;
-//         increase_type: IncreaseType;
-//         increase_weight?: {
-//             by: number;
-//             every: number;
-//         };
-//         increase_reps?: {
-//             by: number;
-//             every: number;
-//         }
-//         break_time: number;
-//     }[];
-// }
-// export interface BodyMassExercise extends Exercise {
-//     sets: {
-//         warmup: boolean;
-//         increase_type: IncreaseType;
-//         increase_reps?: {
-//             by: number;
-//             every: number;
-//         }
-//         increase_time?: {
-//             by: number;
-//             every: number;
-//         }
-//         break_time: number;
-//     }[];
-// }
-// export interface CardioExercise extends Exercise {
-//     customizable_value: 'speed' | 'resistance';
-//     tiltable: boolean;
-//     speed_steps: number;
-//     tilt_steps: number;
-//     sets: {
-//         warmup: boolean;
-//         objective: 'time' | 'distance';
-//         objective_value: number;
-//         speed?: number;
-//         tilt?: number;
-//         resistance?: number;
-//     }[];
-// }
-
-
-// export interface HistoricalValueObject {
-//     done: number;
-//     required: number;
-// }
-// export interface HistoricalExercise {
-//     exercise_id: number;
-// }
-
-// export interface HistoricalWeightExercise extends HistoricalExercise {
-//     exercise: PlateWeightMachineExercise | CableWeightMachineExercise | BarbellExercise | DumbbellExercise | KettlebellExercise;
-//     sets: {
-//         completion_type: SetCompletionType;
-//         weight: HistoricalValueObject;
-//         reps: HistoricalValueObject;
-//     }[];
-// }
-// export interface HistoricalBodyMassExercise extends HistoricalExercise {
-//     exercise: BodyMassExercise;
-//     sets: {
-//         completion_type: SetCompletionType;
-//         reps: HistoricalValueObject;
-//         time: HistoricalValueObject;
-//     }[];
-// }
-// export interface HistoricalCardioExercise extends HistoricalExercise {
-//     exercise: CardioExercise;
-//     sets: {
-//         completion_type: SetCompletionType;
-//         objective_value: HistoricalValueObject;
-//         speed: HistoricalValueObject;
-//         tilt: HistoricalValueObject;
-//         resistance: HistoricalValueObject;
-//     }
-// }
