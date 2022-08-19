@@ -12,7 +12,7 @@ export type UserGender = 'm' | 'f' | 'o';
 /**
  * A type holding all the types of exercises available in the app.
  */
-export type ExerciseType = 'plate_machine' | 'cable_machine' | 'cardio_machine' | 'barbell' | 'dumbbell' | 'kettlebell' | 'body_mass';
+export type ExerciseType = 'plate_loaded' | 'cable_loaded' | 'cardio' | 'barbell' | 'dumbbell' | 'kettlebell' | 'body_mass';
 
 /**
  * A type holding all the ways of automatically increasing the exercise stats.
@@ -48,6 +48,68 @@ export type SetCompletionType = 'unmarked' | 'completed' | 'failed' | 'dropped' 
 export type WeightUnit = 'kg' | 'lbs';
 export type HeightUnit = 'cm' | 'ft' | 'in';
 export type LengthUnit = 'cm' | 'in';
+
+//! components
+/**
+```typescript
+interface RadioBarOption {
+    value: any;
+
+    icon?: string;
+    faIcon?: string;
+    iconstyle?: string;
+
+    title?: string;
+    subtitle?: string;
+    checked?: boolean;
+}
+```
+ * * `value` — a value that should be passed down the event when this option is selected.
+ * * `title` — the option's main title.
+ * * `icon` — a [Bootstrap icon](https://icons.getbootstrap.com/) name.
+ * * `faIcon` — a [Fontawesome icon](https://fontawesome.com/search?q=record&m=free) name.
+ * * `iconstyle` — a Fontawesome icon style.
+ * * `subtitle` — the option's subtitle. a lot smaller and in low opacity.
+ * * `checked` — if the option is checked.
+*/
+export interface RadioBarOption {
+    value: any;
+
+    icon?: string;
+    faIcon?: string;
+    iconstyle?: string;
+
+    title?: string;
+    subtitle?: string;
+    checked?: boolean;
+}
+/**
+```typescript
+interface RadioBarOption {
+    value: any;
+
+    icon?: string;
+    faIcon?: string;
+    iconstyle?: string;
+
+    title?: string;
+    subtitle?: string;
+    desc?: string;
+    checked?: boolean;
+}
+```
+ * * `value` — a value that should be passed down the event when this option is selected.
+ * * `title` — the option's main title.
+ * * `icon` — a [Bootstrap icon](https://icons.getbootstrap.com/) name.
+ * * `faIcon` — a [Fontawesome icon](https://fontawesome.com/search?q=record&m=free) name.
+ * * `iconstyle` — a Fontawesome icon style.
+ * * `subtitle` — the option's subtitle. a lot smaller and in low opacity.
+ * * `desc` — the option's description. even smaller and in even lower opacity.
+ * * `checked` — if the option is checked.
+*/
+export interface RadioCardOption extends RadioBarOption {
+    desc?: string;
+}
 
 //! personal data
 export type WeightMeasurementObject = {
@@ -179,8 +241,11 @@ export type WorkoutPlan = {
 }
 
 //! Exercises
-export type AnyExercise = '';
+export type AnyExercise = PlateLoadedMachineExercise | CableLoadedMachineExercise | BarbellExercise | DumbbellExercise | KettlebellExercise | BodyMassExercise | CardioExercise;
 
+/**
+ * Internal type. Should only be extended and never used directly.
+```typescript
 interface _Exercise {
     id: string;
     name: string;
@@ -188,37 +253,152 @@ interface _Exercise {
     machine_id?: string | number;
     use_imperial: boolean;
 }
-export interface PlateWeightMachineExercise extends _Exercise {
+```
+ */
+interface _Exercise {
+    id: string;
+    name: string;
+    type: ExerciseType;
+    machine_id?: string | number;
+    use_imperial: boolean;
+}
+/**
+```typescript
+interface PlateLoadedMachineExercise {
+    id: string;
+    name: string;
+    machine_id?: string | number;
+    use_imperial: boolean;
+    type: 'plate_loaded';
     sides: 1 | 2;
     sets: WeightedExerciseSet[];
 }
-export interface CableMachineExercise extends _Exercise {
+```
+ */
+export interface PlateLoadedMachineExercise extends _Exercise {
+    type: 'plate_loaded';
+    sides: 1 | 2;
+    sets: WeightedExerciseSet[];
+}
+/**
+```typescript
+interface PlateLoadedMachineExercise {
+    id: string;
+    name: string;
+    machine_id?: string | number;
+    use_imperial: boolean;
+    type: 'cable_loaded';
     accepts_addons: boolean;
     sets: WeightedExerciseSet[];
 }
-export interface BarbellExercise extends _Exercise {
+```
+ */
+export interface CableLoadedMachineExercise extends _Exercise {
+    type: 'cable_loaded';
+    accepts_addons: boolean;
+    sets: WeightedExerciseSet[];
+}
+/**
+```typescript
+interface PlateLoadedMachineExercise {
+    id: string;
+    name: string;
+    machine_id?: string | number;
+    use_imperial: boolean;
+    type: 'barbell';
     sides: 2;
     sets: WeightedExerciseSet[];
 }
+```
+ */
+export interface BarbellExercise extends _Exercise {
+    type: 'barbell';
+    sides: 2;
+    sets: WeightedExerciseSet[];
+}
+/**
+```typescript
+interface PlateLoadedMachineExercise {
+    id: string;
+    name: string;
+    machine_id?: string | number;
+    use_imperial: boolean;
+    type: 'dumbbell';
+    sides: 1 | 2; //How many dumbbells are needed?
+    sets: WeightedExerciseSet[];
+}
+```
+ */
 export interface DumbbellExercise extends _Exercise {
+    type: 'dumbbell';
     /**
      * How many dumbbells are needed?
      */
     sides: 1 | 2;
     sets: WeightedExerciseSet[];
 }
-export interface KettlebellExercise extends _Exercise {
+/**
+```typescript
+interface PlateLoadedMachineExercise {
+    id: string;
+    name: string;
+    machine_id?: string | number;
+    use_imperial: boolean;
+    type: 'kettlebell';
     sides: 1;
     sets: WeightedExerciseSet[];
 }
+```
+ */
+export interface KettlebellExercise extends _Exercise {
+    type: 'kettlebell';
+    sides: 1;
+    sets: WeightedExerciseSet[];
+}
+/**
+```typescript
+interface PlateLoadedMachineExercise {
+    id: string;
+    name: string;
+    machine_id?: string | number;
+    use_imperial: boolean;
+    type: 'body_mass';
+    measures: 'reps' | 'time';
+    sets: BodyMassExerciseSet[];
+}
+```
+ */
 export interface BodyMassExercise extends _Exercise {
+    type: 'body_mass';
     /**
      * Do you measure the time or the reps that you do?
      */
     measures: 'reps' | 'time';
     sets: BodyMassExerciseSet[];
 }
+/**
+```typescript
+interface PlateLoadedMachineExercise {
+    id: string;
+    name: string;
+    machine_id?: string | number;
+    use_imperial: boolean;
+    type: 'cardio';
+    measures: 'time' | 'distance';
+    change_type: 'speed' | 'resistance';
+    allows_tilt_change: boolean;
+
+    time_or_distance: number;
+    speed_or_resistance: number;
+    tilt ?: number;
+    user_input: {
+        time_or_distance ?: number;
+    }
+}
+```
+ */
 export interface CardioExercise extends _Exercise {
+    type: 'cardio';
     /**
      * Do you measure the time or the distance that you do?
      */
@@ -241,11 +421,27 @@ export interface CardioExercise extends _Exercise {
 }
 
 //! Sets
+/**
+ * Internal type. Should only be extended and never used directly.
+```typescript
 interface _ExerciseSet {
     type: SetType;
     break_time: number;
+    uses_weights: boolean;
 }
-interface WeightedExerciseSet extends _ExerciseSet {
+```
+ */
+interface _ExerciseSet {
+    type: SetType;
+    break_time: number;
+    uses_weights: boolean;
+}
+/**
+```typescript
+interface _ExerciseSet {
+    type: SetType;
+    break_time: number;
+    uses_weights: true;
     increase: {
         type: BasicIncreaseType;
         weight_by?: number;
@@ -259,7 +455,44 @@ interface WeightedExerciseSet extends _ExerciseSet {
         reps?: number;
     }
 }
+```
+ */
+interface WeightedExerciseSet extends _ExerciseSet {
+    uses_weights: true;
+    increase: {
+        type: BasicIncreaseType;
+        weight_by?: number;
+        reps_by?: number;
+        reps_threshold?: number;
+    },
+    weight: number;
+    reps: number;
+    user_input: {
+        weight?: number;
+        reps?: number;
+    }
+}
+/**
+```typescript
+interface _ExerciseSet {
+    type: SetType;
+    break_time: number;
+    uses_weights: false;
+    increase: {
+        reps_by?: number;
+        time_by?: number;
+    }
+    time: number;
+    reps: number;
+    user_input: {
+        time?: number;
+        reps?: number;
+    }
+}
+```
+*/
 interface BodyMassExerciseSet extends _ExerciseSet {
+    uses_weights: false;
     increase: {
         reps_by?: number;
         time_by?: number;
