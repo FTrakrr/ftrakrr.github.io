@@ -11,6 +11,7 @@ import { MoreRounding } from 'more-rounding';
 export class NumberInputComponent {
   //basic variables
   @Input() value: number | null = null;
+  @Output() valueChange = new EventEmitter<number | null>();
   @Input() placeholder: string | number | undefined = undefined;
 
   //input element
@@ -26,10 +27,6 @@ export class NumberInputComponent {
   @Input() allowNegative: boolean = false;
   @Input() min?: number;
   @Input() max?: number;
-
-  //emit the number from the input on change and on input
-  @Output() change = new EventEmitter<number | null>();
-  @Output() input = new EventEmitter<number | null>();
 
   // private _watchForChanges = false;
 
@@ -52,8 +49,7 @@ export class NumberInputComponent {
   }
 
   private _emit() {
-    this.input.emit(this.value);
-    this.change.emit(this.value);
+    this.valueChange.emit(this.value);
   }
   onInput(): void {
     let input: InputElementData = {

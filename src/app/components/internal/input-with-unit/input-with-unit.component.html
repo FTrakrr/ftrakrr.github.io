@@ -7,12 +7,12 @@
         (valueChange)="onUnitChange($event)"
     ></app-radio-bar>
     <app-number-input
-        (input)="onValueChange($event)"
+        [value]="value.value"
+        (valueChange)="onValueChange($event)"
         [alwaysShowButtons]="alwaysShowButtons"
         [alwaysShowBorder]="alwaysShowBorder"
         [noButtons]="noButtons"
         [buttonIncrement]="buttonIncrement"
-        [value]="value.value"
         [placeholder]="value.unit"
     ></app-number-input>
 </div>

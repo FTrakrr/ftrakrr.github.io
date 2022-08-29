@@ -1,31 +1,31 @@
 <div class="form-container">
     <app-radio-bar
         [options]="heightUnitOptions"
-        size="S"
         [value]="value.unit"
-        [disabled]="unitDisabled"
         (valueChange)="onUnitChange($event)"
+        size="S"
+        [disabled]="unitDisabled"
     ></app-radio-bar>
     <app-number-input
-        (input)="onMainValueChange($event)"
+        [value]="valueInternal.mainValue"
+        (valueChange)="onMainValueChange($event)"
         [alwaysShowButtons]="alwaysShowButtons"
         [alwaysShowBorder]="alwaysShowBorder"
         [noButtons]="noButtons"
         [buttonIncrement]="1"
         [max]="value.unit == 'cm' ? 300 : 9"
-        [value]="valueInternal.mainValue"
         [placeholder]="value.unit"
     ></app-number-input>
     <app-number-input
         class="inches-input"
         [ngClass]="{'soft-hidden': value.unit == 'cm'}"
-        (input)="onInchesChange($event)"
+        [value]="valueInternal.inches"
+        (valueChange)="onInchesChange($event)"
         [alwaysShowButtons]="alwaysShowButtons"
         [alwaysShowBorder]="alwaysShowBorder"
         [noButtons]="noButtons"
         [max]="11"
         [buttonIncrement]="0.5"
-        [value]="valueInternal.inches"
         placeholder="in"
     ></app-number-input>
 </div>
