@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonalDataService } from 'src/app/services/personal-data.service';
-import { WeightMeasurementObject, HeightMeasurementObject, UserGender } from 'src/app/scripts/types';
-import { RadioBarOption } from 'src/app/components/forms/radio-bar/radio-bar.component';
+import { WeightMeasurementObject, HeightMeasurementObject, UserGender, RadioBarOption } from 'src/app/scripts/types';
 import { MONTH_MAP } from 'src/app/scripts/constants';
 import { Router } from '@angular/router';
 

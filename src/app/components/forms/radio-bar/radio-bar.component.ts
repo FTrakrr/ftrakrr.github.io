@@ -1,4 +1,4 @@
-import { Component, Input, EventEmitter, Output, AfterContentInit } from '@angular/core';
+import { Component, Input, EventEmitter, Output, AfterContentInit, OnChanges, SimpleChanges } from '@angular/core';
 import { RadioBarOption } from 'src/app/scripts/types';
 import { TakeChance } from 'take-chance';
 
@@ -7,7 +7,7 @@ import { TakeChance } from 'take-chance';
   templateUrl: './radio-bar.component.html',
   styleUrls: ['./radio-bar.component.scss']
 })
-export class RadioBarComponent implements AfterContentInit {
+export class RadioBarComponent implements AfterContentInit, OnChanges {
   @Input() options!: RadioBarOption[];
   @Input() size: 'S' | 'M' | 'L' = 'L';
   @Input('fit-content') fitContent: boolean = false;
@@ -21,6 +21,11 @@ export class RadioBarComponent implements AfterContentInit {
 
   ngAfterContentInit(): void {
     this._checkValueToSelect(this.value);
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.hasOwnProperty('value')) {
+      this._checkValueToSelect(this.value);
+    }
   }
 
   private _checkValueToSelect(value: any) {
