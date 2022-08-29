@@ -90,6 +90,7 @@ export const BMI_SCALE: BarScaleRange[] = [
         color: BLUE,
         width: 1.5,
         low: 12,
+        high: 18.5,
     },
     {
         rangeString: '18.5–24',
