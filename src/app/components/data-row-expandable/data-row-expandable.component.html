@@ -33,7 +33,7 @@
             <span class="group-title">{{ group.groupLabel }}</span>
             <div
                 class="data-item-container"
-                [style.grid-template-columns]="'1fr '.repeat(group.items.length)"
+                [style.grid-template-columns]="group.columns"
             >
                 <div
                     class="data-item"
