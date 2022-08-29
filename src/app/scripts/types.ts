@@ -259,7 +259,6 @@ interface _Exercise {
     name: string;
     type: ExerciseType;
     machine_id?: string | number;
-    use_imperial: boolean;
 }
 ```
  */
@@ -268,7 +267,6 @@ interface _Exercise {
     name: string;
     type: ExerciseType;
     machine_id?: string | number;
-    use_imperial: boolean;
 }
 /**
 ```typescript
@@ -279,13 +277,16 @@ interface PlateLoadedMachineExercise {
     use_imperial: boolean;
     type: 'plate_loaded';
     sides: 1 | 2;
+    base_resistance: WeightMeasurementObject;
     sets: WeightedExerciseSet[];
 }
 ```
  */
 export interface PlateLoadedMachineExercise extends _Exercise {
+    use_imperial: boolean;
     type: 'plate_loaded';
     sides: 1 | 2;
+    base_resistance: WeightMeasurementObject;
     sets: WeightedExerciseSet[];
 }
 /**
@@ -296,14 +297,19 @@ interface PlateLoadedMachineExercise {
     machine_id?: string | number;
     use_imperial: boolean;
     type: 'cable_loaded';
+    first_weight: WeightMeasurementObject;
+    weight_steps: WeightMeasurementObject;
     accepts_addons: boolean;
     sets: WeightedExerciseSet[];
 }
 ```
  */
 export interface CableLoadedMachineExercise extends _Exercise {
+    use_imperial: boolean;
     type: 'cable_loaded';
     accepts_addons: boolean;
+    first_weight: WeightMeasurementObject;
+    weight_steps: WeightMeasurementObject;
     sets: WeightedExerciseSet[];
 }
 /**
@@ -315,13 +321,16 @@ interface PlateLoadedMachineExercise {
     use_imperial: boolean;
     type: 'barbell';
     sides: 2;
+    base_resistance: WeightMeasurementObject;
     sets: WeightedExerciseSet[];
 }
 ```
  */
 export interface BarbellExercise extends _Exercise {
+    use_imperial: boolean;
     type: 'barbell';
     sides: 2;
+    base_resistance: WeightMeasurementObject;
     sets: WeightedExerciseSet[];
 }
 /**
@@ -333,16 +342,19 @@ interface PlateLoadedMachineExercise {
     use_imperial: boolean;
     type: 'dumbbell';
     sides: 1 | 2; //How many dumbbells are needed?
+    weight_steps: WeightMeasurementObject;
     sets: WeightedExerciseSet[];
 }
 ```
  */
 export interface DumbbellExercise extends _Exercise {
+    use_imperial: boolean;
     type: 'dumbbell';
     /**
      * How many dumbbells are needed?
      */
     sides: 1 | 2;
+    weight_steps: WeightMeasurementObject;
     sets: WeightedExerciseSet[];
 }
 /**
@@ -354,13 +366,16 @@ interface PlateLoadedMachineExercise {
     use_imperial: boolean;
     type: 'kettlebell';
     sides: 1;
+    weight_steps: WeightMeasurementObject;
     sets: WeightedExerciseSet[];
 }
 ```
  */
 export interface KettlebellExercise extends _Exercise {
+    use_imperial: boolean;
     type: 'kettlebell';
     sides: 1;
+    weight_steps: WeightMeasurementObject;
     sets: WeightedExerciseSet[];
 }
 /**
@@ -446,7 +461,7 @@ interface _ExerciseSet {
 }
 /**
 ```typescript
-interface _ExerciseSet {
+interface WeightedExerciseSet {
     type: SetType;
     break_time: number;
     uses_weights: true;
@@ -458,6 +473,7 @@ interface _ExerciseSet {
     },
     weight: number;
     reps: number;
+
     user_input: {
         weight?: number;
         reps?: number;
@@ -475,6 +491,7 @@ interface WeightedExerciseSet extends _ExerciseSet {
     },
     weight: number;
     reps: number;
+
     user_input: {
         weight?: number;
         reps?: number;
@@ -482,7 +499,7 @@ interface WeightedExerciseSet extends _ExerciseSet {
 }
 /**
 ```typescript
-interface _ExerciseSet {
+interface BodyMassExerciseSet {
     type: SetType;
     break_time: number;
     uses_weights: false;
@@ -492,6 +509,7 @@ interface _ExerciseSet {
     }
     time: number;
     reps: number;
+
     user_input: {
         time?: number;
         reps?: number;
@@ -507,6 +525,7 @@ interface BodyMassExerciseSet extends _ExerciseSet {
     }
     time: number;
     reps: number;
+    
     user_input: {
         time?: number;
         reps?: number;
