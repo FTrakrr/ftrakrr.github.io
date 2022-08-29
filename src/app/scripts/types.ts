@@ -110,6 +110,7 @@ interface RadioBarOption {
 */
 export interface RadioCardOption extends RadioBarOption {
     desc?: string;
+    svg?: string;
 }
 
 //! personal data
