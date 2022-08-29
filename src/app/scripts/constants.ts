@@ -154,6 +154,10 @@ export const M_TO_FT = {
     precise: 3.28084,
     pretty: 3.3,
 };
+export const MI_TO_KM = {
+    precise: 1.609344,
+    pretty: 1.6,
+};
 
 //! calendar
 export const WEEKDAY_MAP: [string, string][] = [
