@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { PersonalDataService } from './../../../services/personal-data.service';
-import { PERSONAL_DATA } from 'src/app/scripts/constants';
-import { HeightMeasurementObject, LengthMeasurementObject, MeasurementObject, PersonalDataID, PersonalDataUpdateDefaults, PersonalDataUpdateModalStates, PersonalDataUpdateOutput, PersonalDataUpdateValueStrings, WeightMeasurementObject } from 'src/app/scripts/types';
-import { TakeChance } from 'take-chance';
 import { Router } from '@angular/router';
+import { PERSONAL_DATA } from 'src/app/scripts/constants';
+import { HeightMeasurementObject, PersonalDataID, PersonalDataUpdateModalStates, PersonalDataUpdateValueStrings, WeightMeasurementObject } from 'src/app/scripts/types';
 import { feetFloatToFeetInches } from 'src/app/scripts/unit_convert';
+import { PersonalDataService } from './../../../services/personal-data.service';
 
 @Component({
   templateUrl: './update-personal-data.component.html',
