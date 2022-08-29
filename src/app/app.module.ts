@@ -6,7 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { HomePage } from './pages/home/home.component';
-import { GoBackComponent } from './components/go-back/go-back.component';
+import { GoBackComponent } from './components/buttons/go-back/go-back.component';
 import { SettingsPage } from './pages/settings/settings.component';
 import { RadioCardComponent } from './components/forms/radio-card/radio-card.component';
 import { PersonalDataComponent } from './pages/personal-data/personal-data.component';
@@ -23,7 +23,7 @@ import { TransparentButtonComponent } from './components/buttons/transparent-but
 import { RadioBarComponent } from './components/forms/radio-bar/radio-bar.component';
 import { WeightAdderComponent } from './components/forms/weight-adder/weight-adder.component';
 import { WeightAdderItemComponent } from './components/forms/weight-adder/weight-adder-item/weight-adder-item.component';
-import { NumberInputComponent } from './components/forms/number-input/number-input.component';
+import { NumberInputComponent } from './components/forms/inputs/number-input/number-input.component';
 import { SettingsRowComponent } from './components/data-row/data-row.component';
 import { SettingsUnitConversionsPage } from './pages/settings/settings-unit-conversions/settings-unit-conversions.component';
 import { SettingsWeightsPage } from './pages/settings/settings-weights/settings-weights.component';
@@ -44,16 +44,16 @@ import { PersonalDataMainPageComponent } from './pages/personal-data/personal-da
 import { WeightAdderFormComponent } from './components/forms/weight-adder/weight-adder-form/weight-adder-form.component';
 import { PersonalDataDisplayComponent } from './components/personal-data-display/personal-data-display.component';
 import { InfoUpdateFormComponent } from './components/forms/info-update-form/info-update-form.component';
-import { DateInputComponent } from './components/forms/date-input/date-input.component';
+import { DateInputComponent } from './components/forms/inputs/date-input/date-input.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { UpdatePersonalDataComponent } from './pages/personal-data/update-personal-data/update-personal-data.component';
-import { WeightInputComponent } from './components/forms/weight-input/weight-input.component';
+import { WeightInputComponent } from './components/forms/inputs/weight-input/weight-input.component';
 import { FullPageModalComponent } from './components/modal/full-page-modal/full-page-modal.component';
 import { CheckmarkSpinnerComponent } from './components/spinners/checkmark-spinner/checkmark-spinner.component';
 import { MultistepFormComponent } from './components/forms/multistep-form/multistep-form.component';
 import { InitialDataFormComponent } from './components/forms/initial-data-form/initial-data-form.component';
-import { HeightInputComponent } from './components/forms/height-input/height-input.component';
+import { HeightInputComponent } from './components/forms/inputs/height-input/height-input.component';
 import { InfoBoxComponent } from './components/info-box/info-box.component';
 import { SelectComponent } from './components/forms/select/select.component';
 import { SimpleSpinnerComponent } from './components/spinners/simple-spinner/simple-spinner.component';
@@ -71,7 +71,7 @@ import { ExercisesEditPage } from './pages/exercises/exercises-edit/exercises-ed
 import { ExercisesExercisePage } from './pages/exercises/exercises-exercise/exercises-exercise.component';
 import { CreateCardComponent } from './components/create-card/create-card.component';
 import { ExerciseCardComponent } from './components/exercise-card/exercise-card.component';
-import { BarScaleComponent } from './components/bar-scale/bar-scale.component';
+import { BarScaleComponent } from './components/internal/bar-scale/bar-scale.component';
 import { InputWithUnitComponent } from './components/internal/input-with-unit/input-with-unit.component';
 import { LengthInputComponent } from './components/forms/inputs/length-input/length-input.component';
 

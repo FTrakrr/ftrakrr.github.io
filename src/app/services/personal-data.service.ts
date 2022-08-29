@@ -8,7 +8,7 @@ import { MoreRounding } from 'more-rounding';
 import { Duration } from 'duration-string';
 import { PersonalDataUpdateOutput, MeasurementObject } from 'src/app/scripts/types';
 import { DateTime } from 'luxon';
-import { BarScaleRange } from 'src/app/components/bar-scale/bar-scale.component';
+import { BarScaleRange } from 'src/app/components/internal/bar-scale/bar-scale.component';
 
 export type BMIObject = { value: number, range: BarScaleRange };
 
