@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Settings } from 'src/app/scripts/types';
-import { RadioBarOption } from 'src/app/components/forms/radio-bar/radio-bar.component';
+import { RadioBarOption, Settings } from 'src/app/scripts/types';
 import { SettingsService } from './../../../services/settings.service';
 import { TimerService } from './../../../services/timer.service';
 

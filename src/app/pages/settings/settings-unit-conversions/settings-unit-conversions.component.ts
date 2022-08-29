@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SettingsService } from './../../../services/settings.service';
-import { RadioBarOption } from 'src/app/components/forms/radio-bar/radio-bar.component';
-import { Settings } from 'src/app/scripts/types';
+import { RadioBarOption, Settings } from 'src/app/scripts/types';
 
 @Component({
   templateUrl: './settings-unit-conversions.component.html',
