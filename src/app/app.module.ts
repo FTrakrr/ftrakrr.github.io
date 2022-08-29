@@ -71,6 +71,7 @@ import { ExercisesEditPage } from './pages/exercises/exercises-edit/exercises-ed
 import { ExercisesExercisePage } from './pages/exercises/exercises-exercise/exercises-exercise.component';
 import { CreateCardComponent } from './components/create-card/create-card.component';
 import { ExerciseCardComponent } from './components/exercise-card/exercise-card.component';
+import { BarScaleComponent } from './components/bar-scale/bar-scale.component';
 
 @NgModule({
   declarations: [
@@ -142,6 +143,7 @@ import { ExerciseCardComponent } from './components/exercise-card/exercise-card.
     ExercisesExercisePage,
     CreateCardComponent,
     ExerciseCardComponent,
+    BarScaleComponent,
   ],
   imports: [
   BrowserModule,

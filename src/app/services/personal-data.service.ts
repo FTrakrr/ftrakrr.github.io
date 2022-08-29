@@ -8,12 +8,13 @@ import { MoreRounding } from 'more-rounding';
 import { Duration } from 'duration-string';
 import { PersonalDataUpdateOutput, MeasurementObject } from 'src/app/scripts/types';
 import { DateTime } from 'luxon';
+import { BarScaleRange } from '../components/bar-scale/bar-scale.component';
 
-
+export type BMIObject = { value: number, range: BarScaleRange };
 
 declare global {
     interface Array<T> {
-        last(): T | undefined;
+        last(): T;
     }
 }
 
@@ -124,11 +125,11 @@ export class PersonalDataService {
             heightData.date.valueOf()
         );
         let bmi = {
-            value: bmiData?.bmi,
+            value: bmiData?.value,
             updated: maxDate && DateTime.fromMillis(maxDate).setLocale('en-US').toRelative(),
             updatedDate: maxDate && new Date(maxDate),
-            subvalue: bmiData?.name,
-            subvalueColor: bmiData?.color,
+            subvalue: bmiData?.range.nameString,
+            subvalueColor: bmiData?.range.color,
             object: bmiData,
         }
         //* gender
@@ -204,17 +205,13 @@ export class PersonalDataService {
         }
         hght /= 100;
         let bmi = MoreRounding.toPrecision(wght / hght / hght, 2);
-        if (bmi < 18.5) return { bmi, ...BMI_SCALE[0] }
-        if (bmi <= 24) return { bmi, ...BMI_SCALE[1] }
-        if (bmi <= 30) return { bmi, ...BMI_SCALE[2] }
-        if (bmi <= 35) return { bmi, ...BMI_SCALE[3] }
-        if (bmi <= 40) return { bmi, ...BMI_SCALE[4] }
-        return { bmi, ...BMI_SCALE[5] }
+        for (const range of BMI_SCALE) {
+            if (bmi < range.high) return { value: bmi, range }
+        }
+        return { value: bmi, range: BMI_SCALE.last() }
     }
     static toUnitString(obj?: MeasurementObject, precision: number = 1) {
         if (!obj || !obj.value) return '';
         return `${MoreRounding.toPrecision(obj.value, precision)} ${obj.unit}`;
     }
 }
-
-export type BMIObject = { bmi: number, range: string, name: string, color: string };

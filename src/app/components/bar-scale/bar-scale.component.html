@@ -1,0 +1,22 @@
+<div class="bar-scale-wrapper">
+    <div class="bar-scale-container">
+        <div class="bar-scale-labels">
+            <span
+                class="bar-scale-label"
+                *ngFor="let range of ranges"
+                [style.flex-grow]="range.width / totalWidths"
+            >
+                <span>{{ range.low }}</span>
+            </span>
+        </div>
+        <div class="bar-scale">
+            <div
+                class="bmi-bar-item"
+                *ngFor="let range of ranges"
+                [style.flex-grow]="range.width / totalWidths"
+                [style.background-color]="range.color"
+            ></div>
+        </div>
+        <div class="bar-scale-marker" [style.left]="'max(5px, min( calc(100% - 5px), ' + (markerPos / totalWidths * 100) + '%))'"></div>
+    </div>
+</div>

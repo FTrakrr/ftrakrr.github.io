@@ -1,4 +1,5 @@
 import { PersonalDataConstant } from "src/app/scripts/types";
+import { BarScaleRange } from "../components/bar-scale/bar-scale.component";
 
 //! personal data
 export const PERSONAL_DATA: PersonalDataConstant[] = [
@@ -75,46 +76,54 @@ export const PERSONAL_DATA: PersonalDataConstant[] = [
     },
 ];
 export const BMI_SCALE: { range: string, name: string, color: string, width: number, range_low?: number }[] = [
+
+export const BMI_SCALE: BarScaleRange[] = [
     {
-        range: '<18.5',
-        name: 'Underweight',
-        color: '#0096fa',
-        width: 15,
+        rangeString: '<18.5',
+        nameString: 'Underweight',
+        color: BLUE,
+        width: 1.5,
+        low: 12,
     },
     {
-        range: '18.5–24',
-        name: 'Normal weight',
-        color: '#079423',
-        width: 30,
-        range_low: 18.5,
+        rangeString: '18.5–24',
+        nameString: 'Normal weight',
+        color: GREEN,
+        width: 3,
+        low: 18.5,
+        high: 25,
     },
     {
-        range: '24–30',
-        name: 'Overweight',
-        color: '#97cf35',
-        width: 20,
-        range_low: 24,
+        rangeString: '25–30',
+        nameString: 'Overweight',
+        color: LIME,
+        width: 2,
+        low: 25,
+        high: 30,
     },
     {
-        range: '30–35',
-        name: '1st degree obese',
-        color: '#d1c411',
-        width: 15,
-        range_low: 30,
+        rangeString: '30–35',
+        nameString: '1st degree obese',
+        color: YELLOW,
+        width: 1.5,
+        low: 30,
+        high: 35,
     },
     {
-        range: '35–40',
-        name: '2nd degree obese',
-        color: '#d16b11',
-        width: 10,
-        range_low: 35,
+        rangeString: '35–40',
+        nameString: '2nd degree obese',
+        color: ORANGE,
+        width: 1,
+        low: 35,
+        high: 40,
     },
     {
-        range: '>40',
-        name: '3rd degree obese',
-        color: '#d12711',
-        width: 10,
-        range_low: 40,
+        rangeString: '>40',
+        nameString: '3rd degree obese',
+        color: RED,
+        width: 1,
+        low: 40,
+        high: 60,
     }
 ];
 export const GENDER_MAP = {
