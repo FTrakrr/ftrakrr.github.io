@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class CreateCardComponent {
   @Input() vertical = false;
+  @Input() text?: string;
 }
