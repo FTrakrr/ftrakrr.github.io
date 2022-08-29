@@ -146,9 +146,9 @@ export const LBS_TO_KG = {
     precise: 0.45359237,
     pretty: 0.45,
 };
-export const CM_TO_INCH = {
-    precise: 2.54,
-    pretty: 2.5,
+export const INCH_TO_CM = {
+    precise: 0.3937007874,
+    pretty: 0.4,
 };
 export const M_TO_FT = {
     precise: 3.28084,

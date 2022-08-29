@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter, AfterContentInit } from '@angul
 import { feetFloatToFeetInches, feetInchesToFeetFloat } from 'src/app/scripts/unit_convert';
 import { HeightMeasurementObject, HeightUnit } from 'src/app/scripts/types';
 import { MoreRounding } from 'more-rounding';
-import { INCHES_IN_FOOT, CM_TO_INCH } from 'src/app/scripts/constants';
+import { INCHES_IN_FOOT, INCH_TO_CM } from 'src/app/scripts/constants';
 
 @Component({
   selector: 'app-height-input',
@@ -56,11 +56,11 @@ export class HeightInputComponent implements AfterContentInit {
       if (unit == 'cm') {
         // converting from ft+in to cm
         let feetFloat = feetInchesToFeetFloat(this.valueInternal.mainValue ?? 0, this.valueInternal.inches ?? 0);
-        this.valueInternal.mainValue = MoreRounding.roundDown(feetFloat * INCHES_IN_FOOT * CM_TO_INCH.precise);
+        this.valueInternal.mainValue = MoreRounding.roundDown(feetFloat * INCHES_IN_FOOT / INCH_TO_CM.precise);
       }
       else {
         //converting from cm to ft+in
-        let [feet, inches] = feetFloatToFeetInches((this.valueInternal.mainValue ?? 0) / INCHES_IN_FOOT / CM_TO_INCH.precise);
+        let [feet, inches] = feetFloatToFeetInches((this.valueInternal.mainValue ?? 0) / INCHES_IN_FOOT * INCH_TO_CM.precise);
         this.valueInternal.mainValue = feet;
         this.valueInternal.inches = MoreRounding.toMultiple(inches, 0.5);
       }

@@ -1,5 +1,5 @@
 import { MoreRounding } from 'more-rounding';
-import { INCHES_IN_FOOT, LBS_TO_KG, CM_TO_INCH, M_TO_FT } from 'src/app/scripts/constants';
+import { INCHES_IN_FOOT, LBS_TO_KG, INCH_TO_CM, M_TO_FT } from 'src/app/scripts/constants';
 
 export function feetFloatToFeetInches(feet: number) {
     return [
@@ -19,10 +19,10 @@ export function lbsToKg(value: number, precise: boolean = true): number {
 }
 // length
 export function cmToIn(value: number, precise: boolean = true): number {
-    return value / CM_TO_INCH[precise ? 'precise' : 'pretty'];
+    return value * INCH_TO_CM[precise ? 'precise' : 'pretty'];
 }
 export function inToCm(value: number, precise: boolean = true): number {
-    return value * CM_TO_INCH[precise ? 'precise' : 'pretty'];
+    return value / INCH_TO_CM[precise ? 'precise' : 'pretty'];
 }
 // height
 export function cmToFtFloat(value: number, precise: boolean = true): number {

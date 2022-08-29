@@ -3,7 +3,7 @@ import { Subject } from 'rxjs';
 import { PersonalData, WeightMeasurementObject, UserPhysiqueObject, HeightMeasurementObject, PersonalDataInternalObject, UserGender } from 'src/app/scripts/types';
 import { LocalStorageService } from './local-storage.service';
 import DEFAULTS from 'src/app/scripts/defaults';
-import { LBS_TO_KG, GENDER_MAP, BMI_SCALE, CM_TO_INCH } from '../scripts/constants';
+import { LBS_TO_KG, GENDER_MAP, BMI_SCALE, INCH_TO_CM } from '../scripts/constants';
 import { MoreRounding } from 'more-rounding';
 import { Duration } from 'duration-string';
 import { PersonalDataUpdateOutput, MeasurementObject } from 'src/app/scripts/types';
@@ -200,7 +200,7 @@ export class PersonalDataService {
             wght *= LBS_TO_KG.precise;
         }
         if (height.unit == "ft") {
-            hght /= CM_TO_INCH.precise;
+            hght *= INCH_TO_CM.precise;
         }
         hght /= 100;
         let bmi = MoreRounding.toPrecision(wght / hght / hght, 2);
