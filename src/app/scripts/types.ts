@@ -44,11 +44,12 @@ export type SetType = 'warmup' | 'normal' | 'cooldown';
  */
 export type SetCompletionType = 'unmarked' | 'completed' | 'failed' | 'dropped' | 'skipped';
 
-export type AnyUnit = WeightUnit | HeightUnit | LengthUnit | DistanceUnit;
+export type AnyUnit = WeightUnit | HeightUnit | LengthUnit | DistanceUnit | SpeedUnit;
 export type WeightUnit = 'kg' | 'lbs';
 export type HeightUnit = 'cm' | 'ft' | 'in';
 export type LengthUnit = 'cm' | 'in';
 export type DistanceUnit = 'km' | 'mi';
+export type SpeedUnit = 'kmph' | 'mph';
 
 //! components
 /**
@@ -115,7 +116,7 @@ export interface RadioCardOption extends RadioBarOption {
 
 //! personal data
 // measurement objects
-export type MeasurementObject = WeightMeasurementObject | HeightMeasurementObject | LengthMeasurementObject | DistanceMeasurementObject;
+export type MeasurementObject = WeightMeasurementObject | HeightMeasurementObject | LengthMeasurementObject | DistanceMeasurementObject | SpeedMeasurementObject;
 export type WeightMeasurementObject = {
     value: number | null;
     unit: WeightUnit;
@@ -131,6 +132,10 @@ export type LengthMeasurementObject = {
 export type DistanceMeasurementObject = {
     value: number | null;
     unit: DistanceUnit;
+}
+export type SpeedMeasurementObject = {
+    value: number | null;
+    unit: SpeedUnit;
 }
 // other personal data objects
 export type UserPhysiqueObject = {
