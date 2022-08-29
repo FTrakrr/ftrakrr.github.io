@@ -1,0 +1,13 @@
+<app-input-with-unit
+    [value]="value"
+    (valueChange)="onValueChange($event)"
+    [units]="['km', 'mi']"
+    [conversionFactor]="conversionFactor"
+    [reverseOrder]="reverseOrder"
+    [horizontal]="horizontal"
+    [unitDisabled]="unitDisabled"
+    [noButtons]="noButtons"
+    [alwaysShowButtons]="alwaysShowButtons"
+    [alwaysShowBorder]="alwaysShowBorder"
+    [buttonIncrement]="0.1"
+></app-input-with-unit>

@@ -23,8 +23,7 @@ export class WeightInputComponent {
   @Input() alwaysShowBorder: boolean = false;
 
   onValueChange(value: MeasurementObject) {
-    value = value as WeightMeasurementObject;
-    this.value = value;
+    this.value = value as WeightMeasurementObject;
     this.valueChange.emit(this.value);
   }
 }
