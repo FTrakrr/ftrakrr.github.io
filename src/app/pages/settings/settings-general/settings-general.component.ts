@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RadioBarOption } from 'src/app/components/forms/radio-bar/radio-bar.component';
-import { Settings } from 'src/app/scripts/types';
+import { RadioBarOption, Settings } from 'src/app/scripts/types';
 import { SettingsService } from './../../../services/settings.service';
 
 @Component({
