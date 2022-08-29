@@ -12,9 +12,12 @@
             <div class="hidden">
                 <ng-content></ng-content>
             </div>
+            <div class="svg-container" *ngIf="opt.svg">
+                <img [src]="'/assets/'+opt.svg" alt="">
+            </div>
             <fa-icon class="icon" *ngIf="opt.faIcon" [icon]="opt.faIcon" [iconstyle]="opt.iconstyle"></fa-icon>
             <bi-icon class="icon" *ngIf="opt.icon" [icon]="opt.icon"></bi-icon>
-            <h4 class="uppercase" *ngIf="opt.title">{{ opt.title }}</h4>
+            <span class="title uppercase" *ngIf="opt.title">{{ opt.title }}</span>
             <span class="subtitle" *ngIf="opt.subtitle">{{ opt.subtitle }}</span>
             <span class="desc" *ngIf="opt.desc">{{ opt.desc }}</span>
         </label>
