@@ -31,7 +31,6 @@ export type BasicIncreaseType = 'weight' | 'reps' | 'reps_until';
  */
 export type PlanColor = 'red' | 'pink' | 'purple' | 'deep-purple' | 'indigo' | 'blue' | 'light-blue' | 'cyan' | 'teal' | 'green' | 'light-green' | 'lime' | 'yellow' | 'amber' | 'orange' | 'deep-orange';
 
-
 export type SetType = 'warmup' | 'normal' | 'cooldown';
 
 /**
@@ -45,9 +44,11 @@ export type SetType = 'warmup' | 'normal' | 'cooldown';
  */
 export type SetCompletionType = 'unmarked' | 'completed' | 'failed' | 'dropped' | 'skipped';
 
+export type AnyUnit = WeightUnit | HeightUnit | LengthUnit | DistanceUnit;
 export type WeightUnit = 'kg' | 'lbs';
 export type HeightUnit = 'cm' | 'ft' | 'in';
 export type LengthUnit = 'cm' | 'in';
+export type DistanceUnit = 'km' | 'mi';
 
 //! components
 /**
@@ -112,6 +113,8 @@ export interface RadioCardOption extends RadioBarOption {
 }
 
 //! personal data
+// measurement objects
+export type MeasurementObject = WeightMeasurementObject | HeightMeasurementObject | LengthMeasurementObject | DistanceMeasurementObject;
 export type WeightMeasurementObject = {
     value: number | null;
     unit: WeightUnit;
@@ -124,7 +127,11 @@ export type LengthMeasurementObject = {
     value: number | null;
     unit: LengthUnit;
 }
-export type MeasurementObject = WeightMeasurementObject | HeightMeasurementObject | LengthMeasurementObject;
+export type DistanceMeasurementObject = {
+    value: number | null;
+    unit: DistanceUnit;
+}
+// other personal data objects
 export type UserPhysiqueObject = {
     date: Date;
     value: MeasurementObject;
