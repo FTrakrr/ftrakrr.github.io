@@ -4,6 +4,7 @@ import { PERSONAL_DATA } from 'src/app/scripts/constants';
 import { HeightMeasurementObject, LengthMeasurementObject, MeasurementObject, PersonalDataID, PersonalDataUpdateDefaults, PersonalDataUpdateModalStates, PersonalDataUpdateOutput, PersonalDataUpdateValueStrings, WeightMeasurementObject } from 'src/app/scripts/types';
 import { TakeChance } from 'take-chance';
 import { Router } from '@angular/router';
+import { feetFloatToFeetInches } from 'src/app/scripts/unit_convert';
 
 @Component({
   templateUrl: './update-personal-data.component.html',
@@ -48,13 +49,34 @@ export class UpdatePersonalDataComponent implements OnInit {
     } as HeightMeasurementObject;
 
     for (const key in this.formData) {
-      const item = this.formData[key as keyof typeof this.formData];
-      this.formValueStrings[key as PersonalDataID] = PersonalDataService.toUnitString(item as MeasurementObject);
+      let item = this.formData[key as keyof typeof this.formData];
+      item = item as HeightMeasurementObject;
+
+      //display as ft&in instead of just ft
+      if (item.unit == 'ft') {
+        let [ft, inch] = feetFloatToFeetInches(item.value);
+        let ftStr = PersonalDataService.toUnitString({ unit: 'ft', value: ft });
+        let inchStr = PersonalDataService.toUnitString({ unit: 'in', value: inch });
+        this.formValueStrings[key as PersonalDataID] = `${ftStr} ${inchStr}`;
+        continue;
+      }
+      this.formValueStrings[key as PersonalDataID] = PersonalDataService.toUnitString(item);
     }
   }
 
   onValueChangeConfirm(itemId: PersonalDataID) {
-    this.formValueStrings[itemId] = PersonalDataService.toUnitString(this.formData[itemId as keyof typeof this.personalData] as MeasurementObject);
+    let item = this.formData[itemId];
+    item = item as HeightMeasurementObject;
+
+    //display as ft&in instead of just ft
+    if (item.unit == 'ft') {
+      let [ft, inch] = feetFloatToFeetInches(item.value);
+      let ftStr = PersonalDataService.toUnitString({ unit: 'ft', value: ft });
+      let inchStr = PersonalDataService.toUnitString({ unit: 'in', value: inch });
+      this.formValueStrings[itemId] = `${ftStr} ${inchStr}`;
+      return;
+    }
+    this.formValueStrings[itemId] = PersonalDataService.toUnitString(item);
   }
   onConfirmClick() {
     this.personalDataService.setPersonalData(this.formData, this.date);
