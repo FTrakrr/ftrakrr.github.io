@@ -1,0 +1,24 @@
+.time-input-wrapper {
+    display: flex;
+    gap: 1px
+}
+app-number-input {
+    width: 5.5ch;
+    position: relative;
+}
+app-number-input:nth-of-type(1)::after,
+app-number-input:nth-of-type(3)::before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    top: 0;
+    bottom: 0;
+    z-index: 3;
+    background: var(--disabled);
+}
+app-number-input:nth-of-type(1)::after {
+    right: -1px;
+}
+app-number-input:nth-of-type(3)::before {
+    left: -1px;
+}

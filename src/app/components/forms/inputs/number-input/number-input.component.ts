@@ -16,6 +16,9 @@ export class NumberInputComponent {
 
   //input element
   @ViewChild('input') inputEl!: ElementRef;
+
+  //rounde corners options
+  @Input() cornersType: 'none' | 'left' | 'right' | 'all' = 'all';
   
   //button-related
   @Input() noButtons: boolean = false;

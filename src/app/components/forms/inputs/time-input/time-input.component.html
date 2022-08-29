@@ -1,0 +1,33 @@
+<div class="time-input-wrapper">
+    <app-number-input
+        *ngIf="useHours"
+        [(value)]="hours"
+        (valueChange)="emit()"
+        [noButtons]="true"
+        [alwaysShowBorder]="true"
+        [min]="0"
+        [max]="24"
+        placeholder="hh"
+        cornersType="left"
+    ></app-number-input>
+    <app-number-input
+        [(value)]="minutes"
+        (valueChange)="emit()"
+        [noButtons]="true"
+        [alwaysShowBorder]="true"
+        [min]="0"
+        [max]="59"
+        placeholder="mm"
+        [cornersType]="useHours ? 'none' : 'left'"
+    ></app-number-input>
+    <app-number-input
+        [(value)]="seconds"
+        (valueChange)="emit()"
+        [noButtons]="true"
+        [alwaysShowBorder]="true"
+        [min]="0"
+        [max]="59"
+        placeholder="ss"
+        cornersType="right"
+    ></app-number-input>
+</div>

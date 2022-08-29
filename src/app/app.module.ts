@@ -74,6 +74,7 @@ import { BarScaleComponent } from './components/internal/bar-scale/bar-scale.com
 import { InputWithUnitComponent } from './components/internal/input-with-unit/input-with-unit.component';
 import { LengthInputComponent } from './components/forms/inputs/length-input/length-input.component';
 import { DistanceInputComponent } from './components/forms/inputs/distance-input/distance-input.component';
+import { TimeInputComponent } from './components/forms/inputs/time-input/time-input.component';
 import { SpeedInputComponent } from './components/forms/inputs/speed-input/speed-input.component';
 
 @NgModule({
@@ -149,6 +150,7 @@ import { SpeedInputComponent } from './components/forms/inputs/speed-input/speed
     InputWithUnitComponent,
     LengthInputComponent,
     DistanceInputComponent,
+    TimeInputComponent,
     SpeedInputComponent,
   ],
   imports: [
