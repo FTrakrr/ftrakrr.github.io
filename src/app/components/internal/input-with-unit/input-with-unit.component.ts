@@ -16,15 +16,15 @@ export class InputWithUnitComponent implements AfterContentInit {
 
   unitOptions!: [RadioBarOption, RadioBarOption];
 
-  @Input('reverse-order') reverseOrder: boolean = false;
+  @Input() reverseOrder: boolean = false;
   @Input() horizontal: boolean = false;
-  @Input('unit-disabled') unitDisabled = false;
+  @Input() unitDisabled = false;
 
   //button-related
-  @Input('no-buttons') noButtons: boolean = false;
-  @Input('buttons-always-show') alwaysShowButtons: boolean = true;
-  @Input('border-always-show') alwaysShowBorder: boolean = false;
-  @Input('button-increment') buttonIncrement: number = 0.1;
+  @Input() noButtons: boolean = false;
+  @Input() alwaysShowButtons: boolean = true;
+  @Input() alwaysShowBorder: boolean = false;
+  @Input() buttonIncrement: number = 0.1;
 
   constructor() { }
 

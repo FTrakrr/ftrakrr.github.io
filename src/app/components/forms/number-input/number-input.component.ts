@@ -17,19 +17,19 @@ export class NumberInputComponent {
   @ViewChild('input') inputEl!: ElementRef;
   
   //button-related
-  @Input('no-buttons') noButtons: boolean = false;
-  @Input('button-increment') buttonIncrement: number = 1;
-  @Input('buttons-always-show') alwaysShowButtons: boolean = false;
-  @Input('border-always-show') alwaysShowBorder: boolean = false;
+  @Input() noButtons: boolean = false;
+  @Input() buttonIncrement: number = 1;
+  @Input() alwaysShowButtons: boolean = false;
+  @Input() alwaysShowBorder: boolean = false;
 
   //number options
-  @Input('allow-negative') allowNegative: boolean = false;
+  @Input() allowNegative: boolean = false;
   @Input() min?: number;
   @Input() max?: number;
 
   //emit the number from the input on change and on input
-  @Output('app-change') change = new EventEmitter<number | null>();
-  @Output('app-input') input = new EventEmitter<number | null>();
+  @Output() change = new EventEmitter<number | null>();
+  @Output() input = new EventEmitter<number | null>();
 
   // private _watchForChanges = false;
 

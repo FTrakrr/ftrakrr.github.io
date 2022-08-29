@@ -7,22 +7,22 @@ import { Component, Input } from '@angular/core';
 })
 export class SettingsRowComponent {
   @Input() icon?: string;
-  @Input('fa-icon') faIcon?: string;
+  @Input() faIcon?: string;
   @Input() iconstyle?: string = "solid";
   @Input() title!: string;
   @Input() routerLink?: string;
   @Input() href?: string;
-  @Input('keep-arrow-space') keepArrowSpace: boolean = false;
+  @Input() keepArrowSpace: boolean = false;
   @Input() gap?: boolean;
-  @Input('hide-arrow') hideArrow?: boolean;
-  @Input('show-arrow') showArrow: boolean = false;
+  @Input() hideArrow?: boolean;
+  @Input() showArrow: boolean = false;
 
   @Input() value?: any;
-  @Input('default-value') defaultValue?: any;
+  @Input() defaultValue?: any;
   @Input() subvalue?: any;
-  @Input('subvalue-opacity') subvalueOpacity?: any;
-  @Input('subvalue-color') subvalueColor?: any;
-  @Input('subvalue-font-weight') subvalueFontWeight?: any;
+  @Input() subvalueOpacity?: any;
+  @Input() subvalueColor?: any;
+  @Input() subvalueFontWeight?: any;
 
   constructor() { }
 }

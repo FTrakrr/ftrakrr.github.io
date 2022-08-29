@@ -18,14 +18,14 @@
                 *ngFor="let item of personalDataConstant;"
                 [title]="item.display.title"
                 [routerLink]="item.display.routerLink"
-                [keep-arrow-space]="true"
+                [keepArrowSpace]="true"
                 [gap]="item.display.gapBefore"
                 [value]="personalData[item.id]?.value"
-                [default-value]="item.display.defaultValue"
+                [defaultValue]="item.display.defaultValue"
                 [subvalue]="personalData[item.id]?.subvalue"
-                [subvalue-color]="personalData[item.id]?.subvalueColor"
-                [subvalue-opacity]="item.display.subvalueOpacity"
-                [subvalue-font-weight]="item.display.subvalueFontWeight"
+                [subvalueColor]="personalData[item.id]?.subvalueColor"
+                [subvalueOpacity]="item.display.subvalueOpacity"
+                [subvalueFontWeight]="item.display.subvalueFontWeight"
             ></app-data-row>
         </div>
     </section>

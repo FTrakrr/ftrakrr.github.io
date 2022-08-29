@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { WeightUnit } from 'src/app/scripts/types';
+import { WeightMeasurementObject } from 'src/app/scripts/types';
 
 @Component({
   selector: 'app-weight-adder-item',
@@ -7,24 +7,18 @@ import { WeightUnit } from 'src/app/scripts/types';
   styleUrls: ['./weight-adder-item.component.scss']
 })
 export class WeightAdderItemComponent {
-  @Input() value!: number;
-  @Input() unit!: WeightUnit;
+  @Input() value!: WeightMeasurementObject;
 
   triggerRemove = false;
 
-  @Output('app-remove') remove = new EventEmitter<
-    {
-      value: number,
-      unit: WeightUnit,
-    }
-  >();
+  @Output() remove = new EventEmitter<WeightMeasurementObject>();
 
   constructor() { }
 
   onRemove() {
     this.triggerRemove = true;
     setTimeout(() => {
-      this.remove.emit({ value: this.value, unit: this.unit });
+      this.remove.emit(this.value);
     }, 750);
   }
 }

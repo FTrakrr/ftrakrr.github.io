@@ -17,20 +17,20 @@ export class CalendarComponent implements OnInit, OnChanges {
   date!: Date;
 
   // day options
-  @Input('enabled-days') enabledDays: boolean[] = new Array(31).fill(true);
-  @Input('active-date') activeDate?: Date;
+  @Input() enabledDays: boolean[] = new Array(31).fill(true);
+  @Input() activeDate?: Date;
+  @Output() activeDateChange = new EventEmitter<Date>();
   selectedDate?: Date;
 
   // view options
-  @Input('hide-heading') hideHeading?: boolean;
-  @Input('hide-labels') hideLabels?: boolean;
-  @Input('hide-back-to-present') hideBackToPresent?: boolean;
-  @Input('fixed-height') fixedHeight?: boolean = true;
+  @Input() hideHeading?: boolean;
+  @Input() hideLabels?: boolean;
+  @Input() hideBackToPresent?: boolean;
+  @Input() fixedHeight?: boolean = true;
 
   calendarArray: CalendarArrayItem[] = [];
   dayArray: string[] = [];
 
-  @Output('app-select') select = new EventEmitter<Date>();
 
   constructor(
     private settingsService: SettingsService,
@@ -161,7 +161,7 @@ export class CalendarComponent implements OnInit, OnChanges {
   }
 
   private _emit(date: Date) {
-    this.select.emit(date);
+    this.activeDateChange.emit(date);
   }
 }
 

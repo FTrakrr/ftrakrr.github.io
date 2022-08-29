@@ -7,16 +7,16 @@
     ></app-transparent-button>
     <app-modal
         title="Select date"
-        cancel="Cancel"
-        ok="Confirm"
+        cancelButtonText="Cancel"
+        okButtonText="Confirm"
         [(open)]="isModalOpen"
-        (app-confirm)="onConfirm()"
-        [width-max-content]="true"
+        (confirm)="onConfirm()"
+        [isWidthMaxContent]="true"
         >
         <div class="calendar-container">
             <app-calendar
-                (app-select)="dateStorage = $event"
-                [active-date]="date"
+                (activeDateChange)="dateStorage = $event"
+                [activeDate]="date"
             ></app-calendar>
             <span>
                 Selected:

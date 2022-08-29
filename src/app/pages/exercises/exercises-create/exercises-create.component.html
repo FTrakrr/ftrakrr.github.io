@@ -1,7 +1,7 @@
 <div class="container">
     <app-multistep-form
-        [total-steps]="4"
-        [step-completenes]="completionStatuses"
+        [totalSteps]="3"
+        [stepCompleteness]="completionStatuses"
         (stepChange)="onStepConfirm($event)"
         (finished)="onFinish()"
     >

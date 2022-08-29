@@ -6,8 +6,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./logo.component.scss']
 })
 export class LogoComponent implements OnInit {
-  @Input('show-name') showName: boolean = true;
-  @Input('show-logo') showLogo: boolean = true;
+  @Input() showName: boolean = true;
+  @Input() showLogo: boolean = true;
 
   constructor() { }
 

@@ -14,7 +14,7 @@
         >
             <app-data-row
                 [title]="item.updateForm.title || item.display.title"
-                [show-arrow]="true"
+                [showArrow]="true"
                 (click)="formModalStates[item.id] = true;"
             >
                 {{ formValueStrings[item.id] }}
@@ -22,8 +22,8 @@
             <app-modal
                 [(open)]="formModalStates[item.id]"
                 [title]="item.updateForm.title || item.display.title"
-                [width-max-content]="true"
-                (app-confirm)="onValueChangeConfirm(item.id)"
+                [isWidthMaxContent]="true"
+                (confirm)="onValueChangeConfirm(item.id)"
             >
                 <app-weight-input
                     *ngSwitchCase="'weight'"
@@ -46,7 +46,7 @@
     </section>
 </div>
 <app-full-page-modal
-    [middle-only]="true"
+    [middleOnly]="true"
     [open]="openFakeUpdatingModal"
 >
     <div class="flex flex-column flex-align-center">

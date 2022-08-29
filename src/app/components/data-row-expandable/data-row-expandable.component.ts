@@ -7,17 +7,17 @@ import { Component, Input, Output, EventEmitter, AfterContentInit } from '@angul
 })
 export class DataRowExpandableComponent implements AfterContentInit {
   @Input() gap?: boolean;
-  @Input('hide-arrow') hideArrow: boolean = false;
+  @Input() hideArrow: boolean = false;
   @Input() title!: string;
 
   @Input() value?: any;
-  @Input('default-value') defaultValue?: any;
+  @Input() defaultValue?: any;
   @Input() subvalue?: any;
-  @Input('subvalue-opacity') subvalueOpacity?: any;
-  @Input('subvalue-color') subvalueColor?: any;
-  @Input('subvalue-font-weight') subvalueFontWeight?: any;
+  @Input() subvalueOpacity?: any;
+  @Input() subvalueColor?: any;
+  @Input() subvalueFontWeight?: any;
 
-  @Input('more-data') moreData?: MoreDataObject;
+  @Input() moreData?: MoreDataObject;
 
   @Input() expanded: boolean = false;
   @Output() expandedChange = new EventEmitter<boolean>();

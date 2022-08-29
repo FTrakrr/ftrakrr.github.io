@@ -19,12 +19,12 @@ export class HeightInputComponent implements AfterContentInit {
     { value: 'ft' as HeightUnit, title: 'ft' },
   ];
 
-  @Input('unit-disabled') unitDisabled = false;
+  @Input() unitDisabled = false;
 
   //button-related
-  @Input('no-buttons') noButtons: boolean = false;
-  @Input('buttons-always-show') alwaysShowButtons: boolean = true;
-  @Input('border-always-show') alwaysShowBorder: boolean = false;
+  @Input() noButtons: boolean = false;
+  @Input() alwaysShowButtons: boolean = true;
+  @Input() alwaysShowBorder: boolean = false;
 
   constructor() { }
 

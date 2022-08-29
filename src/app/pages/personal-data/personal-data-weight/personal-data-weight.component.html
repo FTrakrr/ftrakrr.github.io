@@ -16,7 +16,7 @@
                 [options]="unitOptions"
                 [value]="unit"
                 (valueChange)="onHistoryUnitChange($event)"
-                [fit-content]="true"
+                [fitContent]="true"
             ></app-radio-bar>
         </h4>
         <p>
@@ -28,7 +28,7 @@
             *ngFor="let item of weightHistoryData_copy; let index = index;"
             [title]="item.dateString"
             [value]="item.valueString"
-            [more-data]="item.moreData"
+            [moreData]="item.moreData"
             [(expanded)]="item.expanded"
         ></app-data-row-expandable>
     </section>

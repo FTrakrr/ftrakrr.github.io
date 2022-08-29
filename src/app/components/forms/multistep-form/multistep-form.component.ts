@@ -8,9 +8,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class MultistepFormComponent implements OnInit {
 
   /** The total number of steps in the form */
-  @Input('total-steps') totalSteps!: number;
+  @Input() totalSteps!: number;
   /** An array of steps that can be skipped */
-  @Input('step-skipability') stepSkipability: number[] = [];
+  @Input() stepSkipability: number[] = [];
   /** 
   An array of booleans representing which steps are completed.
   
@@ -18,11 +18,11 @@ export class MultistepFormComponent implements OnInit {
 
   Individual booleans are updated by the parent component.
   */
-  @Input('step-completenes') stepCompleteness: boolean[] = [];
+  @Input() stepCompleteness: boolean[] = [];
   stepsDone = 1;
 
   /** Whether the form has a "landing page" - a step 0 */
-  @Input('has-landing-page') hasLandingPage?: boolean = false;
+  @Input() hasLandingPage?: boolean = false;
 
   /** Controls the text displayed on the main button */
   mainButtonText = '';

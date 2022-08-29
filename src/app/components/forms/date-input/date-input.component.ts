@@ -10,7 +10,6 @@ export class DateInputComponent implements AfterContentInit {
   
   @Input() date: Date = new Date();
   @Output() dateChange = new EventEmitter<Date>();
-  @Output('app-change') change = new EventEmitter<Date>();
 
   constructor() { }
 
@@ -22,6 +21,5 @@ export class DateInputComponent implements AfterContentInit {
   onConfirm() {
     this.date = this.dateStorage;
     this.dateChange.emit(this.date);
-    this.change.emit(this.date);
   }
 }

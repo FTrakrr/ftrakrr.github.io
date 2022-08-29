@@ -7,9 +7,9 @@ import { Component, Input } from '@angular/core';
 })
 export class TransparentButtonComponent {
   @Input() icon?: string;
-  @Input('fa-icon') faIcon?: string;
+  @Input() faIcon?: string;
   @Input() iconstyle?: string = "solid";
-  @Input('icon-size') iconFontSize?: string;
+  @Input() iconFontSize?: string;
   @Input() text?: string;
   @Input() routerLink?: string;
   @Input() href?: string;

@@ -9,7 +9,7 @@ import { TakeChance } from 'take-chance';
 })
 export class RadioCardComponent {
   @Input() options!: RadioCardOption[];
-  @Input('per-row-max') perRowMax?: number; 
+  @Input() perRowMax?: number; 
 
   id = TakeChance.id();
 

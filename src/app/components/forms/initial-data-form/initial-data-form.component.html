@@ -1,5 +1,5 @@
-<app-full-page-modal [middle-only]="true" [(open)]="dataCollectionModalOpen">
-    <app-multistep-form [total-steps]="5" [has-landing-page]="true" [step-skipability]="[3, 4]" [step-completenes]="completionStatuses" (stepChange)="onStepConfirm($event)" (finished)="onFinish()">
+<app-full-page-modal [middleOnly]="true" [(open)]="dataCollectionModalOpen">
+    <app-multistep-form [totalSteps]="5" [hasLandingPage]="true" [stepSkipability]="[3, 4]" [stepCompleteness]="completionStatuses" (stepChange)="onStepConfirm($event)" (finished)="onFinish()">
         <div step="0">
             <section>
                 <app-logo class="watermark-logo"></app-logo>
@@ -44,9 +44,9 @@
                     class="input-large"
                     [value]="weightData"
                     (valueChange)="onWeightChange($event)"
-                    [no-buttons]="true"
-                    [border-always-show]="true"
-                    [reverse-order]="true"
+                    [noButtons]="true"
+                    [alwaysShowBorder]="true"
+                    [reverseOrder]="true"
                 ></app-weight-input>
             </section>
         </div>
@@ -63,8 +63,8 @@
                     class="input-large"
                     [value]="heightData"
                     (valueChange)="onHeightChange($event)"
-                    [border-always-show]="true"
-                    [no-buttons]="true"
+                    [alwaysShowBorder]="true"
+                    [noButtons]="true"
                 ></app-height-input>
             </section>
         </div>
@@ -80,7 +80,7 @@
                 <app-radio-bar
                     [options]="genderOptions"
                     size="L"
-                    [fit-content]="true"
+                    [fitContent]="true"
                     [value]="genderTemp"
                     (valueChange)="onGenderChange($event)"
                 ></app-radio-bar>
@@ -124,7 +124,7 @@
     </app-multistep-form>
 </app-full-page-modal>
 <app-full-page-modal
-    [middle-only]="true"
+    [middleOnly]="true"
     [open]="openFakeUpdatingModal"
 >
     <div class="flex flex-column flex-align-center">

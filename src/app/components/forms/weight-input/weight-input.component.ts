@@ -13,14 +13,14 @@ export class WeightInputComponent {
 
   conversionFactor = LBS_TO_KG.precise;
 
-  @Input('reverse-order') reverseOrder: boolean = false;
+  @Input() reverseOrder: boolean = false;
   @Input() horizontal: boolean = false;
-  @Input('unit-disabled') unitDisabled = false;
+  @Input() unitDisabled = false;
 
   //button-related
-  @Input('no-buttons') noButtons: boolean = false;
-  @Input('buttons-always-show') alwaysShowButtons: boolean = true;
-  @Input('border-always-show') alwaysShowBorder: boolean = false;
+  @Input() noButtons: boolean = false;
+  @Input() alwaysShowButtons: boolean = true;
+  @Input() alwaysShowBorder: boolean = false;
 
   onValueChange(value: MeasurementObject) {
     value = value as WeightMeasurementObject;

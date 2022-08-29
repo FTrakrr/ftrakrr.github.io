@@ -8,31 +8,31 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class FullPageModalComponent {
   @Input() title?: string;
 
-  @Input('cancel') cancelButtonText?: string;
-  @Input('ok') okButtonText?: string;
+  @Input() cancelButtonText?: string;
+  @Input() okButtonText?: string;
 
   @Input() open?: boolean = false;
   @Output() openChange = new EventEmitter<boolean>();
 
-  @Output('app-close') closeEvent = new EventEmitter<Event>();
-  @Output('app-cancel') cancelEvent = new EventEmitter<Event>();
-  @Output('app-confirm') confirmEvent = new EventEmitter<Event>();
+  @Output() close = new EventEmitter<Event>();
+  @Output() cancel = new EventEmitter<Event>();
+  @Output() confirm = new EventEmitter<Event>();
 
-  @Input('middle-only') middleOnly = false;
+  @Input() middleOnly = false;
 
   constructor() { }
 
   onClose(event: Event) {
     this.open = false;
-    this.closeEvent.emit(event);
+    this.close.emit(event);
     this.openChange.emit(false);
   }
   onCancel(event: Event) {
     this.onClose(event);
-    this.cancelEvent.emit(event);
+    this.cancel.emit(event);
   }
   onConfirm(event: Event) {
     this.onClose(event);
-    this.confirmEvent.emit(event);
+    this.confirm.emit(event);
   }
 }

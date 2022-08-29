@@ -7,23 +7,14 @@ import { WeightMeasurementObject, WeightUnit } from 'src/app/scripts/types';
   styleUrls: ['./weight-adder-form.component.scss']
 })
 export class WeightAdderFormComponent {
-  @Input('button-text') buttonText?: string;
+  @Input() buttonText?: string;
 
-  @Output('app-submit') submit = new EventEmitter<WeightMeasurementObject>();
-
-  inputNumbers: number | null = null;
-
-  weightUnitOptions = [
-    { value: 'kg' as WeightUnit, title: 'kg', checked: true },
-    { value: 'lbs' as WeightUnit, title: 'lbs' },
-  ]
+  @Output() submit = new EventEmitter<WeightMeasurementObject>();
 
   weightData: WeightMeasurementObject = {
     value: null,
     unit: 'kg',
-  }
-
-  constructor() { }
+  };
 
   onSubmit(): void {
     this.submit.emit(this.weightData);

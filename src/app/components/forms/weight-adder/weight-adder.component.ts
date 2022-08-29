@@ -9,8 +9,8 @@ import { WeightObject, WeightMeasurementObject } from 'src/app/scripts/types';
 export class WeightAdderComponent {
   @Input() items!: WeightObject;
 
-  @Output('app-remove') remove = new EventEmitter<WeightMeasurementObject>();
-  @Output('app-add') add = new EventEmitter<WeightMeasurementObject>();
+  @Output() itemRemove = new EventEmitter<WeightMeasurementObject>();
+  @Output() itemAdd = new EventEmitter<WeightMeasurementObject>();
 
   constructor() { }
   
@@ -23,6 +23,6 @@ export class WeightAdderComponent {
         .indexOf(event.value) != -1
     ) return;
 
-    this.add.emit(event);
+    this.itemAdd.emit(event);
   }
 }

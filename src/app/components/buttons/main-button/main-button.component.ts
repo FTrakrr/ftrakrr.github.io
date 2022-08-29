@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class MainButtonComponent {
   @Input() icon?: string;
-  @Input('fa-icon') faIcon?: string;
+  @Input() faIcon?: string;
   @Input() iconstyle?: string = "solid";
   @Input() text?: string;
   @Input() routerLink?: string;

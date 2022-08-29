@@ -10,9 +10,9 @@ import { TakeChance } from 'take-chance';
 export class RadioBarComponent implements AfterContentInit, OnChanges {
   @Input() options!: RadioBarOption[];
   @Input() size: 'S' | 'M' | 'L' = 'L';
-  @Input('fit-content') fitContent: boolean = false;
+  @Input() fitContent: boolean = false;
   @Input() width?: string;
-  @Input('no-uppercase') noUppercase: boolean = false;
+  @Input() noUppercase: boolean = false;
   @Input() disabled = false;
 
   id = TakeChance.id();

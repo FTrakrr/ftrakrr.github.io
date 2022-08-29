@@ -7,7 +7,7 @@
         <app-radio-bar
             [options]="weekdayOptions"
             size="S"
-            [fit-content]="true"
+            [fitContent]="true"
             [value]="settings.first_weekday"
             (valueChange)="settingsService.setFirstWeekday($event)"
         ></app-radio-bar>
@@ -18,7 +18,7 @@
         <app-radio-bar
             [options]="keepAwakeOptions"
             size="S"
-            [fit-content]="true"
+            [fitContent]="true"
             [value]="settings.keep_awake"
             (valueChange)="settingsService.setKeepAwake($event)"
         ></app-radio-bar>
