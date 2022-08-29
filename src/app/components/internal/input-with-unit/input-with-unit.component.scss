@@ -1,0 +1,19 @@
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+    width: min-content;
+
+    &.horizontal {
+        flex-direction: row-reverse;
+
+        .large-input {
+            width: 100%;
+        }
+    }
+}
+
+.large-input {
+    font-size: 1.2em;
+}
