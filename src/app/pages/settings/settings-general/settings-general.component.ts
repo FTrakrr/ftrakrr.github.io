@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RadioBarOption, Settings } from 'src/app/scripts/types';
-import { SettingsService } from './../../../services/settings.service';
+import { SettingsService } from 'src/app/services/settings.service';
 
 @Component({
   templateUrl: './settings-general.component.html',

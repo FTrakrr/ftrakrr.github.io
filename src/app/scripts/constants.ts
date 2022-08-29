@@ -1,5 +1,5 @@
 import { PersonalDataConstant } from "src/app/scripts/types";
-import { BarScaleRange } from "../components/bar-scale/bar-scale.component";
+import { BarScaleRange } from "src/app/components/bar-scale/bar-scale.component";
 
 //! personal data
 export const PERSONAL_DATA: PersonalDataConstant[] = [

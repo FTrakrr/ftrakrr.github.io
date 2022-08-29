@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { Workout } from '../scripts/types';
+import { Workout } from 'src/app/scripts/types';
 import { LocalStorageService } from './local-storage.service';
 
 @Injectable({

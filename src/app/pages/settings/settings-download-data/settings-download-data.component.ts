@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { saveAs } from 'file-saver';
-import { LocalStorageService } from './../../../services/local-storage.service';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { TakeChance } from 'take-chance';
 
 @Component({

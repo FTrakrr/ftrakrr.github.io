@@ -3,8 +3,8 @@ import { PersonalDataService } from 'src/app/services/personal-data.service';
 import { DateTime } from 'luxon';
 import { HeightMeasurementObject, MeasurementHistoryData, PersonalData, WeightMeasurementObject, WeightUnit } from 'src/app/scripts/types';
 import { MoreRounding } from 'more-rounding';
-import { LBS_TO_KG } from './../../../scripts/constants';
-import { SettingsService } from './../../../services/settings.service';
+import { LBS_TO_KG } from 'src/app/scripts/constants';
+import { SettingsService } from 'src/app/services/settings.service';
 import { MoreDataObject } from 'src/app/components/data-row-expandable/data-row-expandable.component';
 
 @Component({

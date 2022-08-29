@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { PERSONAL_DATA } from 'src/app/scripts/constants';
 import { HeightMeasurementObject, PersonalDataID, PersonalDataUpdateModalStates, PersonalDataUpdateValueStrings, WeightMeasurementObject } from 'src/app/scripts/types';
 import { feetFloatToFeetInches } from 'src/app/scripts/unit_convert';
-import { PersonalDataService } from './../../../services/personal-data.service';
+import { PersonalDataService } from 'src/app/services/personal-data.service';
 
 @Component({
   templateUrl: './update-personal-data.component.html',

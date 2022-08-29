@@ -3,12 +3,12 @@ import { Subject } from 'rxjs';
 import { PersonalData, WeightMeasurementObject, UserPhysiqueObject, HeightMeasurementObject, PersonalDataInternalObject, UserGender } from 'src/app/scripts/types';
 import { LocalStorageService } from './local-storage.service';
 import DEFAULTS from 'src/app/scripts/defaults';
-import { LBS_TO_KG, GENDER_MAP, BMI_SCALE, INCH_TO_CM } from '../scripts/constants';
+import { LBS_TO_KG, GENDER_MAP, BMI_SCALE, INCH_TO_CM } from 'src/app/scripts/constants';
 import { MoreRounding } from 'more-rounding';
 import { Duration } from 'duration-string';
 import { PersonalDataUpdateOutput, MeasurementObject } from 'src/app/scripts/types';
 import { DateTime } from 'luxon';
-import { BarScaleRange } from '../components/bar-scale/bar-scale.component';
+import { BarScaleRange } from 'src/app/components/bar-scale/bar-scale.component';
 
 export type BMIObject = { value: number, range: BarScaleRange };
 

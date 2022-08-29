@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { WorkoutPlan } from '../scripts/types';
-import { LocalStorageService } from './local-storage.service';
+import { WorkoutPlan } from 'src/app/scripts/types';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
 
 @Injectable({
   providedIn: 'root'

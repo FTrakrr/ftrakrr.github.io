@@ -73,6 +73,7 @@ import { CreateCardComponent } from './components/create-card/create-card.compon
 import { ExerciseCardComponent } from './components/exercise-card/exercise-card.component';
 import { BarScaleComponent } from './components/bar-scale/bar-scale.component';
 import { InputWithUnitComponent } from './components/internal/input-with-unit/input-with-unit.component';
+import { LengthInputComponent } from './components/forms/inputs/length-input/length-input.component';
 
 @NgModule({
   declarations: [
@@ -146,6 +147,7 @@ import { InputWithUnitComponent } from './components/internal/input-with-unit/in
     ExerciseCardComponent,
     BarScaleComponent,
     InputWithUnitComponent,
+    LengthInputComponent,
   ],
   imports: [
   BrowserModule,

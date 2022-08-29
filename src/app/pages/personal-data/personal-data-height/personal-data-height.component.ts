@@ -3,7 +3,7 @@ import { PersonalDataService } from 'src/app/services/personal-data.service';
 import { DateTime } from 'luxon';
 import { MeasurementHistoryData, PersonalData, HeightMeasurementObject, HeightUnit } from 'src/app/scripts/types';
 import { MoreRounding } from 'more-rounding';
-import { SettingsService } from './../../../services/settings.service';
+import { SettingsService } from 'src/app/services/settings.service';
 import { MoreDataObject } from 'src/app/components/data-row-expandable/data-row-expandable.component';
 import { feetFloatToFeetInches, cmToFtFloat, ftFloatToCm } from 'src/app/scripts/unit_convert';
 

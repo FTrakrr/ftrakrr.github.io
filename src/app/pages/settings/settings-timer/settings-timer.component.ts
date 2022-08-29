@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RadioBarOption, Settings } from 'src/app/scripts/types';
-import { SettingsService } from './../../../services/settings.service';
-import { TimerService } from './../../../services/timer.service';
+import { SettingsService } from 'src/app/services/settings.service';
+import { TimerService } from 'src/app/services/timer.service';
 
 @Component({
   templateUrl: './settings-timer.component.html',

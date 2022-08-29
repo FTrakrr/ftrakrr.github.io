@@ -20,7 +20,7 @@ export class TimerService {
 
     playTimerSound() {
         if (this.timerSettings.volume == 0) return;
-        let beep = new Audio('../../assets/beep.mp3');
+        let beep = new Audio('src/app/assets/beep.mp3');
         //* volume settings: 
         // low (1): 20%
         // medium (2): 60%

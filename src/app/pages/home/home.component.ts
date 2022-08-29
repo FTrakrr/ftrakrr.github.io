@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Workout } from 'src/app/scripts/types';
-import { WorkoutsService } from './../../services/workouts.service';
+import { WorkoutsService } from 'src/app/services/workouts.service';
 
 @Component({
   templateUrl: './home.component.html',
