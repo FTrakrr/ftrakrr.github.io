@@ -12,6 +12,7 @@
             [for]="id+-i"
             [class]="'size-'+size"
             [style]="'width:'+width"
+            [ngClass]="{disabled}"
         >
             <fa-icon class="icon" *ngIf="opt.faIcon" [icon]="opt.faIcon" [iconstyle]="opt.iconstyle"></fa-icon>
             <bi-icon class="icon" *ngIf="opt.icon" [icon]="opt.icon"></bi-icon>

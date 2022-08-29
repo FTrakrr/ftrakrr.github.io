@@ -13,6 +13,7 @@ export class RadioBarComponent implements AfterContentInit, OnChanges {
   @Input('fit-content') fitContent: boolean = false;
   @Input() width?: string;
   @Input('no-uppercase') noUppercase: boolean = false;
+  @Input() disabled = false;
 
   id = TakeChance.id();
 
