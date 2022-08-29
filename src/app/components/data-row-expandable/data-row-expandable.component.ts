@@ -28,7 +28,6 @@ export class DataRowExpandableComponent implements AfterContentInit {
   }
   ngAfterContentInit(): void {
     if (!this.moreData) return;
-    console.log(this.moreData);
     for (const group of this.moreData) {
       group.columns = '';
       for (const item of group.items) {

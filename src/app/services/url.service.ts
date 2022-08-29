@@ -39,7 +39,6 @@ export class UrlService {
     this.navigateTo(url);
     this.url_history.shift();
     this.url_history.shift();
-    console.log(this.url_history);
   }
   private _urlStringToUrlArray(url: string) {
     url = url.substring(1);

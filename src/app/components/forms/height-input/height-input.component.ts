@@ -35,8 +35,6 @@ export class HeightInputComponent implements AfterContentInit {
     this.valueChange.emit(this.value);
   }
   private _onValueChange() {
-    console.log(this.value, this.valueInternal);
-    
     if (this.value.unit == 'ft') {
       if (this.valueInternal.mainValue == null && this.valueInternal.mainValue == null) {
         this.value.value = null;
@@ -46,7 +44,6 @@ export class HeightInputComponent implements AfterContentInit {
     else {
       this.value.value = this.valueInternal.mainValue;
     }
-    console.log(this.value, this.valueInternal);
     this._emit();
   }
   onUnitChange(unit: HeightUnit) {

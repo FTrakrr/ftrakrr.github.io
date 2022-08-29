@@ -154,7 +154,6 @@ export class PersonalDataService {
 
     //! update personal data
     public setPersonalData(data: PersonalDataUpdateOutput, date: Date) {
-        console.log(data, date);
         //* weight
         if (data.weight && data.weight.value && this.getLastWeight()?.value.value != data.weight?.value) {
             let physiqueObject: UserPhysiqueObject = {
