@@ -119,9 +119,9 @@ export class PersonalDataWeightComponent implements OnInit {
       let hght = persDataCopy.height.filter(v => wght.date.valueOf() >= v.date.valueOf()).last();
       let bmiObject = PersonalDataService.getBMI(wght.value as WeightMeasurementObject, hght?.value as HeightMeasurementObject);
       historyObj.moreData[1].items[0].value = PersonalDataService.toUnitString(hght?.value);
-      historyObj.moreData[1].items[1].value = bmiObject.bmi
-      historyObj.moreData[1].items[2].value = bmiObject.name;
-      historyObj.moreData[1].items[2].color = bmiObject.color;
+      historyObj.moreData[1].items[1].value = bmiObject.value
+      historyObj.moreData[1].items[2].value = bmiObject.range.nameString;
+      historyObj.moreData[1].items[2].color = bmiObject.range.color;
     });
     this._copyHistoryArray();
   }
