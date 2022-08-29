@@ -75,7 +75,13 @@ export const PERSONAL_DATA: PersonalDataConstant[] = [
         }
     },
 ];
-export const BMI_SCALE: { range: string, name: string, color: string, width: number, range_low?: number }[] = [
+
+export const BLUE   = '#0096fa';
+export const GREEN  = '#079423';
+export const LIME   = '#97cf35';
+export const YELLOW = '#d1c411';
+export const ORANGE = '#d16b11';
+export const RED    = '#d12711';
 
 export const BMI_SCALE: BarScaleRange[] = [
     {
