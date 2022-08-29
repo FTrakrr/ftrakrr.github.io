@@ -18,7 +18,8 @@ export class HeightInputComponent implements AfterContentInit {
     { value: 'cm' as HeightUnit, title: 'cm' },
     { value: 'ft' as HeightUnit, title: 'ft' },
   ];
-  heightUnitValue: HeightUnit = 'cm';
+
+  @Input('unit-disabled') unitDisabled = false;
 
   //button-related
   @Input('no-buttons') noButtons: boolean = false;

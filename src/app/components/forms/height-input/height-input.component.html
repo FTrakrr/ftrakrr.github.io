@@ -2,7 +2,8 @@
     <app-radio-bar
         [options]="heightUnitOptions"
         size="S"
-        [value]="heightUnitValue"
+        [value]="value.unit"
+        [disabled]="unitDisabled"
         (valueChange)="onUnitChange($event)"
     ></app-radio-bar>
     <app-number-input
