@@ -138,6 +138,7 @@ button.danger-btn {
     font-size: 0.875rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    transition: background-color 0.25s ease, opacity 0.25s ease;
 
     &.size-ICON {
         padding: 0.15rem 0.15rem;
@@ -153,7 +154,6 @@ button.danger-btn {
 }
 
 button.main-btn {
-    transition: background-color 0.25s ease;
     color: var(--text-e);
     background-color: var(--main-900);
     border: none;
@@ -170,7 +170,6 @@ button.main-btn {
 }
 
 button.ghost-btn {
-    transition: background-color 0.25s ease;
     color: var(--text);
     background-color: transparent;
     border: 1px solid var(--acc);
@@ -187,7 +186,6 @@ button.ghost-btn {
 }
 
 button.main-btn.ghost-btn {
-    transition: background-color 0.25s ease;
     color: var(--main-700);
     background-color: transparent;
     border: 1px solid var(--main-700);
@@ -204,7 +202,6 @@ button.main-btn.ghost-btn {
 }
 
 button.danger-btn {
-    transition: background-color 0.25s ease;
     color: var(--text-e);
     background-color: var(--error-dark);
     border: none;
@@ -221,7 +218,6 @@ button.danger-btn {
 }
 
 button.danger-btn.ghost-btn {
-    transition: background-color 0.25s ease;
     color: var(--error-dark);
     background-color: transparent;
     border: 1px solid var(--error-dark);
@@ -238,7 +234,6 @@ button.danger-btn.ghost-btn {
 }
 
 button.transparent-btn {
-    transition: background-color 0.25s ease;
     color: var(--text);
     border: none;
     background: transparent;
