@@ -4,7 +4,6 @@
         type="text"
         [class]="{'with-buttons': !noButtons, 'corners-left': cornersType == 'left', 'corners-right': cornersType == 'right', 'corners-none': cornersType == 'none'}"
         (input)="onInput()"
-        [value]="value"
         [placeholder]="placeholder"
     >
     <div class="buttons" *ngIf="!noButtons">

@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, ViewChild, ElementRef, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewChild, ElementRef, ChangeDetectionStrategy, OnChanges, SimpleChanges, AfterContentInit, AfterViewInit } from '@angular/core';
 import { RegexService, InputElementData } from 'src/app/services/regex.service';
 import { MoreRounding } from 'more-rounding';
 
@@ -8,9 +8,9 @@ import { MoreRounding } from 'more-rounding';
   styleUrls: ['./number-input.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NumberInputComponent {
+export class NumberInputComponent implements AfterViewInit, OnChanges {
   //basic variables
-  @Input() value: number | null = null;
+  @Input() value: number | string | null = null;
   @Output() valueChange = new EventEmitter<number | null>();
   @Input() placeholder: string | number | undefined = undefined;
 
@@ -40,7 +40,7 @@ export class NumberInputComponent {
   private _getValue(): string {
     return String(this.inputEl.nativeElement.value);
   }
-  private _setValue(v: number | null): void {
+  private _setValue(v: string | number | null): void {
     this.inputEl.nativeElement.value = v;
     this.value = v;
   }
@@ -51,8 +51,25 @@ export class NumberInputComponent {
     this.inputEl.nativeElement.setSelectionRange(pos, pos);
   }
 
+  isViewInit = false;
+  firstValue: number | string | null = null;
+  ngAfterViewInit(): void {
+    this.isViewInit = true;
+    this._setValue(this.firstValue);
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    if (!this.isViewInit && changes['value'].isFirstChange()) {
+      this.firstValue = changes['value'].currentValue;
+      return;
+    }
+    if (changes['value']) {
+      this._setValue(changes['value'].currentValue);
+    }
+  }
+
   private _emit() {
-    this.valueChange.emit(this.value);
+    if (String(this.value).endsWith('.')) return;
+    this.valueChange.emit(Number(this.value));
   }
   onInput(): void {
     let input: InputElementData = {
@@ -86,14 +103,14 @@ export class NumberInputComponent {
     else if (this.max && inputAsNumber > this.max) input.value = String(this.max);
 
     //update the input element
-    this._setValue(Number(input.value));
+    this._setValue(input.value);
     this._setCaretPos(input.caretPos);
 
     this._emit();
   }
 
   onIncrementClick(): void {
-    let newValue = (this.value ?? 0) + this.buttonIncrement;
+    let newValue = (Number(this.value) ?? 0) + this.buttonIncrement;
     newValue = MoreRounding.toPrecision(newValue, 1);
     this._setValue(newValue);
     this.inputEl.nativeElement.focus();
@@ -102,7 +119,7 @@ export class NumberInputComponent {
   }
   onDecrementClick(): void {
     if (!this.value) return;
-    let newValue = (this.value ?? 0) - this.buttonIncrement;
+    let newValue = (Number(this.value) ?? 0) - this.buttonIncrement;
     newValue = MoreRounding.toPrecision(newValue, 1);
     this._setValue(newValue);
     this.inputEl.nativeElement.focus();
