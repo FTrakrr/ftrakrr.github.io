@@ -21,9 +21,10 @@
 .heading-container {
     width: 100%;
 }
-.heading-container>div {
+.arrow-button-container {
     width: max-content;
     align-items: center;
+    font-size: 0.5rem;
 }
 .calendar-container {
     padding: var(--padding);

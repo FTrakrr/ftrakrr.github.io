@@ -2,6 +2,7 @@ button {
     display: flex;
     align-items: center;
     flex-direction: row-reverse;
+    font-size: inherit;
 }
 span {
     padding-left: 0.25rem;

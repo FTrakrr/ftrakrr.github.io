@@ -7,7 +7,7 @@
         Back to present
     </a>
     <div class="heading-container">
-        <div>
+        <div class="arrow-button-container">
             <app-transparent-button
                 icon="chevron-double-left"
                 (click)="changeYearDown()"
@@ -25,7 +25,7 @@
             {{ date.toLocaleDateString('en-US', {month: "long"}) }}
             {{ year }}
         </h6>
-        <div>
+        <div class="arrow-button-container">
             <app-transparent-button
                 icon="chevron-right"
                 (click)="changeMonthUp()"
