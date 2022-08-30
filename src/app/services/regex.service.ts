@@ -110,6 +110,22 @@ export class RegexService {
     )
   }
   /**
+   * Removes any decimal separator.
+   *
+   * **Examples**:
+   * * `10.5` → `105`
+   * * `10.` → `10`
+   * @param input an object containing input's value and its caret position
+   */
+  public makeInteger(input: InputElementData) {
+    this._applyRegex(
+      {
+        pattern: /\./g,
+      },
+      input
+    )
+  }
+  /**
    * Removes all dots from, except the first one. The left-most dot is always not removed.
    *
    * **Examples**:

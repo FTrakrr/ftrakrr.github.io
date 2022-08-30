@@ -28,6 +28,7 @@ export class NumberInputComponent implements AfterViewInit, OnChanges {
 
   //number options
   @Input() allowNegative: boolean = false;
+  @Input() integerOnly: boolean = false;
   @Input() min?: number;
   @Input() max?: number;
 
@@ -85,7 +86,7 @@ export class NumberInputComponent implements AfterViewInit, OnChanges {
       return;
     }
 
-    //aply regexes
+    //apply regexes
     if (this.allowNegative) {
       this.regexService.removeTrailingMinus(input);
     }
@@ -95,7 +96,12 @@ export class NumberInputComponent implements AfterViewInit, OnChanges {
     this.regexService.removeLeadingZeros(input);
     this.regexService.removeInvalidNumberCharacters(input);
     this.regexService.commaToDot(input);
-    this.regexService.removeTrailingDots(input);
+    if (this.integerOnly) {
+      this.regexService.makeInteger(input);
+    }
+    else {
+      this.regexService.removeTrailingDots(input);
+    }
 
     //keep the number in the min/max bounds
     let inputAsNumber: number | null = Number(input.value);
