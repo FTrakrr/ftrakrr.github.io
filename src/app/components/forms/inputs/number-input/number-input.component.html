@@ -1,11 +1,20 @@
 <div class="container" [class]="{'force-show-buttons': alwaysShowButtons, 'force-show-border': alwaysShowBorder}">
-    <input
-        #input
-        type="text"
-        [class]="{'with-buttons': !noButtons, 'corners-left': cornersType == 'left', 'corners-right': cornersType == 'right', 'corners-none': cornersType == 'none'}"
-        (input)="onInput()"
-        [placeholder]="placeholder"
+    <div
+        class="input-container"
+        [ngClass]="{
+            'corners-left': cornersType == 'left',
+            'corners-right': cornersType == 'right',
+            'corners-none': cornersType == 'none'
+        }"
     >
+        <input
+            #input
+            type="text"
+            [class]="{'with-buttons': !noButtons}"
+            (input)="onInput()"
+            [placeholder]="placeholder"
+        >
+    </div>
     <div class="buttons" *ngIf="!noButtons">
         <button class="transparent-btn plus" (click)="onIncrementClick()">
             <bi-icon icon="plus"></bi-icon>

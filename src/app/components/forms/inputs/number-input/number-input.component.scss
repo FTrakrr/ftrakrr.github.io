@@ -6,15 +6,33 @@
     --component-color: var(--disabled);
 }
 
+.input-container {
+    background: var(--bg);
+    z-index: 2;
+    
+    border-radius: 4px;
+    &.corners-left {
+        border-radius: 4px 0 0 4px;
+        border-right: none !important;
+    }
+    &.corners-right {
+        border-radius: 0 4px 4px 0;
+        border-left: none !important;
+    }
+    &.corners-none {
+        border-radius: 0;
+        border-right: none !important;
+        border-left: none !important;
+    }
+}
 input {
     height: calc(1.5em + 1px * 2 + 0.5px);
     font-size: 0.85em;
     min-width: 5.5ch;
     width: 100%;
     text-align: center;
-    background: var(--bg);
     border: 1px solid transparent;
-    z-index: 2;
+    background: transparent;
     color: var(--text);
     transition: border-color 0.2s ease, background-color 0.15s ease;
     
@@ -38,6 +56,7 @@ input {
     flex-direction: column;
     position: relative;
     left: -4px;
+    background-color: var(--bg);
 
     opacity: 0;
     transition: opacity 0.2s ease;
@@ -67,20 +86,22 @@ button {
     }
     & > * {
         position: absolute;
-        top: calc(50% + 1px);
-        left: calc(50% + 2px);
+        top: 50%;
+        left: calc(50% + 3px);
         transform: translate(-50%, -50%);
         color: var(--text);
         transition: color 0.2s ease;
     }
 }
 
-input:focus {
-    border-color: var(--component-color);
+.input-container:focus-within {
+    input {
+        border-color: var(--component-color);
+    }
 
     &+.buttons {
         opacity: 1;
-        transition: opacity 0.2s ease 0.3s;
+        transition: opacity 0.2s ease 0.1s;
     }
 }
 
