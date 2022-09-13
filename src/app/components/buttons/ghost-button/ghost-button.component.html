@@ -2,6 +2,7 @@
     class="ghost-btn"
     [class]="size ? 'size-'+size : ''"
     [routerLink]="routerLink"
+    [disabled]="disabled"
 >
     <span *ngIf="text">{{ text }}</span>
     <fa-icon class="icon" *ngIf="faIcon" [icon]="faIcon" [iconstyle]="iconstyle"></fa-icon>

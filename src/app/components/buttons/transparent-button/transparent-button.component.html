@@ -2,6 +2,7 @@
     class="transparent-btn"
     [routerLink]="routerLink"
     [class]="size ? 'size-'+size : ''"
+    [disabled]="disabled"
 >
     <span *ngIf="text">{{ text }}</span>
     <div class="icon-container" [style]="{'font-size': iconFontSize}">

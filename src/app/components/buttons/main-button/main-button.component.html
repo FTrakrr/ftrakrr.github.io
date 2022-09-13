@@ -2,6 +2,7 @@
     class="main-btn"
     [routerLink]="routerLink"
     [class]="size ? 'size-'+size : ''"
+    [disabled]="disabled"
 >
     <span *ngIf="text">{{ text }}</span>
     <fa-icon class="icon" *ngIf="faIcon" [icon]="faIcon" [iconstyle]="iconstyle"></fa-icon>
