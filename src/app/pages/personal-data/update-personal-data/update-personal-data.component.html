@@ -21,7 +21,7 @@
             </app-data-row>
             <app-modal
                 [(open)]="formModalStates[item.id]"
-                [title]="item.updateForm.title || item.display.title"
+                [modalTitle]="item.updateForm.title || item.display.title"
                 [isWidthMaxContent]="true"
                 (confirm)="onValueChangeConfirm(item.id)"
             >

@@ -4,8 +4,8 @@
         [style]="{'min-width': isWidthMaxContent ? 'max-content' : null}"
         (click)="stopBgClick($event)"
     >
-        <div class="top-container" [ngClass]="{'has-border': title}">
-            <h5 class="title" *ngIf="title">{{ title }}</h5>
+        <div class="top-container" [ngClass]="{'has-border': modalTitle}">
+            <h5 class="title" *ngIf="modalTitle">{{ modalTitle }}</h5>
             <button
                 class="close-btn transparent-btn"
                 (click)="onClose($event)"
