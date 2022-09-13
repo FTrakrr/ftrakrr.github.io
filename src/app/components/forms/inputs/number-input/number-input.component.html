@@ -1,16 +1,12 @@
 <div class="container" [class]="{'force-show-buttons': alwaysShowButtons, 'force-show-border': alwaysShowBorder}">
     <div
         class="input-container"
-        [ngClass]="{
-            'corners-left': cornersType == 'left',
-            'corners-right': cornersType == 'right',
-            'corners-none': cornersType == 'none'
-        }"
     >
         <input
             #input
             type="text"
-            [class]="{'with-buttons': !noButtons}"
+            [class.with-buttons]="!noButtons"
+            [ngClass]="'corners-'+cornersType"
             (input)="onInput()"
             [placeholder]="placeholder"
         >
