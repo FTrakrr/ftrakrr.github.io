@@ -41,4 +41,6 @@ export class ModalComponent {
   stopBgClick(event: Event) {
     event.stopPropagation();
   }
+
+    @Input() okDisabled: boolean = false;
 }

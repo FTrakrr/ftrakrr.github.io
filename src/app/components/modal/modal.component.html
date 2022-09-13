@@ -28,6 +28,7 @@
                 class="ok-btn"
                 [text]="okButtonText ?? 'OK'"
                 size="S"
+                [disabled]="okDisabled"
                 (click)="onConfirm($event)"
             ></app-main-button>
         </div>
